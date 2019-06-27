@@ -1,6 +1,7 @@
-mod hello;
+mod singer;
+// mod dancer;
 
 fn main() {
-    // ybq::person::sing();
-    hello::print_hello();
+    singer::sing();
+    // dancer::dance();
 }
