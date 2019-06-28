@@ -1,6 +1,8 @@
 use std::error::Error;
 use std::fs;
 use std::env;
+pub mod hello;
+pub mod ybq;
 
 pub struct Config {
     pub query: String,

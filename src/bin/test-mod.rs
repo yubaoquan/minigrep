@@ -1,7 +1,10 @@
 mod singer;
-// mod dancer;
+use minigrep::ybq::dancer;
+use minigrep::ybq::deyunshe::{ yueyunpeng, yuqian };
 
 fn main() {
     singer::sing();
-    // dancer::dance();
+    dancer::dance();
+    yueyunpeng::play();
+    yuqian::play();
 }

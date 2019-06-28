@@ -1,3 +1,3 @@
 pub fn dance() {
-    println!("+++++-----");
+    println!("+++++不如跳舞-----");
 }
