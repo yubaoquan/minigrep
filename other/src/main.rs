@@ -46,7 +46,7 @@ fn main() {
         .collect();
 
     person.hi();
-    println!("================");
+    println!("=================");
     showSons(&sons);
     sons.sort();
     sons.iter().for_each(|son| {
