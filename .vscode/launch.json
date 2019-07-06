@@ -1,0 +1,472 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'other'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--package=other"
+        ],
+        "filter": {
+          "name": "other",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'other'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=other",
+          "--package=other"
+        ],
+        "filter": {
+          "name": "other",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'other'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=other",
+          "--package=other"
+        ],
+        "filter": {
+          "name": "other",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'fuckr'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--package=fuckr"
+        ],
+        "filter": {
+          "name": "fuckr",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'gui'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=gui",
+          "--package=gui"
+        ],
+        "filter": {
+          "name": "gui",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'gui'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=gui",
+          "--package=gui"
+        ],
+        "filter": {
+          "name": "gui",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'leetcode'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=leetcode",
+          "--package=leetcode"
+        ],
+        "filter": {
+          "name": "leetcode",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'leetcode'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=leetcode",
+          "--package=leetcode"
+        ],
+        "filter": {
+          "name": "leetcode",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in library 'minigrep'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--lib",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "minigrep",
+          "kind": "lib"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'minigrep'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=minigrep",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "minigrep",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'minigrep'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=minigrep",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "minigrep",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'test-ref'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=test-ref",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-ref",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'test-ref'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=test-ref",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-ref",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'test-1'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=test-1",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-1",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'test-1'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=test-1",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-1",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'test-display'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=test-display",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-display",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'test-display'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=test-display",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-display",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'test-mod'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=test-mod",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-mod",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'test-mod'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=test-mod",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-mod",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'mod'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=mod",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "mod",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'mod'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=mod",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "mod",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'singer'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=singer",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "singer",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'singer'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=singer",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "singer",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug executable 'test-str'",
+      "cargo": {
+        "args": [
+          "build",
+          "--bin=test-str",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-str",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug unit tests in executable 'test-str'",
+      "cargo": {
+        "args": [
+          "test",
+          "--no-run",
+          "--bin=test-str",
+          "--package=minigrep"
+        ],
+        "filter": {
+          "name": "test-str",
+          "kind": "bin"
+        }
+      },
+      "args": [],
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
