@@ -1,4 +1,4 @@
-use leetcode::arr::find_diagonal_order::find_diagonal_order;
+use leetcode::arr::spiral_order::spiral_order;
 
 fn main() {
     let arr: Vec<Vec<i32>> = vec![
@@ -6,6 +6,6 @@ fn main() {
         vec![ 4, 5, 6 ],
         vec![ 7, 8, 9 ],
     ];
-    let result = find_diagonal_order(arr);
+    let result = spiral_order(arr);
     println!("result: {:?}", &result);
 }
