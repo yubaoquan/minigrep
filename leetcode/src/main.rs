@@ -1,8 +1,8 @@
-use leetcode::string::add_binary::add_binary;
+use leetcode::arr::remove_element::remove_element;
+
 
 fn main() {
-    let a = String::from("11");
-    let b = String::from("11");
-    let result = add_binary(a, b);
-    println!("result: {}", result);
+    let mut arr: Vec<i32> = vec![2, 3, 4];
+    let result = remove_element(&mut arr, 3);
+    println!("{:?}", result);
 }
