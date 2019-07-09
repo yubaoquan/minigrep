@@ -1,8 +1,8 @@
-use leetcode::arr::remove_element::remove_element;
+use leetcode::arr::get_row::get_row;
 
 
 fn main() {
-    let mut arr: Vec<i32> = vec![2, 3, 4];
-    let result = remove_element(&mut arr, 3);
-    println!("{:?}", result);
+    let _arr = vec![2,3,1,2,4,3];
+    let result = get_row(3);
+    println!("{}", result);
 }
