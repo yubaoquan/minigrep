@@ -1,5 +1,7 @@
 // https://stackoverflow.com/questions/29901415/reversing-the-result-of-str-split
 
+/// 反转字符串的单词顺序
+/// 如 "this is a big apple" 转成 "apple big a is this"
 pub fn reverse_words(s: String) -> String {
     s
         .split(" ")
@@ -12,7 +14,8 @@ pub fn reverse_words(s: String) -> String {
         .join(" ")
 }
 
-
+/// 根据字符串中的空格分割, 生成一个字符串数组
+/// 如 "this is a big apple" 转成 ["this", "is", "a", "big", "apple"]
 pub fn get_string_array_from_str(s: &String) -> Vec<String> {
     s
         .split(" ")
