@@ -25,3 +25,16 @@ pub fn get_string_array_from_str(s: &String) -> Vec<String> {
         .map(|&w| w.to_string())
         .collect::<Vec<String>>()
 }
+
+pub fn get_string_array_from_str_2(s: &String) -> Vec<String> {
+    s
+        .split(" ")
+        .filter_map(|w| {
+            return if  w.len() > 0 {
+                Some(w.to_string())
+            } else {
+                None
+            }
+        })
+        .collect::<Vec<String>>()
+}
