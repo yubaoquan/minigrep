@@ -20,9 +20,7 @@ pub fn get_string_array_from_str(s: &String) -> Vec<String> {
     s
         .split(" ")
         .filter(|&w| w.len() > 0)
-        .collect::<Vec<&str>>()
-        .iter()
-        .map(|&w| w.to_string())
+        .map(|w| w.to_string())
         .collect::<Vec<String>>()
 }
 
