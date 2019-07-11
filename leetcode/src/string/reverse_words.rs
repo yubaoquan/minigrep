@@ -4,12 +4,8 @@
 /// 如 "this is a big apple" 转成 "apple big a is this"
 pub fn reverse_words(s: String) -> String {
     s
-        .split(" ")
-        .filter(|&w| w.len() > 0)
-        .collect::<Vec<&str>>()
-        .iter()
-        .rev()
-        .map(|&w| w)
+        .rsplit(" ")
+        .filter(|w| w.len() > 0)
         .collect::<Vec<&str>>()
         .join(" ")
 }
