@@ -1,4 +1,5 @@
 use leetcode::string::reverse_words::reverse_words;
+use leetcode::string::reverse_words::reverse_words2;
 use leetcode::string::reverse_words::get_string_array_from_str;
 
 
@@ -11,4 +12,8 @@ fn main() {
     let s = "this is the string hahaha".to_string();
     let string_array = get_string_array_from_str(&s);
     println!("{:?}", string_array);
+
+    let s = "Let's take LeetCode contest".to_string();
+    let result = reverse_words2(s);
+    println!("{}", result);
 }

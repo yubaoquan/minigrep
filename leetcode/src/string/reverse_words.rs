@@ -5,8 +5,24 @@
 pub fn reverse_words(s: String) -> String {
     s
         .rsplit(" ")
-        .filter(|w| w.len() > 0)
+        .filter(|w| !w.is_empty())
         .collect::<Vec<&str>>()
+        .join(" ")
+}
+
+/// 输入: "Let's take LeetCode contest"
+/// 输出: "s'teL ekat edoCteeL tsetnoc"
+pub fn reverse_words2(s: String) -> String {
+    let str_arr = get_string_array_from_str_3(&s);
+    str_arr
+        .iter()
+        .map(|s| {
+            s
+                .rsplit("")
+                .collect::<Vec<&str>>()
+                .join("")
+        })
+        .collect::<Vec<String>>()
         .join(" ")
 }
 
@@ -15,7 +31,7 @@ pub fn reverse_words(s: String) -> String {
 pub fn get_string_array_from_str(s: &String) -> Vec<String> {
     s
         .split(" ")
-        .filter(|w| w.len() > 0)
+        .filter(|w| !w.is_empty())
         .map(|w| w.to_string())
         .collect::<Vec<String>>()
 }
@@ -24,7 +40,7 @@ pub fn get_string_array_from_str_2(s: &String) -> Vec<String> {
     s
         .split(" ")
         .filter_map(|w| {
-            if  w.len() > 0 {
+            if  !w.is_empty() {
                 Some(w.to_string())
             } else {
                 None
@@ -37,9 +53,9 @@ pub fn get_string_array_from_str_3(s: &String) -> Vec<String> {
     s
         .split(" ")
         .filter_map(|w| {
-            match w.len() {
-                0 => None,
-                _ => Some(w.to_string()),
+            match w.is_empty() {
+                true => None,
+                false => Some(w.to_string()),
             }
         })
         .collect::<Vec<String>>()
