@@ -8,3 +8,5 @@ pub mod remove_element;
 pub mod find_max_consecutive_ones;
 pub mod min_sub_array_len;
 pub mod get_row;
+pub mod max_sub_array;
+pub mod rob;
