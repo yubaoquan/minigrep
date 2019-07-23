@@ -1,4 +1,4 @@
-use leetcode::tree::preorder_traversal::test;
+use leetcode::tree::has_path_sum::test;
 // use leetcode::arr::rob::rob;
 
 fn main() {
