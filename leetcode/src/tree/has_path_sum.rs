@@ -25,10 +25,9 @@ use crate::tree::def::TreeNode;
 pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> bool {
     let mut arr = vec![];
     foo(root, &mut arr);
-    if let Some(_) = arr.iter().find(|&&x| x == sum) {
-        true
-    } else {
-        false
+    match arr.iter().find(|&&x| x == sum) {
+        Some(_) => true,
+        None => false,
     }
 }
 
