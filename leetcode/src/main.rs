@@ -1,4 +1,5 @@
-use leetcode::tree::has_path_sum::test;
+// use leetcode::tree::has_path_sum::test;
+use leetcode::foo::test1::test;
 // use leetcode::arr::rob::rob;
 
 fn main() {
