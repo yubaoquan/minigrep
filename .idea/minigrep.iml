@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/gui/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gui/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/gui/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/gui/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/fuckr/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fuckr/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fuckr/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/fuckr/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/other/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/other/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/other/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/other/benches" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/leetcode/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/leetcode/examples" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/leetcode/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/leetcode/benches" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/fuckr/target" />
+      <excludeFolder url="file://$MODULE_DIR$/gui/target" />
+      <excludeFolder url="file://$MODULE_DIR$/leetcode/target" />
+      <excludeFolder url="file://$MODULE_DIR$/other/target" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
