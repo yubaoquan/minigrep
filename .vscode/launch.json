@@ -4,6 +4,18 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+  {
+    "type": "node",
+    "request": "launch",
+    "name": "yanghui",
+    "program": "${workspaceFolder}/leetcode/js/yanghuisanjiao.js"
+  },
+  {
+    "type": "node",
+    "request": "launch",
+    "name": "JS LinkedList",
+    "program": "${workspaceFolder}/leetcode/js/linked-list/def.js"
+  },
     {
       "type": "lldb",
       "request": "launch",
