@@ -84,13 +84,13 @@ impl Drop for LinkedList {
     }
 }
 
-fn main() {
-    let mut list = LinkedList::new();
-    for i in 0..250_000 {
-        list.add_to_tail(i);
-    }
-    println!("{:?}", list.contains(200_000));
-}
+// fn main() {
+//     let mut list = LinkedList::new();
+//     for i in 0..250_000 {
+//         list.add_to_tail(i);
+//     }
+//     println!("{:?}", list.contains(200_000));
+// }
 
 
 pub fn tests() {

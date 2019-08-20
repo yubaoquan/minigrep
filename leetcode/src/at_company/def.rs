@@ -1,4 +1,3 @@
-
 #[derive(Debug)]
 struct Node {
     next: Option<Box<Node>>,
@@ -16,14 +15,27 @@ impl Node {
     fn display(&mut self) {
         let mut next = &self.next;
         println!("val: {}", self.val);
-        self.val += 1;
-        // self.add();
 
         while next.is_some() {
             if let Some(inner_node) = next {
                 println!("val: {}", inner_node.val);
                 next = &inner_node.next;
             }
+        }
+    }
+
+    fn disp(&mut self) {
+        println!("disp: {}", self.val);
+        let mut cur = Node::new(0);
+        cur.next = self.next.take();
+        while let Some(mut node) = cur.next {
+            println!("disp: {}", node.val);
+            // self.next = cur.next.take(); // 赋值不回去了, 造成链表遍历一次后节点都消耗没了
+
+            cur.next = match node.next {
+                Some(_) => node.next.take(),
+                _ => None,
+            };
         }
     }
 
@@ -40,10 +52,10 @@ pub fn test() {
     node2.next = Some(Box::new(node3));
     node1.next = Some(Box::new(node2));
 
+    node1.disp();
     node1.display();
-    node1.display();
-    println!("{:?}", &node1);
 
+    println!("====================");
     let mut node = Some(Box::new(node1));
     while node.is_some() {
         if let Some(mut inner_node) = node {
