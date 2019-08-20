@@ -1,4 +1,4 @@
-use leetcode::at_company::def3::test;
+use leetcode::at_company::def::test;
 
 fn main() {
     test()

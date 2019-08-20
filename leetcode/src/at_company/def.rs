@@ -57,10 +57,4 @@ pub fn test() {
     // node1.display();
     // println!("{:?}", &node1); // value borrowed here after move
 
-    // let mut s = String::from("foo");
-    // s.push_str("bar");
-    // println!("{}", s);
-
-    // s.push_str("bar");
-    // println!("{}", s);
 }

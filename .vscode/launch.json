@@ -7,6 +7,12 @@
   {
     "type": "node",
     "request": "launch",
+    "name": "JS test",
+    "program": "${workspaceFolder}/app.js"
+  },
+  {
+    "type": "node",
+    "request": "launch",
     "name": "isPalindrome",
     "program": "${workspaceFolder}//leetcode/js/linked-list/isPalindrome/isPalindrome.js"
   },
