@@ -7,6 +7,12 @@
   {
     "type": "node",
     "request": "launch",
+    "name": "isPalindrome",
+    "program": "${workspaceFolder}//leetcode/js/linked-list/isPalindrome/isPalindrome.js"
+  },
+  {
+    "type": "node",
+    "request": "launch",
     "name": "yanghui",
     "program": "${workspaceFolder}/leetcode/js/yanghuisanjiao.js"
   },

@@ -4,12 +4,12 @@ function reverseList(head) {
   }
   let cur = head;
   let node = head.next;
-  while (node.next) {
+  while (node) {
     let next = node.next;
     node.next = cur;
     head.next = next;
     cur = node;
     node = next;
   }
-  return head;
+  return cur;
 }
