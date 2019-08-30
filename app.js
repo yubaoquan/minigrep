@@ -1,3 +1,3 @@
-const test = require('./leetcode/js/linked-list/addTwoNumbers.js');
+const test = require('./leetcode/js/linked-list/oddEvenList.js');
 
 test();
