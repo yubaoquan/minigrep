@@ -1,4 +1,8 @@
-function addTwoNumbers(l1, l2) {
+const { makeList } = require('./util.js');
+
+function addTwoNumbers(a, b) {
+  let l1 = a;
+  let l2 = b;
   const result = { val: null };
   let node = result;
   let inc = 0; // 进位
@@ -22,14 +26,11 @@ function addTwoNumbers(l1, l2) {
     if (l1 || l2 || inc) {
       node.next = { val: 0 };
       node = node.next;
-    } else {
-      return result;
-    }
+    } else return result;
   }
 }
 
-module.exports = function () {
-  const { makeList } = require('./util.js');
+module.exports = function() {
   const a = makeList([5]);
   const b = makeList([5]);
 

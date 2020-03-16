@@ -1,11 +1,11 @@
 /**
  * Initialize your data structure here.
  */
-var MyLinkedList = function() {
+function MyLinkedList() {
   this.head = null;
   this.tail = null;
   this.len = 0;
-};
+}
 
 /**
  * Get the value of the index-th node in the linked list. If the index is invalid, return -1.
@@ -13,20 +13,20 @@ var MyLinkedList = function() {
  * @return {number}
  */
 MyLinkedList.prototype.get = function(index) {
-  if (index < 0 || index >= this.len) {
-    return -1;
-  }
+  if (index < 0 || index >= this.len) return -1;
+
   let current = this.head;
   let pos = 0;
   while (current.next && pos < index) {
     current = current.next;
-    pos ++;
+    pos += 1;
   }
   return current.val;
 };
 
 /**
- * Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list.
+ * Add a node of value val before the first element of the linked list.
+ * After the insertion, the new node will be the first node of the linked list.
  * @param {number} val
  * @return {void}
  */
@@ -36,10 +36,9 @@ MyLinkedList.prototype.addAtHead = function(val) {
     next: this.head,
   };
   this.head = node;
-  if (!this.tail) {
-    this.tail = node;
-  }
-  this.len ++;
+  if (!this.tail) this.tail = node;
+
+  this.len += 1;
 };
 
 /**
@@ -51,32 +50,34 @@ MyLinkedList.prototype.addAtTail = function(val) {
   const node = { val, next: null };
   this.tail.next = node;
   this.tail = node;
-  if (!this.head) {
-    this.head = node;
-  }
-  this.len ++;
+  if (!this.head) this.head = node;
+
+  this.len += 1;
 };
 
 /**
- * Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted.
+ * Add a node of value val before the index-th node in the linked list.
+ * If index equals to the length of linked list,
+ * the node will be appended to the end of linked list.
+ * If index is greater than the length, the node will not be inserted.
  * @param {number} index
  * @param {number} val
  * @return {void}
  */
 MyLinkedList.prototype.addAtIndex = function(index, val) {
-  if (index > this.len) { return; }
-  if (index <= 0) { return this.addAtHead(val); }
-  if (index === this.len) { return this.addAtTail(val) }
+  if (index > this.len) return;
+  if (index <= 0) return this.addAtHead(val);
+  if (index === this.len) return this.addAtTail(val);
 
   let current = this.head;
   let pos = 0;
   while (current.next && pos < index - 1) {
     current = current.next;
-    pos ++;
+    pos += 1;
   }
   const nextnext = current.next;
-  current.next = { val, next: nextnext }
-  this.len++;
+  current.next = { val, next: nextnext };
+  this.len += 1;
 };
 
 /**
@@ -85,25 +86,22 @@ MyLinkedList.prototype.addAtIndex = function(index, val) {
  * @return {void}
  */
 MyLinkedList.prototype.deleteAtIndex = function(index) {
-  if (index < 0 || index > this.len - 1) { return }
+  if (index < 0 || index > this.len - 1) return;
   let current = this.head;
   let pos = 0;
-  this.len --;
+  this.len -= 1;
   if (index === 0) {
     this.head = this.head.next;
-    if (!this.head) {
-      this.tail = null;
-    }
+    if (!this.head) this.tail = null;
+
     return;
   }
   while (current.next && pos < index - 1) {
     current = current.next;
-    pos ++;
+    pos += 1;
   }
   current.next = current.next.next;
-  if (!current.next) {
-    this.tail = current;
-  }
+  if (!current.next) this.tail = current;
 };
 
 MyLinkedList.prototype.display = function() {
@@ -118,10 +116,10 @@ MyLinkedList.prototype.display = function() {
   }
 
   console.info(arr.join(', '));
-  console.info(`=========================`);
-}
+  console.info('=========================');
+};
 
-var obj = new MyLinkedList();
+const obj = new MyLinkedList();
 
 const { methods, params } = require('./case4.js');
 

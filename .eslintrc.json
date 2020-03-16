@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base"],
+  "rules": {
+    "consistent-return": "off",
+    "no-console": "off",
+    "func-names": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "arrow-parens": ["error", "as-needed"],
+    "import/extensions": ["error", "always"],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "prefer-destructuring": ["error", {"object": true, "array": false}],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "no-return-assign": ["error", "except-parens"],
+    "no-constant-condition": ["error", { "checkLoops": false }],
+    "nonblock-statement-body-position": ["error", "beside"],
+    "curly": ["error", "multi"]
+  }
+}

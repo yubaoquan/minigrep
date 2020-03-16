@@ -1,8 +1,8 @@
 function climbStairs(n) {
-  if (n <= 3) { return n; }
+  if (n <= 3) return n;
   const arr = [2, 3];
   for (let i = 4; i < n; i++) {
-    let t = arr[0] + arr[1];
+    const t = arr[0] + arr[1];
     arr[0] = arr[1];
     arr[1] = t;
   }

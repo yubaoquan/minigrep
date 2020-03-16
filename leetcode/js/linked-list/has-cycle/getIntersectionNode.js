@@ -1,4 +1,4 @@
-function getIntersectionNode(headA, headB) {
+export default function getIntersectionNode(headA, headB) {
   let node = headA;
   while (node) {
     node.visited = true;
@@ -6,7 +6,7 @@ function getIntersectionNode(headA, headB) {
   }
   node = headB;
   while (node) {
-    if (node.visited) { return node; }
+    if (node.visited) return node;
     node = node.next;
   }
   return null;

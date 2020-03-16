@@ -1,10 +1,7 @@
 function maxDepth(root) {
-  if (!root) {
-    return 0;
-  }
-  if (!root.left && !root.right) {
-    return 1;
-  }
+  if (!root) return 0;
+  if (!root.left && !root.right) return 1;
+
   const leftLen = maxDepth(root.left);
   const rightLen = maxDepth(root.right);
   return 1 + Math.max(leftLen, rightLen);

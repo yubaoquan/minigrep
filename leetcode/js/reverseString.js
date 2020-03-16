@@ -1,9 +1,7 @@
 function reverseString(s) {
   const len = s.length;
   const middle = Math.floor(len / 2);
-  for (let i = 0; i < middle; i++) {
-    swap(s, i, len - i - 1);
-  }
+  for (let i = 0; i < middle; i++) swap(s, i, len - i - 1);
 }
 
 function swap(arr, i, j) {
@@ -12,6 +10,6 @@ function swap(arr, i, j) {
   arr[j] = t;
 }
 
-const arr = ["H","a","n","n","a","h"];
+const arr = ['H', 'a', 'n', 'n', 'a', 'h'];
 reverseString(arr);
 console.info(arr);

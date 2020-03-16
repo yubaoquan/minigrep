@@ -5,12 +5,9 @@
 const { makeList } = require('./util.js');
 
 function oddEvenList(head) {
-  let node = head;
   const arr = listToArr(head);
   const sorted = sortByOdd(arr);
-  sorted.forEach((node, i) => {
-    node.next = sorted[i + 1];
-  });
+  sorted.forEach((node, i) => (node.next = sorted[i + 1]));
   return head;
 }
 
@@ -28,11 +25,8 @@ function sortByOdd(arr) {
   const odd = [];
   const even = [];
   arr.forEach((item, index) => {
-    if (index % 2 === 0) {
-      odd.push(item);
-    } else {
-      even.push(item);
-    }
+    if (index % 2 === 0) odd.push(item);
+    else even.push(item);
   });
   return [...odd, ...even];
 }
@@ -42,4 +36,4 @@ module.exports = function() {
   console.info(list);
   oddEvenList(list);
   console.info(list);
-}
+};
