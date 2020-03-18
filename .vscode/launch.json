@@ -8,7 +8,7 @@
     "type": "node",
     "request": "launch",
     "name": "JS test",
-    "program": "${workspaceFolder}/app.js"
+    "program": "${workspaceFolder}/app.mjs"
   },
   {
     "type": "node",

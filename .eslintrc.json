@@ -2,9 +2,11 @@
   "parser": "babel-eslint",
   "extends": ["airbnb-base"],
   "rules": {
+    "no-continue": "off",
     "consistent-return": "off",
     "no-console": "off",
     "func-names": "off",
+    "import/prefer-default-export": "off",
     "comma-dangle": ["error", "always-multiline"],
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
     "arrow-parens": ["error", "as-needed"],
