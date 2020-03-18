@@ -1,3 +1,3 @@
-import test from './leetcode/js/linked-list/flatten.mjs';
+import test from './leetcode/js/recursion/kthGrammar.mjs';
 
 test();
