@@ -7,6 +7,16 @@
   {
     "type": "node",
     "request": "launch",
+    "name": "Deno",
+    "runtimeExecutable": "deno",
+    "port": 9229,
+    "runtimeArgs": ["run", "--inspect-brk", "-A", "index.ts"],
+    "cwd": "${workspaceFolder}/leetcode/ts",
+    "outputCapture": "std"
+  },
+  {
+    "type": "node",
+    "request": "launch",
     "name": "JS test",
     "program": "${workspaceFolder}/app.mjs"
   },
