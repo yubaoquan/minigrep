@@ -1,6 +1,7 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": ["airbnb-base"],
+  "plugins": ["@typescript-eslint"],
   "rules": {
     "no-continue": "off",
     "consistent-return": "off",

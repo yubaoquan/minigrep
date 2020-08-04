@@ -1,7 +1,5 @@
-type element = number | undefined
-
 class MyCircularQueue {
-  queue: element[] = []
+  queue: number[] = []
 
   maxLength = 0
 
@@ -29,7 +27,6 @@ class MyCircularQueue {
 
   deQueue(): boolean {
     if (this.isEmpty()) return false;
-    this.queue[this.head] = undefined;
     this.count -= 1;
     if (this.isEmpty()) {
       this.head = -1;
@@ -41,16 +38,12 @@ class MyCircularQueue {
 
   Front(): number {
     if (this.isEmpty()) return -1;
-    const val = this.queue[this.head];
-
-    return val === undefined ? -1 : val;
+    return this.queue[this.head]!;
   }
 
   Rear(): number {
     if (this.isEmpty()) return -1;
-    const val = this.queue[this.tail];
-
-    return val === undefined ? -1 : val;
+    return this.queue[this.tail]!;
   }
 
   isEmpty(): boolean {

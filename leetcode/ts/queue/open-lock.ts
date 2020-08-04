@@ -22,8 +22,7 @@ function openLock(deadends: string[], target: string): number {
   while (q.length) {
     const len = q.length;
     for (let i = 0; i < len; i++) {
-      const current = q.shift();
-      if (current === undefined) return step;
+      const current = q.shift()!;
       if (deadends.includes(current)) continue;
       if (current === target) return step;
       for (let j = 0; j < 4; j++) {

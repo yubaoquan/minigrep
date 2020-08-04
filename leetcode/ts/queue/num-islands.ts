@@ -36,8 +36,8 @@ function numIslands(grid: string[][]): number {
       res += 1;
       const queue = [i * n + j];
       while (queue.length) {
-        const t = queue.shift();
-        if (t !== undefined) checkRound(t, queue);
+        const t = queue.shift()!;
+        checkRound(t, queue);
       }
     });
   });
