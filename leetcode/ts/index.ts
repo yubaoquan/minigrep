@@ -1,3 +1,3 @@
-import foo from './queue/circular-queue.ts';
+import foo from './queue/num-islands.ts';
 
 foo();
