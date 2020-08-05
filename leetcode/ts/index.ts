@@ -1,3 +1,3 @@
-import foo from './queue/num-squares.ts';
+import foo from './queue-stack/daily-temperatures.ts';
 
 foo();
