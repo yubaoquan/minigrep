@@ -1,3 +1,3 @@
-import foo from './queue-stack/daily-temperatures.ts';
+import foo from './queue-stack/eval-rpn.ts';
 
 foo();

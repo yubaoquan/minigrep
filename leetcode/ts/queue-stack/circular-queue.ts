@@ -16,7 +16,6 @@ deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真
 isEmpty(): 检查循环队列是否为空。
 isFull(): 检查循环队列是否已满。
 
-
 示例：
 
 MyCircularQueue circularQueue = new MyCircularQueue(3); // 设置长度为 3
@@ -33,15 +32,15 @@ circularQueue.Rear();  // 返回 4
  */
 
 class MyCircularQueue {
-  queue: number[] = []
+  queue: number[] = [];
 
-  maxLength = 0
+  maxLength = 0;
 
-  head = -1
+  head = -1;
 
-  tail = -1
+  tail = -1;
 
-  count = 0
+  count = 0;
 
   constructor(k: number) {
     this.maxLength = k;
@@ -92,7 +91,6 @@ class MyCircularQueue {
 /**
 * Your MyCircularQueue object will be instantiated and called as such:
 */
-
 
 export default function() {
   const obj = new MyCircularQueue(3);

@@ -11,7 +11,6 @@
 
 字符串 target 代表可以解锁的数字，你需要给出最小的旋转次数，如果无论如何不能解锁，返回 -1。
 
-
 示例 1:
 
 输入：deadends = ["0201","0101","0102","1212","2002"], target = "0202"
@@ -37,7 +36,6 @@
 输入: deadends = ["0000"], target = "8888"
 输出：-1
 
-
 提示：
 
 死亡列表 deadends 的长度范围为 [1, 500]。
@@ -45,7 +43,6 @@
 每个 deadends 和 target 中的字符串的数字会在 10,000 个可能的情况 '0000' 到 '9999' 中产生。
 
  */
-
 
 function openLock(deadends: string[], target: string): number {
   const q = [];
