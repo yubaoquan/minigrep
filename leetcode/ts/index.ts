@@ -1,3 +1,3 @@
-import foo from './queue/open-lock.ts';
+import foo from './queue/num-squares.ts';
 
 foo();
