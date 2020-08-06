@@ -5,14 +5,14 @@
   "version": "0.2.0",
   "configurations": [
   {
-    "type": "node",
+    "type": "pwa-node",
     "request": "launch",
     "name": "Deno",
     "runtimeExecutable": "deno",
-    "port": 9229,
     "runtimeArgs": ["run", "--inspect-brk", "-A", "index.ts"],
     "cwd": "${workspaceFolder}/leetcode/ts",
-    "outputCapture": "std"
+    "outputCapture": "std",
+    "attachSimplePort": 9229
   },
   {
     "type": "node",
