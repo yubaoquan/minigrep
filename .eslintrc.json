@@ -27,12 +27,20 @@
     "no-return-assign": ["error", "except-parens"],
     "no-constant-condition": ["error", { "checkLoops": false }],
     "nonblock-statement-body-position": ["error", "beside"],
-    "curly": ["error", "multi"],
+    "curly": ["error", "multi-or-nest", "consistent"],
     "@typescript-eslint/space-before-function-paren": ["error", {
       "anonymous": "never",
       "named": "never",
       "asyncArrow": "always"
     }],
-    "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }]
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "lines-around-comment": ["error", {
+      "beforeBlockComment": true,
+      "beforeLineComment": true,
+      "allowBlockStart": true,
+      "allowClassStart": true,
+      "allowObjectStart": true,
+      "allowArrayStart": true
+    }]
   }
 }

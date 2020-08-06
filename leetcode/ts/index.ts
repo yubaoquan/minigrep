@@ -1,3 +1,3 @@
-import foo from './queue-stack/eval-rpn.ts';
+import foo from './queue-stack/decode-string.ts';
 
 foo();
