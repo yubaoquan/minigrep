@@ -12,5 +12,10 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["es7", "dom"],
     "baseUrl": "./",
-  }
+  },
+  "include": [
+    "leetcode/**/*.ts",
+    "leetcode/**/*.js",
+    "leetcode/**/*.mjs"
+  ]
 }
