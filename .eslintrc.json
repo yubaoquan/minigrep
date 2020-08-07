@@ -41,6 +41,8 @@
       "allowClassStart": true,
       "allowObjectStart": true,
       "allowArrayStart": true
-    }]
+    }],
+    "brace-style": ["error", "1tbs"],
+    "max-statements-per-line": ["error", { "max": 1 }]
   }
 }

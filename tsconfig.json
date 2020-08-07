@@ -7,7 +7,6 @@
     "noUnusedLocals": true,
     "strictNullChecks": true,
     "preserveConstEnums": true,
-    "noImplicitUseStrict": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["es7", "dom"],

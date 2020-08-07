@@ -1,3 +1,3 @@
-import test from './clone-graph.mjs';
+import fn from './bi-tree/serialize.mjs';
 
-test();
+fn();
