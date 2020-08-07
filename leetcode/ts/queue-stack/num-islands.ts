@@ -31,6 +31,7 @@ function numIslands(grid: string[][]): number {
       const x = Math.floor(t / n) + dirX[k];
       const y = (t % n) + dirY[k];
       if (isWaterOrVisited(x, y)) continue;
+
       // 没有探索过的陆地, 标记并加入队列
       visited[`${x}-${y}`] = true;
       queue.push(x * n + y);

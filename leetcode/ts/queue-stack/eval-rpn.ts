@@ -53,8 +53,9 @@ function evalRPN(tokens: string[]): number {
   console.info(234);
   for (let i = 0; i < tokens.length; i++) {
     const token = tokens[i];
-    if (/\d+/.test(token)) stack.push(+token);
-    else {
+    if (/\d+/.test(token)) {
+      stack.push(+token);
+    } else {
       const b = stack.pop()!;
       const a = stack.pop()!;
       switch (token) {

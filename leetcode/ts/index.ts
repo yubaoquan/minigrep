@@ -1,3 +1,3 @@
-import foo from './queue-stack/decode-string.ts';
+import fn from './queue-stack/update-matrix.ts';
 
-foo();
+fn();
