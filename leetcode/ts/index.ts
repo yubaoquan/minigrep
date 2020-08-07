@@ -1,3 +1,3 @@
-import fn from './queue-stack/update-matrix.ts';
+import fn from './queue-stack/can-visit-all-rooms.ts';
 
 fn();
