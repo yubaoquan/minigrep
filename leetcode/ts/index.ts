@@ -1,3 +1,3 @@
-import fn from './array-string/rotate.ts';
+import fn from './array-string/set-zeros.ts';
 
 fn();
