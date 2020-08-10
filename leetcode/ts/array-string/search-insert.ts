@@ -1,3 +1,8 @@
+/**
+ * 搜索插入位置
+ * https://leetcode-cn.com/leetbook/read/array-and-string/cxqdh/
+ */
+
 function searchInsert(nums: number[], target: number): number {
   for (let i = 0; i < nums.length; i++) if (nums[i] >= target) return i;
 

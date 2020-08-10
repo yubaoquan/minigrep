@@ -1,3 +1,8 @@
+/**
+ * 旋转矩阵
+ * https://leetcode-cn.com/leetbook/read/array-and-string/clpgd/
+ */
+
 function rotate(matrix: number[][]): void {
   const rowLen = matrix.length;
   const colLen = matrix[0].length;

@@ -1,3 +1,8 @@
+/**
+ * 合并区间
+ * https://leetcode-cn.com/leetbook/read/array-and-string/c5tv3/
+ */
+
 function merge(intervals: number[][]): number[][] {
   if (!intervals.length) return [];
   const ret: number[][] = [];

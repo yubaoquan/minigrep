@@ -1,3 +1,7 @@
+/**
+ * 零矩阵
+ * https://leetcode-cn.com/leetbook/read/array-and-string/ciekh/
+ */
 function setZeroes(matrix: number[][]): void {
   const rowsToClean: any = {};
   const colsToClean: any = {};
