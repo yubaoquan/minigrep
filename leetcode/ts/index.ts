@@ -1,3 +1,3 @@
-import fn from './queue-stack/can-visit-all-rooms.ts';
+import fn from './array-string/rotate.ts';
 
 fn();
