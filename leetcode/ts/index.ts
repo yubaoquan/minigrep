@@ -1,3 +1,3 @@
-import fn from './array-string/find-min.ts';
+import fn from './stock/4.ts';
 
 fn();

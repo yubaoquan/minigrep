@@ -43,6 +43,7 @@
       "allowArrayStart": true
     }],
     "brace-style": ["error", "1tbs"],
-    "max-statements-per-line": ["error", { "max": 1 }]
+    "max-statements-per-line": ["error", { "max": 1 }],
+    "arrow-body-style": ["error", "as-needed"]
   }
 }
