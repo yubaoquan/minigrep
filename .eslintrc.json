@@ -44,6 +44,7 @@
     }],
     "brace-style": ["error", "1tbs"],
     "max-statements-per-line": ["error", { "max": 1 }],
-    "arrow-body-style": ["error", "as-needed"]
+    "arrow-body-style": ["error", "as-needed"],
+    "no-mixed-operators": ["error", { "allowSamePrecedence": true }]
   }
 }

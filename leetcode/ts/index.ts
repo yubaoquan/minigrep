@@ -1,3 +1,3 @@
-import fn from './stock/4.ts';
+import fn from './simple/add.ts';
 
 fn();
