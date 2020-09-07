@@ -1,0 +1,25 @@
+function massage(nums: number[]): number {
+  if (!nums.length) return 0;
+  if (nums.length === 1) return nums[0];
+
+  const n = nums.length;
+
+  const dp: number[] = [];
+  dp[0] = nums[0];
+  dp[1] = Math.max(nums[0], nums[1]);
+
+  for (let i = 2; i < n; i++) dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i]);
+
+  return dp[n - 1];
+}
+
+export default function() {
+  [
+    [[1, 2, 3, 1], 4],
+    [[2, 7, 9, 3, 1], 12],
+    [[2, 1, 4, 5, 3, 1, 1, 3], 12],
+  ].forEach(([arr, expect]: any) => {
+    const ret = massage(arr);
+    console.info(expect === ret);
+  });
+}
