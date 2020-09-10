@@ -9,11 +9,13 @@ function missingNumber(nums: number[]): number {
   return total;
 }
 
+type Case = [number[], number];
+
 export default function() {
-  [
+  ([
     [[3, 0, 1], 2],
     [[9, 6, 4, 2, 3, 5, 7, 0, 1], 8],
-  ].forEach(([arr, expect]: any) => {
+  ] as Case[]).forEach(([arr, expect]) => {
     const ret = missingNumber(arr);
     console.info(ret === expect);
   });

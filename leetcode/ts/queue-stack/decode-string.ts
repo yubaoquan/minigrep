@@ -73,14 +73,16 @@ function repeat(str: string, n: number): string {
   return ret;
 }
 
+type Case = [string, string];
+
 export default function() {
-  [
+  ([
     ['3[z]2[2[y]pq4[2[jk]e1[f]]]ef', 'zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef'],
     ['3[a2[c]]', 'accaccacc'],
     ['3[a]2[bc]', 'aaabcbc'],
     ['2[abc]3[cd]ef', 'abcabccdcdcdef'],
     ['abc3[cd]xyz', 'abccdcdcdxyz'],
-  ].forEach(([s, expect]: any) => {
+  ] as Case[]).forEach(([s, expect]) => {
     const result = decodeString(s);
 
     // console.info(result);

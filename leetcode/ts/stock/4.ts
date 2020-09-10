@@ -39,12 +39,14 @@ function maxProfitKInf(prices: number[]) {
   return dpI0;
 }
 
+type Case = [number[], number, number];
+
 export default function() {
-  [
+  ([
     [[1, 2], 1, 1],
     [[2, 4, 1], 2, 2],
     [[3, 2, 6, 5, 0, 3], 2, 7],
-  ].forEach(([arr, k, result]: any) => {
+  ] as Case[]).forEach(([arr, k, result]) => {
     console.info(maxProfit(k, arr));
     console.info(maxProfit(k, arr) === result);
   });

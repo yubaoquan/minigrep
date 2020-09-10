@@ -1,3 +1,6 @@
+// 打家劫舍
+// https://leetcode-cn.com/problems/house-robber/
+
 function rob(nums: number[]): number {
   const len = nums.length;
   if (!len) return 0;
@@ -12,11 +15,13 @@ function rob(nums: number[]): number {
   return dp[len - 1];
 }
 
+type Case = [number[], number];
+
 export default function() {
-  [
+  ([
     [[1, 2, 3, 1], 4],
     [[2, 7, 9, 3, 1], 12],
-  ].forEach(([arr, expect]: any) => {
+  ] as Case[]).forEach(([arr, expect]) => {
     const ret = rob(arr);
     console.info(expect === ret);
   });

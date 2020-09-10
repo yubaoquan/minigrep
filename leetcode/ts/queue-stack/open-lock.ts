@@ -75,6 +75,7 @@ function openLock(deadends: string[], target: string): number {
 
   return -1;
 }
+
 /**
  * 将 s[pos] 向上拨动一次
  */
@@ -91,8 +92,10 @@ function minusOne(s: string, pos: number) {
   return s.slice(0, pos) + num + s.slice(pos + 1);
 }
 
+type Case = [string[], string];
+
 export default function() {
-  [
+  ([
     [
       ['0201', '0101', '0102', '1212', '2002'], '0202',
     ],
@@ -105,7 +108,7 @@ export default function() {
     [
       ['0000'], '8888',
     ],
-  ].forEach(([deadends, target]: any) => {
+  ] as Case[]).forEach(([deadends, target]) => {
     const result = openLock(deadends, target);
     console.info(result);
   });

@@ -18,11 +18,13 @@ function maxProfit(prices: number[]): number {
   return dp[n - 1][0];
 }
 
+type Case = [number[], number];
+
 export default function() {
-  [
+  ([
     [[7, 1, 5, 3, 6, 4], 5],
     [[7, 6, 4, 3, 1], 0],
-  ].forEach(([arr, result]: any) => {
+  ] as Case[]).forEach(([arr, result]) => {
     console.info(maxProfit(arr) === result);
   });
 }

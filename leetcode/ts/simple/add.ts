@@ -70,6 +70,8 @@ function minus(a: number, b: number): number {
   return parseInt(arr.join(''), 2);
 }
 
+type Case = number[];
+
 export default function() {
   for (let i = 0; i < 10; i++) {
     const a = Math.ceil(Math.random() * 100);
@@ -88,7 +90,7 @@ export default function() {
     }
   }
 
-  [
+  ([
     [-40, 29, -11],
     [40, -29, 11],
     [11, 31, 42],
@@ -99,7 +101,7 @@ export default function() {
     [100, -200, -100],
     [-100, 200, 100],
     [79, -1251245734, -1251245655],
-  ].forEach(([a, b, expect]: any) => {
+  ] as Case[]).forEach(([a, b, expect]) => {
     const result = add(a, b);
     show(a, b, expect, result);
   });

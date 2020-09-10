@@ -7,33 +7,27 @@
     "extraFileExtensions": [".mjs"]
   },
   "rules": {
-    "no-continue": "off",
-    "consistent-return": "off",
-    "no-console": "off",
-    "func-names": "off",
-    "import/prefer-default-export": "off",
-    "comma-dangle": ["error", "always-multiline"],
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "arrow-body-style": ["error", "as-needed"],
     "arrow-parens": ["error", "as-needed"],
-    "import/extensions": ["error", "always"],
-    "no-param-reassign": ["error", { "props": false }],
-    "no-use-before-define": ["error", { "functions": false, "classes": false }],
-    "prefer-destructuring": ["error", {"object": true, "array": false}],
-    "space-before-function-paren": ["error", {
-      "anonymous": "never",
-      "named": "never",
-      "asyncArrow": "always"
-    }],
-    "no-return-assign": ["error", "except-parens"],
-    "no-constant-condition": ["error", { "checkLoops": false }],
-    "nonblock-statement-body-position": ["error", "beside"],
+    "brace-style": ["error", "1tbs"],
+    "comma-dangle": ["error", "always-multiline"],
+    "consistent-return": "off",
     "curly": ["error", "multi-or-nest", "consistent"],
-    "@typescript-eslint/space-before-function-paren": ["error", {
-      "anonymous": "never",
-      "named": "never",
-      "asyncArrow": "always"
-    }],
-    "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "func-names": "off",
+    "import/extensions": ["error", "always"],
+    "import/prefer-default-export": "off",
+    "max-statements-per-line": ["error", { "max": 1 }],
+    "no-console": "off",
+    "no-constant-condition": ["error", { "checkLoops": false }],
+    "no-continue": "off",
+    "no-mixed-operators": ["error", { "allowSamePrecedence": true }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-return-assign": ["error", "except-parens"],
+    "no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "nonblock-statement-body-position": ["error", "beside"],
+    "prefer-destructuring": ["error", {"object": true, "array": false}],
+
     "lines-around-comment": ["error", {
       "beforeBlockComment": true,
       "beforeLineComment": true,
@@ -42,9 +36,25 @@
       "allowObjectStart": true,
       "allowArrayStart": true
     }],
-    "brace-style": ["error", "1tbs"],
-    "max-statements-per-line": ["error", { "max": 1 }],
-    "arrow-body-style": ["error", "as-needed"],
-    "no-mixed-operators": ["error", { "allowSamePrecedence": true }]
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "export" },
+      { "blankLine": "never", "prev": "export", "next": "export" },
+      { "blankLine": "always", "prev": "import", "next": "*" }
+      { "blankLine": "never", "prev": "import", "next": "import" }
+    ],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+
+    "@typescript-eslint/no-extra-parens": ["error"],
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }],
+    "@typescript-eslint/space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }]
   }
 }

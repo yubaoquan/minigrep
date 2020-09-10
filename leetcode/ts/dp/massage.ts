@@ -13,12 +13,14 @@ function massage(nums: number[]): number {
   return dp[n - 1];
 }
 
+type Case = [number[], number];
+
 export default function() {
-  [
+  ([
     [[1, 2, 3, 1], 4],
     [[2, 7, 9, 3, 1], 12],
     [[2, 1, 4, 5, 3, 1, 1, 3], 12],
-  ].forEach(([arr, expect]: any) => {
+  ] as Case[]).forEach(([arr, expect]) => {
     const ret = massage(arr);
     console.info(expect === ret);
   });
