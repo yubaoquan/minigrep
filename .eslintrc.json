@@ -40,7 +40,7 @@
       "error",
       { "blankLine": "always", "prev": "*", "next": "export" },
       { "blankLine": "never", "prev": "export", "next": "export" },
-      { "blankLine": "always", "prev": "import", "next": "*" }
+      { "blankLine": "always", "prev": "import", "next": "*" },
       { "blankLine": "never", "prev": "import", "next": "import" }
     ],
     "space-before-function-paren": ["error", {
