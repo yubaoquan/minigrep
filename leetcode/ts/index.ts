@@ -1,3 +1,3 @@
-import fn from './dp/rob3.ts';
+import fn from './simple/game.ts';
 
 fn();
