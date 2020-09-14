@@ -1,3 +1,5 @@
+// 逃离游乐园 麻将
+
 export default function() {
   const result = solve([1, 9, 6, 7, 4, 8, 2, 3, 5], 4);
   console.info(result);
