@@ -1,32 +1,48 @@
 // 逃离游乐园 麻将
 
 export default function() {
-  const result = solve([1, 9, 6, 7, 4, 8, 2, 3, 5], 4);
+  const arr = [1, 9, 6, 7, 4, 8, 2, 3, 5];
+  const result = solve(arr, 4);
   console.info(result);
 }
 
-type Swap = [number, number]; // 交互位置
-type OneStepRecord = [number[], Swap[]]; // 走到某步为止的交互记录
+type OneStepRecord = [number[], string[]]; // 走到某步为止的交互记录 [当前数组, 交换记录]
 
-function solve(arr: number[], maxSteps: number): number[][] {
+function solve(arr: number[], maxSteps: number): string[] {
   if (isSorted(arr)) return [];
 
   const ret: OneStepRecord[] = [[arr, []]];
-  let steps = maxSteps;
+  let count = 0;
+  let count2 = 0;
+  const visited: any = {};
+  const display = (array: number[]) => console.info(array.join(', '));
 
-  while (steps) {
+  while (ret.length && count < 100000) {
     const [curArr, swaps] = ret.shift()!;
-    if (isSorted(curArr)) return swaps;
+    if (swaps.length > maxSteps) return [];
+
+    if (isSorted(curArr)) {
+      display(curArr);
+      console.info(count);
+      return swaps;
+    }
+
+    const canSwap = (i: number, j: number, id: string) => swaps.length < maxSteps && swaps[swaps.length - 1] !== `${i}-${j}` && !visited[id];
 
     for (let i = 0; i < curArr.length - 1; i++) {
       for (let j = i + 1; j < curArr.length; j++) {
-        if (isSwapable(curArr, i, j)) {
-          ret.push([swap(curArr, i, j), [...swaps, [i, j]]]); // [arr, swaps]
+        const swapped = swap(curArr, i, j);
+        const id = swapped.join(',');
+        if (canSwap(i, j, id)) {
+          count2 += 1;
+          if (count2 % 1000 === 0) console.info(count2);
+          visited[id] = true;
+          ret.push([swapped, [...swaps, `${i}-${j}`]]); // [arr, swaps]
         }
       }
     }
-
-    steps -= 1;
+    console.info('ret size: ', ret.length);
+    count += 1;
   }
 
   return [];
@@ -34,13 +50,9 @@ function solve(arr: number[], maxSteps: number): number[][] {
 
 function isSorted(arr: number[]): boolean {
   let counter = 0;
-  for (let i = 0; i < arr.length - 1; i++) if (arr[i] > arr[i + 1]) counter += 1;
+  for (let i = 0; i < arr.length - 1; i++) if (arr[i] - arr[i + 1] !== -1) counter += 1;
 
   return counter <= 1;
-}
-
-function isSwapable(arr: number[], i: number, j: number): boolean {
-  return arr[i] + 1 !== arr[j];
 }
 
 function swap(arr: number[], i: number, j: number): number[] {
