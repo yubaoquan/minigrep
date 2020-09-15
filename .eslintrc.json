@@ -4,7 +4,8 @@
   "plugins": ["@typescript-eslint"],
   "parserOptions": {
     "project": "./tsconfig.json",
-    "extraFileExtensions": [".mjs"]
+    "extraFileExtensions": [".mjs"],
+    "ecmaVersion": 2020
   },
   "rules": {
     "arrow-body-style": ["error", "as-needed"],
