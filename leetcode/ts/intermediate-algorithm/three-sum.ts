@@ -3,6 +3,13 @@
  * https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvpj16/
  */
 
+/**
+  * 数组中求 n 数之和 target 的组合
+  * @param nums 数组
+  * @param n 几个数求和
+  * @param start 开始位置
+  * @param target 目标和
+  */
 function nSum(nums: number[], n: number, start: number, target: number): number[][] {
   const ret: number[][] = [];
   if (n < 2 || nums.length < n) return ret;
@@ -12,11 +19,9 @@ function nSum(nums: number[], n: number, start: number, target: number): number[
     while (lo < hi) {
       const sum = nums[lo] + nums[hi];
       const [left, right] = [nums[lo], nums[hi]];
-      if (sum < target) {
-        while (lo < hi && nums[lo] === left) lo += 1;
-      } else if (sum > target) {
-        while (lo < hi && nums[hi] === right) hi -= 1;
-      } else {
+      if (sum < target) while (lo < hi && nums[lo] === left) lo += 1;
+      else if (sum > target) while (lo < hi && nums[hi] === right) hi -= 1;
+      else {
         ret.push([left, right]);
         while (lo < hi && nums[lo] === left) lo += 1;
         while (lo < hi && nums[hi] === right) hi -= 1;

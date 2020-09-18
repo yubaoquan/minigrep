@@ -1,3 +1,3 @@
-import fn from './simple/game2.ts';
+import fn from './dp/can-partition.ts';
 
 fn();

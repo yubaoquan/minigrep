@@ -13,7 +13,7 @@
     "brace-style": ["error", "1tbs"],
     "comma-dangle": ["error", "always-multiline"],
     "consistent-return": "off",
-    "curly": ["error", "multi-line", "consistent"],
+    "curly": ["error", "multi-line"],
     "func-names": "off",
     "import/extensions": ["error", "always"],
     "import/prefer-default-export": "off",

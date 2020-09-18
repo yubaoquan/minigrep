@@ -1,4 +1,5 @@
 // 逃离游乐园 三个转盘转数字的游戏
+// 失败. 数据量太大, 算法写的不行
 
 export default function() {
   const result = solve(
