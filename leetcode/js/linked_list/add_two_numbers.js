@@ -1,4 +1,4 @@
-const { makeList } = require('./util.js');
+const { makeList } = require('./util.js.js');
 
 function addTwoNumbers(a, b) {
   let l1 = a;

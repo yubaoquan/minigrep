@@ -34,7 +34,7 @@ function numIslands(grid: string[][]): number {
 
       // 没有探索过的陆地, 标记并加入队列
       visited[`${x}-${y}`] = true;
-      queue.push(x * n + y);
+      queue.push((x * n) + y);
     }
   }
 
@@ -42,7 +42,7 @@ function numIslands(grid: string[][]): number {
     item.forEach((subItem, j) => {
       if (subItem === '0' || visited[`${i}-${j}`]) return;
       res += 1;
-      const queue = [i * n + j];
+      const queue = [(i * n) + j];
       while (queue.length) {
         const t = queue.shift()!;
         checkRound(t, queue);
