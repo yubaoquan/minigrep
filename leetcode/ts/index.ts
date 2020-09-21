@@ -1,3 +1,3 @@
-import fn from './dp/can-partition.ts';
+import fn from './dp/can_partition.ts';
 
 fn();
