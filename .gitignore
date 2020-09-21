@@ -4,3 +4,4 @@ ybq163
 ybq163.pub
 .DS_Store
 node_modules
+*.log

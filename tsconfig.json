@@ -10,7 +10,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["es7", "es2017", "dom"],
-    "baseUrl": "./",
+    "baseUrl": "./"
   },
   "include": [
     "leetcode/**/*.ts",
