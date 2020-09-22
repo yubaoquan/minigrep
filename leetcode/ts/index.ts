@@ -1,3 +1,3 @@
-import fn from './dp/max_coins.ts';
+import fn from './za/game.ts';
 
 fn();
