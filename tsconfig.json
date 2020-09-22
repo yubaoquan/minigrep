@@ -9,7 +9,7 @@
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["es7", "es2017", "dom"],
+    "lib": ["es7", "es2020", "dom"],
     "baseUrl": "./"
   },
   "include": [
