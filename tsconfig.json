@@ -4,15 +4,15 @@
     "checkJs": true,
     "sourceMap": true,
     "noImplicitAny": true,
-    "noUnusedLocals": true,
     "strictNullChecks": true,
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["es7", "es2020", "dom"],
+    "lib": ["es2018", "dom"],
     "baseUrl": "./"
   },
   "include": [
+    "ts/**/*.ts",
     "leetcode/**/*.ts",
     "leetcode/**/*.js",
     "leetcode/**/*.mjs"

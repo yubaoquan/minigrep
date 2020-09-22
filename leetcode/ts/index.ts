@@ -1,3 +1,3 @@
-import fn from './dp/can_partition.ts';
+import fn from './dp/max_coins.ts';
 
 fn();
