@@ -1,3 +1,3 @@
-import fn from './za/game.ts';
+import fn from './intermediate_algorithm/increasing_triplet.ts';
 
 fn();

@@ -4,18 +4,25 @@
  */
 
 function increasingTriplet(nums: number[]): boolean {
-  let counter = 1;
-  for (let i = 0; i + 1 < nums.length; i++) {
-    if (nums[i] < nums[i + 1]) counter += 1;
-    else counter = 1;
-    if (counter === 3) return true;
+  if (nums.length < 3) return false;
+
+  const dp: number[] = Array(nums.length).fill(1);
+
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = 0; j < i; j++) {
+      if (nums[j] < nums[i]) dp[i] = Math.max(dp[i], dp[j] + 1);
+      if (dp[i] >= 3) return true;
+    }
   }
 
-  return counter === 3;
+  return dp[dp.length - 1] >= 3;
 }
 
 export default function() {
   [
+    [1, 2, 3, 1, 2, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [5, 1, 5, 5, 2, 5, 4],
     [1, 2, 3, 4, 5],
     [5, 4, 3, 2, 1],
   ].forEach(arr => {

@@ -12,16 +12,20 @@
 
  */
 
-function dailyTemperatures(T: number[]): number[] {
-  const stack: number[] = [];
+/**
+ *
+ * @param temperatures 气温列表
+ */
+function dailyTemperatures(temperatures: number[]): number[] {
+  const stack: number[] = []; // 日期
   const res: number[] = [];
 
-  for (let i = T.length - 1; i >= 0; i--) {
-    while (stack.length && T[stack[stack.length - 1]] <= T[i]) stack.pop();
-
-    res[i] = !stack.length ? 0 : stack[stack.length - 1] - i;
-    stack.push(i);
+  for (let i = temperatures.length - 1; i >= 0; i--) {
+    while (stack.length && temperatures[stack[0]] <= temperatures[i]) stack.shift();
+    res[i] = stack.length ? stack[0] - i : 0;
+    stack.unshift(i);
   }
+
   return res;
 }
 

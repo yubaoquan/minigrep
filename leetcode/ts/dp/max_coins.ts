@@ -49,15 +49,15 @@ function maxCoins(nums: number[]): number {
   }
 
   const dp: any = {};
-  const getPoints = (i: number, j: number, k: number) => points[i] * points[j] * points[k];
 
   for (let i = n; i >= 0; i--) {
     for (let j = i + 1; j < n + 2; j++) {
       for (let k = i + 1; k < j; k++) {
-        dp[`${i}-${j}`] = Math.max(
-          dp[`${i}-${j}`] ?? 0,
-          (dp[`${i}-${k}`] ?? 0) + (dp[`${k}-${j}`] ?? 0) + getPoints(i, j, k),
-        );
+        const ij = dp[`${i}-${j}`] ?? 0;
+        const ik = dp[`${i}-${k}`] ?? 0;
+        const kj = dp[`${k}-${j}`] ?? 0;
+        const ijk = points[i] * points[j] * points[k];
+        dp[`${i}-${j}`] = Math.max(ij, ik + kj + ijk);
       }
     }
   }
@@ -68,6 +68,7 @@ function maxCoins(nums: number[]): number {
 type Case = [number[], number];
 
 export default function() {
+  console.info(maxCoins2);
   ([
     // [[3, 5, 8], 120],
 
