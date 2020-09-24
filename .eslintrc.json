@@ -52,7 +52,18 @@
 
     "@typescript-eslint/no-extra-parens": ["error"],
     "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }],
-    "@typescript-eslint/type-annotation-spacing": ["error", { "before": false }],
+    "@typescript-eslint/type-annotation-spacing": ["error",
+      {
+        "before": false,
+        "after": true,
+        "overrides": {
+          "arrow": {
+            "before": true,
+            "after": true
+          }
+        }
+      }
+    ],
     "@typescript-eslint/space-before-function-paren": ["error", {
       "anonymous": "never",
       "named": "never",
