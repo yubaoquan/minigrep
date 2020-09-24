@@ -1,3 +1,3 @@
-import fn from './intermediate_algorithm/increasing_triplet.ts';
+import fn from './intermediate_algorithm/zigzag.ts';
 
 fn();
