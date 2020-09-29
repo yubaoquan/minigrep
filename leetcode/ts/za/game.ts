@@ -1,6 +1,12 @@
+// 优化记录
 // 252w 133s
 // 240w 44s
 // 250w 45s
+
+// 50.56s
+// 最终答案: 0-0,0-1,1-1,1-2,0-2,0-3,0-4,0-5,1-5,2-5,3-5,3-4,3-3,3-2,3-1,4-1,5-1,5-2,5-3,5-4,5-5,5-6,5-7,6-7,7-7,7-6,7-5,7-4,7-3,7-2,8-2,9-2,9-3,9-4,9-5,9-6,9-7,9-8,8-8,8-9,9-9
+
+type Position = { x: number, y: number };
 
 export default function() {
   const rowLimits: number[] = [6, 3, 1, 5, 1, 7, 1, 6, 3, 8]; // 每行可以填充的数量
@@ -13,7 +19,7 @@ export default function() {
   const colFills = Array(map[0]!.length).fill(0); // 每列实际填充的数量
   const rowFills = Array(map.length).fill(0); // 每行实际填充的数量
 
-  // 检查完整填充结果是否合法
+  /** 检查完整填充结果是否合法 */
   const check = (solution: string): boolean => {
     if (solution.length < pathStrLen) return false;
 
@@ -38,7 +44,7 @@ export default function() {
     return columnsValid && rowsValid;
   };
 
-  // 检查部分填充结果是否合法
+  /** 检查部分填充结果是否合法 */
   const partiallyValid = (pathsStr: string): boolean => {
     const paths: number[][] = pathsStr
       .split(',')
@@ -59,36 +65,50 @@ export default function() {
     return true;
   };
 
+  /** 坐标是否在地图里且是空位 */
+  const canGoTo = ({ x, y }: Position, arr: string[]): boolean => {
+    const isInMap = (x >= 0 && x < 10) && (y >= 0 && y < 10);
+    const isEmptyPos = !arr.includes(`${x}-${y}`);
+    return isInMap && isEmptyPos;
+  };
+
   const q: string[] = ['0-0'];
   const visited: any = {};
   let counter = 0;
 
-  const timeStart = Date.now();
   while (q.length) {
     const cur = q.shift()!;
-    let path = '';
 
-    for (let i = 0; i < map.length; i++) {
-      for (let j = 0; j < map[0]!.length; j++) {
-        counter += 1;
+    if (visited[cur]) continue;
+    visited[cur] = true;
 
-        path = `${cur},${i}-${j}`;
-        if (visited[path]) continue;
-        visited[path] = true;
+    const arr = cur.split(',');
+    const currentPos = arr[arr.length - 1].split('-');
+    let [x, y]: any = currentPos;
+    x = +x;
+    y = +y;
 
-        // 当前已填错
-        if (!partiallyValid(path)) continue;
+    let result = '';
+    [
+      { x: x - 1, y },
+      { x: x + 1, y },
+      { x, y: y - 1 },
+      { x, y: y + 1 },
+    ]
+      .filter(pos => canGoTo(pos, arr))
+      .forEach(pos => {
+        const path = `${cur},${pos.x}-${pos.y}`;
+        if (!partiallyValid(path)) return;
+        if (counter % 1000 === 0) console.info(path);
         q.push(path);
+        if (check(path)) result = path;
+      });
 
-        if (check(path)) {
-          console.info(path);
-          return;
-        }
-      }
+    if (result) {
+      console.info(result);
+      return result;
     }
-    if (counter % 500000 === 0) {
-      console.info(Object.keys(visited).length, q.length, path);
-      console.info((Date.now() - timeStart) / 1000);
-    }
+
+    counter += 1;
   }
 }

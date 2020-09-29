@@ -1,3 +1,3 @@
-import fn from './intermediate_algorithm/coin_change.ts';
+import fn from './za/game.ts';
 
 fn();
