@@ -5,7 +5,6 @@ function kthGrammar(n, k) {
   return parent === 0 ? 1 - (k % 2) : k % 2;
 }
 
-
 export default function() {
   [
     [[1, 1], 0],

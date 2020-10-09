@@ -1,3 +1,3 @@
-import fn from './bi-tree/serialize.mjs';
+import fn from './bi_tree/serialize.mjs';
 
 fn();
