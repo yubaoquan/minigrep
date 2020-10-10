@@ -26,10 +26,9 @@ function solve(arr: number[], maxSteps: number): string[] {
       console.info(count);
       return swaps;
     }
-    // eslint-disable-next-line arrow-body-style
-    const canSwap = (i: number, j: number, id: string) => {
-      return swaps.length < maxSteps && swaps[swaps.length - 1] !== `${i}-${j}` && !visited[id];
-    };
+
+    const canSwap = (i: number, j: number, id: string) =>
+      swaps.length < maxSteps && swaps[swaps.length - 1] !== `${i}-${j}` && !visited[id];
 
     for (let i = 0; i < curArr.length - 1; i++) {
       for (let j = i + 1; j < curArr.length; j++) {

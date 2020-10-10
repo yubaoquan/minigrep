@@ -29,6 +29,7 @@
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "nonblock-statement-body-position": ["error", "beside"],
     "prefer-destructuring": ["error", {"object": true, "array": false}],
+    "implicit-arrow-linebreak": "off",
 
     "lines-around-comment": ["error", {
       "beforeBlockComment": true,
