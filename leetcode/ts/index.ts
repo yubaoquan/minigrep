@@ -1,3 +1,3 @@
-import fn from './za/game.ts';
+import fn from './math/devide.ts';
 
 fn();
