@@ -1,3 +1,3 @@
-import fn from './math/devide.ts';
+import fn from './za/find_peak_element.ts';
 
 fn();
