@@ -1,5 +1,6 @@
 // 颜色分类
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvg25c/
+import { arrEq } from '../util/array.ts';
 
 function sortColors(nums: number[]): void {
   let redIndex = 0;
@@ -41,11 +42,6 @@ function sortColors(nums: number[]): void {
 }
 
 type Case = [number[], number[]];
-
-function arrEq(nums1: number[], nums2: number[]): boolean {
-  if (nums1.length !== nums2.length) return false;
-  return nums1.every((t, i) => t === nums2[i]);
-}
 
 export default function() {
   ([

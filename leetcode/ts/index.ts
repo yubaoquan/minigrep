@@ -1,3 +1,3 @@
-import fn from './za/find_peak_element.ts';
+import fn from './array_string/search_matrix.ts';
 
 fn();
