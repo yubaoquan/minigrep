@@ -1,3 +1,3 @@
-import fn from './array_string/search_matrix.ts';
+import fn from './array_string/search.ts';
 
 fn();

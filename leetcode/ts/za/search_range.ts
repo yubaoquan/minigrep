@@ -25,7 +25,7 @@ function searchRange(nums: number[], target: number): number[] {
    */
   const middleFind = (start: number, end: number) => {
     if (end < start) return;
-    const middle = start + Math.floor((end - start) / 2);
+    const middle = Math.floor((start + end) / 2);
     const middleValue = nums[middle];
 
     if (middleValue === target) {
