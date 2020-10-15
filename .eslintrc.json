@@ -24,7 +24,7 @@
     "no-continue": "off",
     "no-mixed-operators": ["error", { "allowSamePrecedence": true }],
     "no-param-reassign": ["error", { "props": false }],
-    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-plusplus": "off",
     "no-return-assign": ["error", "except-parens"],
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
     "nonblock-statement-body-position": ["error", "beside"],

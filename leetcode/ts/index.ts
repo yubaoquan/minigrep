@@ -1,3 +1,3 @@
-import fn from './intermediate_algorithm/generate_parenthesis.ts';
+import fn from './intermediate_algorithm/subsets.ts';
 
 fn();
