@@ -9,8 +9,8 @@
     "type": "pwa-node",
     "request": "launch",
     "runtimeExecutable": "deno",
-    "runtimeArgs": ["run", "--inspect-brk", "-A", "index.ts"],
-    "cwd": "${workspaceFolder}/leetcode/ts",
+    "runtimeArgs": ["run", "--inspect-brk", "-A", "${file}"],
+    "cwd": "${fileDirname}",
     "outputCapture": "std",
     "attachSimplePort": 9229
   },
