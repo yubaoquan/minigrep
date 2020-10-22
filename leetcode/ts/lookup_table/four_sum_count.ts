@@ -1,7 +1,7 @@
 // 四数相加 II
 // https://leetcode-cn.com/leetbook/read/all-about-lockup-table/xheops/
 
-import { debug } from '../util/debug.ts';
+// import { debug } from '../util/debug.ts';
 
 function fourSumCount(a: number[], b: number[], c: number[], d: number[]): number {
   // return debug(nSumCount([a, b, c, d], 0, 0)).length;
@@ -51,6 +51,6 @@ const b = [-2, -1];
 const c = [-1, 2];
 const d = [0, 2];
 
-// console.info(nSumCount([c, d], 1));
+console.info(nSumCount([c, d], 1, 0));
 
 console.info(fourSumCount(a, b, c, d));
