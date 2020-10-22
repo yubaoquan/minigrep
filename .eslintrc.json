@@ -8,7 +8,8 @@
   "parserOptions": {
     "project": "./tsconfig.json",
     "extraFileExtensions": [".mjs"],
-    "ecmaVersion": 2020
+    "ecmaVersion": 2020,
+    "createDefaultProgram": true
   },
   "rules": {
     "arrow-body-style": ["error", "as-needed"],
