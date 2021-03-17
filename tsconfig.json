@@ -9,12 +9,16 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["es2018", "dom"],
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "outDir": "./dist"
   },
   "include": [
     "ts/**/*.ts",
     "leetcode/**/*.ts",
     "leetcode/**/*.js",
     "leetcode/**/*.mjs"
+  ],
+  "exclude": [
+    "./dist/**/*"
   ]
 }

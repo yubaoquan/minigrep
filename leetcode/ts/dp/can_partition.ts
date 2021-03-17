@@ -12,7 +12,7 @@ function canPartition(nums: number[]): boolean {
 
   nums.forEach(t => {
     for (let j = sum; j >= 0; j--) {
-      if (j - t >= 0) dp[j] = dp[j] || dp[j - t];
+      if (j >= t) dp[j] = dp[j] || dp[j - t];
     }
   });
 
