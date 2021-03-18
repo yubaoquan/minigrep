@@ -27,7 +27,7 @@
     "no-constant-condition": ["error", { "checkLoops": false }],
     "no-continue": "off",
     "no-mixed-operators": ["error", { "allowSamePrecedence": true }],
-    "no-param-reassign": ["error", { "props": false }],
+    "no-param-reassign": "off",
     "no-plusplus": "off",
     "no-return-assign": ["error", "except-parens"],
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
