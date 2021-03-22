@@ -15,23 +15,45 @@ empty() -- 返回栈是否为空
 
  */
 
+// https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/comments/259777
+
+class Node {
+  val: number;
+
+  min: number;
+
+  next: Node | null;
+
+  constructor(val: number, min: number, next: Node | null) {
+    this.val = val;
+    this.min = min;
+    this.next = next;
+  }
+}
+
 class MyStack {
-  q: number[] = [];
+  head: Node|null = null;
 
   push(x: number): void {
-    this.q.unshift(x);
+    this.head = this.head
+      ? new Node(x, Math.min(this.head.min, x), this.head)
+      : new Node(x, x, null);
   }
 
-  pop(): number {
-    return this.q.shift()!;
+  pop(): void {
+    this.head = this.head!.next;
   }
 
   top(): number {
-    return this.q[0]!;
+    return this.head!.val;
+  }
+
+  min(): number {
+    return this.head!.min;
   }
 
   empty(): boolean {
-    return !this.q.length;
+    return !this.head;
   }
 }
 

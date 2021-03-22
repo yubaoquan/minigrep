@@ -21,6 +21,7 @@
     "func-names": "off",
     "import/extensions": ["error", "always"],
     "import/prefer-default-export": "off",
+    "max-classes-per-file": "off",
     "max-len": ["error", { "code": 100, "ignoreComments": true }],
     "max-statements-per-line": ["error", { "max": 1 }],
     "no-console": "off",

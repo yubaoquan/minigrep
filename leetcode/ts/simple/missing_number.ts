@@ -1,5 +1,6 @@
 // 消失的数字
 // https://leetcode-cn.com/problems/missing-number-lcci/
+// https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/
 
 function missingNumber(nums: number[]): number {
   const len = nums.length;

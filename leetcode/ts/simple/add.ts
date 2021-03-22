@@ -1,5 +1,6 @@
 // 不用加号的加法
 // https://leetcode-cn.com/problems/add-without-plus-lcci/
+// https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/
 
 function add(a: number, b: number): number {
   // 同号

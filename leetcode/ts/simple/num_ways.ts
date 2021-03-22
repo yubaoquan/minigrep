@@ -3,7 +3,7 @@
  * https://leetcode-cn.com/problems/chuan-di-xin-xi/
  */
 
-function numWays(n: number, relation: number[][], k: number): number {
+export function numWays(n: number, relation: number[][], k: number): number {
   const memo: Record<number, number[]> = {};
   relation.forEach(([a, b]) => {
     if (memo[a]) memo[a].push(b);
