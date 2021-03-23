@@ -77,7 +77,10 @@ type Case = [string, string];
 
 export default function() {
   ([
-    ['3[z]2[2[y]pq4[2[jk]e1[f]]]ef', 'zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef'],
+    [
+      '3[z]2[2[y]pq4[2[jk]e1[f]]]ef',
+      'zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef',
+    ],
     ['3[a2[c]]', 'accaccacc'],
     ['3[a]2[bc]', 'aaabcbc'],
     ['2[abc]3[cd]ef', 'abcabccdcdcdef'],

@@ -1,5 +1,6 @@
 // 主要元素
 // https://leetcode-cn.com/problems/find-majority-element-lcci/
+// https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/
 
 function majorityElement(nums: number[]): number {
   const rec: any = {};
