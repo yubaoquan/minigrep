@@ -3,7 +3,7 @@
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvf0kh/
 
 function coinChange(coins: number[], amount: number): number {
-  const memo: any = {};
+  const memo: Record<string, number> = {};
 
   const dp = (n: number) => {
     if (memo[n] !== undefined) return memo[n];

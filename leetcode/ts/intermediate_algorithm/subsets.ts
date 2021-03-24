@@ -8,7 +8,7 @@ function subsets(nums: number[]): number[][] {
 
   let start = 1;
   let { length } = nums;
-  const memo: any = {};
+  const memo: Record<string, boolean> = {};
 
   while (ret[ret.length - 1].length < nums.length) {
     for (let i = start; i < length; i++) {

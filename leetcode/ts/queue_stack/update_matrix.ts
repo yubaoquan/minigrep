@@ -37,7 +37,7 @@
 */
 
 function updateMatrix(matrix: number[][]): number[][] {
-  const visited: any = {};
+  const visited: Record<string, boolean> = {};
   const q: number[][] = [];
 
   const ret: number[][] = matrix.map((arr, i) => arr.map((item, j) => {

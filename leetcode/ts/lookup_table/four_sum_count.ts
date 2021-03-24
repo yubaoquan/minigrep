@@ -5,7 +5,7 @@
 
 function fourSumCount(a: number[], b: number[], c: number[], d: number[]): number {
   // return debug(nSumCount([a, b, c, d], 0, 0)).length;
-  const map: any = {};
+  const map: Record<string, number> = {};
   let ret = 0;
 
   a.forEach(aItem => {

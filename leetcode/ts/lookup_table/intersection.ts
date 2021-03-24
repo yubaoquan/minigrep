@@ -3,7 +3,7 @@
 import { arrEqIgnoreOrder } from '../util/array.ts';
 
 function intersection(nums1: number[], nums2: number[]): number[] {
-  const memo: any = {};
+  const memo: Record<number, boolean> = {};
   nums1.forEach(t => (memo[t] = true));
   return nums2.filter(t => {
     if (memo[t]) {

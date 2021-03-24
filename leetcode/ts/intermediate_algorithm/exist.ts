@@ -7,7 +7,7 @@ function exist(board: string[][], word: string): boolean {
     if (word.length === 1) return true;
 
     const memo: string[] = [`${col}-${row}`];
-    const visited: any = {};
+    const visited: Record<string, boolean> = {};
     const xEnd = board[0].length;
     const yEnd = board.length;
 

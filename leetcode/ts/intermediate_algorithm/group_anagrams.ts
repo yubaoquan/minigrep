@@ -4,9 +4,9 @@
  */
 
 function groupAnagrams(strs: string[]): string[][] {
-  const record: any = {};
+  const record: Record<string, string[]> = {};
 
-  function check(rec: any, str: string) {
+  function check(rec: Record<string, string[]>, str: string) {
     const key = str.split('').sort().join('');
     if (rec[key]) rec[key].push(str);
     else rec[key] = [str];

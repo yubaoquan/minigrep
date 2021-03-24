@@ -2,7 +2,7 @@
 // https://leetcode-cn.com/leetbook/read/all-about-lockup-table/fc4ic/
 
 function frequencySort(s: string): string {
-  const map: any = {};
+  const map: Record<string, number> = {};
   for (let i = 0; i < s.length; i++) {
     const c = s[i];
     map[c] = map[c] ? map[c] + 1 : 1;

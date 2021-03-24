@@ -9,7 +9,7 @@ function leastInterval(tasks: string[], n: number): number {
   const map = Array(26).fill(0);
   const codeOfA = 'A'.charCodeAt(0);
   const codeOfZ = codeOfA + 25;
-  const offsetsOfChar: any = {}; // { A: 0, B: 1,..., Z: 25 }
+  const offsetsOfChar: Record<string, number> = {}; // { A: 0, B: 1,..., Z: 25 }
 
   for (let chraCode = codeOfA; chraCode <= codeOfZ; chraCode++) {
     offsetsOfChar[String.fromCharCode(chraCode)] = chraCode - codeOfA;

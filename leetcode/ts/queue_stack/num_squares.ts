@@ -19,7 +19,7 @@
 function numSquares(n: number): number {
   const q: number[] = [n];
   let res = 1;
-  const record: any = {};
+  const record: Record<number, number> = {};
 
   function square(x: number) {
     if (record[x] !== undefined) return record[x];

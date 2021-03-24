@@ -2,7 +2,7 @@
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvzpxi/
 
 function topKFrequent(nums: number[], k: number): number[] {
-  const memo: any = {};
+  const memo: Record<string, number> = {};
   nums.forEach(t => {
     memo[t] = memo[t] ? memo[t] + 1 : 1;
   });

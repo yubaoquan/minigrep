@@ -3,7 +3,7 @@ function maxProfit(maxK: number, prices: number[]): number {
   if (!n) return 0;
   if (maxK > n / 2) return maxProfitKInf(prices);
 
-  const dp: any = {};
+  const dp: Record<string, number> = {};
 
   for (let i = 0; i < n; i++) {
     dp[`${i}-0-0`] = 0;

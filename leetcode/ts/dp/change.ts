@@ -3,7 +3,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function change(amount: number, coins: number[]): number {
-  const dp: any = {};
+  const dp: Record<string, number> = {};
   for (let i = 0; i <= coins.length; i++) dp[`${i}-0`] = 1;
   for (let i = 1; i <= amount; i++) dp[`0-${i}`] = 0;
 

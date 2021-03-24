@@ -2,9 +2,9 @@
 // https://leetcode-cn.com/leetbook/read/all-about-lockup-table/xhp45m/
 
 function numberOfBoomerangs(points: number[][]): number {
-  const distances: any = {};
+  const distances: Record<string, number> = {};
   let ret = 0;
-  const memo: any = {};
+  const memo: Record<string, number> = {};
 
   function getDistance(a: number[], b: number[]) {
     const xOffset = Math.abs(a[0] - b[0]);
@@ -23,7 +23,7 @@ function numberOfBoomerangs(points: number[][]): number {
   }
 
   for (let i = 0; i < points.length; i++) {
-    const distancesFromI: any = {};
+    const distancesFromI: Record<string, number> = {};
 
     for (let j = 0; j < points.length; j++) {
       if (i === j) continue;
@@ -33,7 +33,7 @@ function numberOfBoomerangs(points: number[][]): number {
       distancesFromI[distance] = distanceRecordNum ? distanceRecordNum + 1 : 1;
     }
 
-    (Object.entries(distancesFromI) as any[]).forEach(([, value]) => {
+    Object.entries(distancesFromI).forEach(([, value]) => {
       if (value > 1) ret += value * (value - 1);
     });
   }

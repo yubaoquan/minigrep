@@ -12,7 +12,7 @@ function longestCommonSubsequence(str1: string, str2: string): number {
   console.info(dp1);
 
   // 备忘录
-  const dp: any = {};
+  const dp: Record<string, number> = {};
   for (let i = 1; i < str1.length + 1; i++) {
     for (let j = 1; j < str2.length + 1; j++) {
       dp[`${i}-${j}`] = str1[i - 1] === str2[j - 1]

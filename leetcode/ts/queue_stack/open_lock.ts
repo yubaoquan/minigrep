@@ -46,7 +46,7 @@
 
 function openLock(deadends: string[], target: string): number {
   const q = [];
-  const visited: any = {};
+  const visited: Record<string, boolean> = {};
   let step = 0;
 
   q.push('0000');

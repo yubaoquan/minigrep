@@ -38,7 +38,7 @@
 
 function canVisitAllRooms(rooms: number[][]): boolean {
   const q: number[][] = [];
-  const visited: any = {};
+  const visited: Record<string, boolean> = {};
   q.push(rooms[0]);
   visited[0] = true;
 

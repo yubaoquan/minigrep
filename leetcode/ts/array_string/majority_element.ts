@@ -3,7 +3,7 @@
 // https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/
 
 function majorityElement(nums: number[]): number {
-  const rec: any = {};
+  const rec: Record<number, number> = {};
   const half = nums.length / 2;
 
   for (let i = 0; i < nums.length; i++) {

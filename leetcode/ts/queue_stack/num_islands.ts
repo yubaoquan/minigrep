@@ -16,7 +16,7 @@ function numIslands(grid: string[][]): number {
   const m = grid.length;
   const n = grid[0].length;
   let res = 0;
-  const visited: any = {};
+  const visited: Record<string, boolean> = {};
   const dirX = [-1, 0, 1, 0];
   const dirY = [0, 1, 0, -1];
 

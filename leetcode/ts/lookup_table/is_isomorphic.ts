@@ -7,7 +7,7 @@ function isIsomorphic(s: string, t: string): boolean {
 }
 
 function getReplacedStr(s: string): string {
-  const memo: any = {};
+  const memo: Record<string, number> = {};
   let counter = 1;
   let ret = '';
 

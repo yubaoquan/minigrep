@@ -2,7 +2,7 @@
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xvb8zs/
 
 function canJump(nums: number[]): boolean {
-  const canArrive: any = {};
+  const canArrive: Record<number, boolean> = {};
 
   for (let i = 0; i < nums.length; i++) {
     for (let j = 0; j <= nums[i]; j++) {

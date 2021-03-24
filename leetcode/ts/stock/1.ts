@@ -5,7 +5,7 @@
 function maxProfit(prices: number[]): number {
   const n = prices.length;
   if (!n) return 0;
-  const dp: any = {};
+  const dp: Record<number, [number, number]> = {};
   dp[0] = [0, -prices[0]];
 
   for (let i = 1; i < n; i++) {

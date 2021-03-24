@@ -2,9 +2,9 @@
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xw5rt1/
 
 class RandomizedSet {
-  memo: any = {};
+  memo: Record<string, boolean> = {};
 
-  data: any = {};
+  data: Record<string, number> = {};
 
   insert(val: number): boolean {
     if (this.memo[val]) return false;

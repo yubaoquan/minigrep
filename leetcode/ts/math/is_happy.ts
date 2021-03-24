@@ -6,7 +6,7 @@ function isHappy(n: number): boolean {
     .reduce((sum, cur) => sum + (cur * cur), 0);
 
   let temp = powSum(n);
-  const cache: any = {};
+  const cache: Record<number, boolean> = {};
 
   while (temp > 1) {
     temp = powSum(temp);

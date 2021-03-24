@@ -1,6 +1,7 @@
 /**
  * 图像渲染
  * https://leetcode-cn.com/leetbook/read/queue-stack/g02cj/
+ * https://leetcode-cn.com/problems/color-fill-lcci/
  * 有一幅以二维整数数组表示的图画，每一个整数表示该图画的像素值大小，数值在 0 到 65535 之间。
 
 给你一个坐标 (sr, sc) 表示图像渲染开始的像素值（行 ，列）和一个新的颜色值 newColor，让你重新上色这幅图像。
@@ -32,7 +33,7 @@ image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535]内。
 function floodFill(image: number[][], sr: number, sc: number, newColor: number): number[][] {
   if (!image.length || !image[0].length) return image;
   const q: number[][] = [];
-  const visited: any = {};
+  const visited: Record<string, boolean> = {};
   const oldColor = image[sr][sc];
 
   q.push([sr, sc]);

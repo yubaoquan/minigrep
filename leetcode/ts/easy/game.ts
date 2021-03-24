@@ -14,7 +14,7 @@ function solve(arr: number[], maxSteps: number): string[] {
   const ret: OneStepRecord[] = [[arr, []]];
   let count = 0;
   let count2 = 0;
-  const visited: any = {};
+  const visited: Record<string, boolean> = {};
   const display = (array: number[]) => console.info(array.join(', '));
 
   while (ret.length && count < 100000) {

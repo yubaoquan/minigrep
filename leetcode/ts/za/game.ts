@@ -73,7 +73,7 @@ export default function() {
   };
 
   const q: string[] = ['0-0'];
-  const visited: any = {};
+  const visited: Record<string, boolean> = {};
   let counter = 0;
 
   while (q.length) {
@@ -84,7 +84,7 @@ export default function() {
 
     const arr = cur.split(',');
     const currentPos = arr[arr.length - 1].split('-');
-    let [x, y]: any = currentPos;
+    let [x, y]: (string|number)[] = currentPos;
     x = +x;
     y = +y;
 

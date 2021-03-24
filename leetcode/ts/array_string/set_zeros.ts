@@ -3,9 +3,9 @@
  * https://leetcode-cn.com/leetbook/read/array-and-string/ciekh/
  */
 function setZeroes(matrix: number[][]): void {
-  const rowsToClean: any = {};
-  const colsToClean: any = {};
-  const colCleaned: any = {};
+  const rowsToClean: Record<number, boolean> = {};
+  const colsToClean: Record<number, boolean> = {};
+  const colCleaned: Record<number, boolean> = {};
 
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {

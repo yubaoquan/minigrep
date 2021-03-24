@@ -40,7 +40,7 @@
  * @param nn 楼层
  */
 function superEggDrop(kk: number, nn: number): number {
-  const memo: any = {};
+  const memo: Record<string, number> = {};
 
   const dp = (k: number, n: number): number => {
     if (!n) return 0;

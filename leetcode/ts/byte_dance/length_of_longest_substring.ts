@@ -4,7 +4,7 @@ function lengthOfLongestSubstring(s: string): number {
   let ret = 0;
   for (let i = 0; i < s.length; i++) {
     let dupLength = 1;
-    const memo: any = {};
+    const memo: Record<string, boolean> = {};
     memo[s[i]] = true;
 
     for (let j = i + 1; j < s.length; j++) {

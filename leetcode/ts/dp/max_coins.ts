@@ -3,7 +3,7 @@
 
 // 回溯版
 function maxCoins2(numbs: number[]): number {
-  const memo: any = {};
+  const memo: Record<string, number> = {};
 
   function dp(nums: number[]): number {
     if (!nums.length) return 0;
@@ -48,7 +48,7 @@ function maxCoins(nums: number[]): number {
     points[i] = nums[i - 1];
   }
 
-  const dp: any = {};
+  const dp: Record<string, number> = {};
 
   for (let i = n; i >= 0; i--) {
     for (let j = i + 1; j < n + 2; j++) {

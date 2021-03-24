@@ -14,7 +14,7 @@ function fractionToDecimal(numerator: number, denominator: number): string {
   if (!remainder) return fraction;
 
   fraction += '.';
-  const map: any = {};
+  const map: Record<string, number> = {};
 
   while (remainder) {
     if (map[remainder]) {

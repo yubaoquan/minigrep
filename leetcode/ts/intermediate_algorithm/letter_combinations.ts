@@ -6,7 +6,7 @@ import { arrEqIgnoreOrder } from '../util/array.ts';
 function letterCombinations(digits: string): string[] {
   if (!digits) return [];
 
-  const letterMap: any = {
+  const letterMap: Record<number, string[]> = {
     2: ['a', 'b', 'c'],
     3: ['d', 'e', 'f'],
     4: ['g', 'h', 'i'],
@@ -23,8 +23,7 @@ function letterCombinations(digits: string): string[] {
 
   while (ret[0].length < digits.length) {
     const curStr = ret.shift();
-    const digit = digitsArr[index];
-    (letterMap[digit] as string[]).forEach(char => ret.push(curStr + char));
+    letterMap[+digitsArr[index]].forEach(char => ret.push(curStr + char));
     index = ret[0].length;
   }
 

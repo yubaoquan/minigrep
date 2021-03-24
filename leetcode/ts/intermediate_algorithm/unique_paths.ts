@@ -1,5 +1,5 @@
 function uniquePaths(mm: number, nn: number): number {
-  const memo: any = {};
+  const memo: Record<string, number> = {};
 
   const check = (m: number, n: number): number => {
     if (m === 1 || n === 1) return 1;

@@ -1,8 +1,4 @@
-function debug(val: any) {
-  console.info(val);
+export function debug(val: any, show = true) {
+  if (show) console.info(val);
   return val;
 }
-
-export {
-  debug,
-};

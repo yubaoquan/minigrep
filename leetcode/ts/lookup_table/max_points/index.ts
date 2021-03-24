@@ -4,7 +4,7 @@ import bigArray from './big_array.ts';
 
 function maxPoints(points: number[][]): number {
   if (points.length === 1) return 1;
-  const memo: any = {};
+  const memo: Record<string, Set<number>> = {};
 
   for (let i = 0; i < points.length - 1; i++) {
     for (let j = i + 1; j < points.length; j++) {

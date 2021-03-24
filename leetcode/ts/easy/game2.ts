@@ -1,6 +1,8 @@
 // 逃离游乐园 三个转盘转数字的游戏
 // 失败. 数据量太大, 算法写的不行
 
+import { debug } from '../util/debug.ts';
+
 export default function() {
   const result = solve(
     'bbyyrybbbryybrbr',
@@ -20,12 +22,12 @@ const rotateOperations = [rotate1, rotate2, rotate3];
 
 type PlateGroup = [string, string, string];
 type RotateHistory = string[];
-type Record = [PlateGroup, RotateHistory];
+type TRecord = [PlateGroup, RotateHistory];
 
 function solve(arr1: string, arr2: string, arr3: string): string[] {
-  const q: Record[] = [[[arr1, arr2, arr3], []]];
-  const visited: any = {};
-  const displayedHistory: any = {};
+  const q: TRecord[] = [[[arr1, arr2, arr3], []]];
+  const visited: Record<string, boolean> = {};
+  const displayedHistory: Record<string, boolean> = {};
   const displayHistory = (id: string) => {
     displayedHistory[id] = true;
     console.info(id);
@@ -56,7 +58,7 @@ function solve(arr1: string, arr2: string, arr3: string): string[] {
   return [];
 }
 
-const rotateRecords: any = {};
+const rotateRecords: Record<string, string> = {};
 
 // 旋转转盘
 function rotate(str: string, time = 1) {
@@ -65,7 +67,7 @@ function rotate(str: string, time = 1) {
 
   const arr = str.split('');
   const timeNeed = time % arr.length;
-  let ret: any = [];
+  const ret: string[] = [];
 
   for (let i = timeNeed; i < arr.length; i++) {
     ret.push(arr[i]);
@@ -74,13 +76,12 @@ function rotate(str: string, time = 1) {
     ret.push(arr[i]);
   }
 
-  ret = ret.join('');
-  rotateRecords[key] = ret;
-  return ret;
+  rotateRecords[key] = ret.join('');
+  return rotateRecords[key];
 }
 
 // 旋转第一个转盘
-function rotate1<T>(str1: string, str2: string, str3: string, time: number) {
+function rotate1(str1: string, str2: string, str3: string, time: number) {
   const str = rotate(str1, time);
 
   // 影响第二个转盘
@@ -92,7 +93,7 @@ function rotate1<T>(str1: string, str2: string, str3: string, time: number) {
 }
 
 // 旋转第二个转盘
-function rotate2<T>(str1: string, str2: string, str3: string, time: number) {
+function rotate2(str1: string, str2: string, str3: string, time: number) {
   const str = rotate(str2, time);
 
   // 影响第一个转盘
@@ -109,7 +110,7 @@ function rotate2<T>(str1: string, str2: string, str3: string, time: number) {
 }
 
 // 旋转第三个转盘
-function rotate3<T>(str1: string, str2: string, str3: string, time: number) {
+function rotate3(str1: string, str2: string, str3: string, time: number) {
   const str = rotate(str3, time);
 
   // 影响第二个转盘
@@ -121,7 +122,7 @@ function rotate3<T>(str1: string, str2: string, str3: string, time: number) {
 }
 
 // 转盘的颜色全部对齐
-function isDone<T>(str1: string, str2: string, str3: string): boolean {
+function isDone(str1: string, str2: string, str3: string): boolean {
   const arr1Done = str1 === 'rrrrrrrrrrrrrrrr';
   const arr2Done = str2 === 'yyryyybyyybyyyry';
   const arr3Done = str3 === 'bbbbbbbbbbbbbbbb';
@@ -131,9 +132,4 @@ function isDone<T>(str1: string, str2: string, str3: string): boolean {
 
 function getId(str1: string, str2: string, str3: string): string {
   return `${str1}-${str2}-${str3}`;
-}
-
-function debug(val: any, show = true) {
-  if (show) console.info(val);
-  return val;
 }

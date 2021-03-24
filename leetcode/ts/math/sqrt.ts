@@ -2,7 +2,7 @@
 // https://leetcode-cn.com/leetbook/read/top-interview-questions-medium/xwrzwc/
 
 function mySqrt(n: number): number {
-  const cache: any = {
+  const cache: Record<number, number> = {
     0: 0,
     1: 1,
   };
