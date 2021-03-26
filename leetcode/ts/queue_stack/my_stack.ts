@@ -1,6 +1,7 @@
 /**
  * 用队列实现栈
  * https://leetcode-cn.com/leetbook/read/queue-stack/gw7fg/
+ * https://leetcode-cn.com/problems/min-stack-lcci/
  * 使用队列实现栈的下列操作：
 
 push(x) -- 元素 x 入栈

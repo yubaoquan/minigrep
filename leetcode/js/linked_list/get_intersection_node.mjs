@@ -1,6 +1,7 @@
 /**
  * 两个链表的第一个公共节点
  * https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/
+ * https://leetcode-cn.com/problems/intersection-of-two-linked-lists-lcci/
  */
 
 export function getIntersectionNode2(headA, headB) {
