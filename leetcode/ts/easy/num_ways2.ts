@@ -4,7 +4,7 @@
  * https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/solution/mian-shi-ti-10-ii-qing-wa-tiao-tai-jie-wen-ti-dong/
  */
 
-function numWays(n: number): number {
+export function numWays(n: number): number {
   if (n <= 1) return 1;
   if (n === 2) return 2;
   let a = 1;
