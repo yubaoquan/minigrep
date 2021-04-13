@@ -58,6 +58,9 @@
       "asyncArrow": "always"
     }],
 
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"],
+
     "@typescript-eslint/no-loop-func":"off",
     "@typescript-eslint/no-extra-parens": ["error"],
     "@typescript-eslint/no-use-before-define": ["error", { "functions": false, "classes": false }],
