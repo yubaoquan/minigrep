@@ -5,3 +5,4 @@ ybq163.pub
 .DS_Store
 node_modules
 *.log
+test_open.ts
