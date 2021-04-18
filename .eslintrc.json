@@ -13,12 +13,9 @@
     "createDefaultProgram": true
   },
   "rules": {
-    "arrow-body-style": ["error", "as-needed"],
     "arrow-parens": ["error", "as-needed"],
     "brace-style": ["error", "1tbs"],
-    "comma-dangle": ["error", "always-multiline"],
     "consistent-return": "off",
-    "curly": ["error", "multi-line"],
     "func-names": "off",
     "implicit-arrow-linebreak": "off",
     "import/extensions": ["error", "always"],
