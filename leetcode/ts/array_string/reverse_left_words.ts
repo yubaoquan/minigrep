@@ -3,7 +3,7 @@
  * https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/
  */
 
-function reverseLeftWords(s: string, n: number): string {
+export function reverseLeftWords(s: string, n: number): string {
   return s.substring(n) + s.substring(0, n);
 }
 
