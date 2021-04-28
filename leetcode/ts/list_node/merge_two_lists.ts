@@ -5,7 +5,7 @@
 
 import ListNode from '../def/list_node.ts';
 
-export function mergeTwoLists(a: ListNode | null, b: ListNode | null): ListNode | null {
+function mergeTwoLists(a: ListNode | null, b: ListNode | null): ListNode | null {
   let l1 = a;
   let l2 = b;
   if (!l1 && !l2) return l1;
@@ -34,3 +34,10 @@ export function mergeTwoLists(a: ListNode | null, b: ListNode | null): ListNode 
   }
   return result;
 }
+
+function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
+  if (!lists || !lists.length) return null;
+  return lists.reduce((prev, cur) => mergeTwoLists(prev, cur), null);
+}
+
+export { mergeTwoLists, mergeKLists };

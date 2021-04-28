@@ -20,10 +20,13 @@ export function getIntersectionNode2(headA, headB) {
 
 // https://leetcode-cn.com/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/solution/shuang-zhi-zhen-fa-lang-man-xiang-yu-by-ml-zimingm/
 export function getIntersectionNode(headA, headB) {
-  while (headA !== headB) {
-    headA = headA?.next || headB;
-    headB = headB?.next || headA;
+  let n1 = headA;
+  let n2 = headB;
+
+  while (n1 !== n2) {
+    n1 = n1?.next || headB;
+    n2 = n2?.next || headA;
   }
 
-  return headA;
+  return n1;
 }
