@@ -10,3 +10,8 @@ if (foo) {
     baz,
   );
 }
+
+export function xxx(aaa: number) {
+  aaa = 7;
+  console.info(aaa);
+}
