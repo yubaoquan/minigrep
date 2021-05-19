@@ -21,6 +21,12 @@
 - 数据劫持  Object.defineProperty (无法shim, IE8下不兼容)
 - 监听的是对象的属性, 所以需要遍历对象的 keys
 
+#### 流程
+
+- compiler 编译模板(处理指令)的过程中在 updater 中创建 Watcher, 并向其传递数据变化时的回调
+- observer 劫持数据并在 get 中创建 dep, set 中触发 dep.notify
+- watcher 在构造函数里触发 observer 中的 getter, 将自身添加到 dep.subs中
+
 ### 3.x
 
 - Proxy (IE不支持)
