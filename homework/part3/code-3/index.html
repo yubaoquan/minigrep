@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snabbdom-demo</title>
+  <style>
+    body, h1, ul {
+      margin: 0;
+    }
+    .page-title {
+      margin: 10px 20px;
+    }
+    .operations {
+      position: relative;
+      margin: 10px 20px;
+    }
+    .btn-add {
+      position: absolute;
+      top: 10px;
+      right: 0px;
+    }
+    .operations button {
+      margin-left: 10px;
+    }
+
+    ul {
+      padding: 10px 20px;
+    }
+    .movie-item {
+      list-style: none;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      transition: opacity linear 300ms;
+    }
+    .movie-item span {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .rank {
+      width: 60px;
+      font-weight: bold;
+    }
+
+    .title {
+      width: 200px;
+    }
+
+    .desc {
+      width: 600px;
+    }
+    .btn-remove {
+      margin-left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="./src/main.js"></script>
+</body>
+</html>

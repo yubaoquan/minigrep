@@ -27,4 +27,4 @@
 
 1. 进入 code-1/test-router 目录, 安装依赖, 执行 `yarn serve` 即可, router 实现在 my-router 目录
 2. 用浏览器打开 code-2/index.html 即可查看
-3. building...
+3. 进入 code-3 目录, 执行 `yarn dev` 即可查看结果
