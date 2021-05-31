@@ -1,0 +1,11 @@
+- 注册全局的指令和组件
+- 向原型上添加__patch__
+- 向原型上添加$mount
+- 向原型上添加用于ssr的方法
+- 向Vue添加化静态方法
+- 初始化Vue.options
+- 初始化_init
+- 初始化 $data, $props等
+- 初始化事件api
+- 初始化生命周期钩子
+- 初始化$nextTick, _render
