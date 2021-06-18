@@ -12,16 +12,11 @@ const AppleBusket = observer(({ store }) => {
 
   /** 获取未吃苹果的组件数组*/
   function getAppleItem() {
-    let data = [];
-    apples.forEach(apple => {
-      if (!apple.isEaten) {
-        data.push(
-          <AppleItem apple={apple} eatApple={eatApple} key={apple.id}/>
-        )
-      }
-    });
+    const data = apples
+      .filter(apple => !apple.isEaten)
+      .map(apple => <AppleItem apple={apple} eatApple={eatApple} key={apple.id} />);
 
-    if(!data.length) data.push(<div className="empty-tip" key="empty">苹果篮子空空如也</div>);
+    if (!data.length) data.push(<div className="empty-tip" key="empty">苹果篮子空空如也</div>);
 
     return data;
   }
