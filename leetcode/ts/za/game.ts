@@ -8,7 +8,7 @@
 
 type Position = { x: number, y: number };
 
-export default function() {
+export default function () {
   const rowLimits: number[] = [6, 3, 1, 5, 1, 7, 1, 6, 3, 8]; // 每行可以填充的数量
   const colLimits: number[] = [1, 5, 7, 5, 5, 7, 3, 4, 2, 2]; // 每列可以填充的数量
   const totalLimit = colLimits.reduce((sum, cur) => sum + cur, 0); // 整个地图填充的总数量
@@ -31,7 +31,7 @@ export default function() {
     colFills.fill(0); // 每列实际填充的数量
     rowFills.fill(0); // 每行实际填充的数量
 
-    paths.forEach(positionStr => {
+    paths.forEach((positionStr) => {
       const [row, col] = positionStr.split('-');
       rowFills[+row] += 1;
       colFills[+col] += 1;
@@ -48,12 +48,12 @@ export default function() {
   const partiallyValid = (pathsStr: string): boolean => {
     const paths: number[][] = pathsStr
       .split(',')
-      .map(path => path.split('-').map(t => +t));
+      .map((path) => path.split('-').map((t) => +t));
 
     colFills.fill(0); // 每列实际填充的数量
     rowFills.fill(0); // 每行实际填充的数量
 
-    for (let k = 0; k < paths.length; k++) {
+    for (let k = 0; k < paths.length; k += 1) {
       const [row, col] = paths[k]!;
       colFills[col] += 1;
       rowFills[row] += 1;
@@ -95,8 +95,8 @@ export default function() {
       { x, y: y - 1 },
       { x, y: y + 1 },
     ]
-      .filter(pos => canGoTo(pos, arr))
-      .forEach(pos => {
+      .filter((pos) => canGoTo(pos, arr))
+      .forEach((pos) => {
         const path = `${cur},${pos.x}-${pos.y}`;
         if (!partiallyValid(path)) return;
         if (counter % 1000 === 0) console.info(path);

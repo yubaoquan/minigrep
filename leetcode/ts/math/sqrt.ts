@@ -10,7 +10,7 @@ function mySqrt(n: number): number {
   function find(x: number) {
     if (cache[x] !== undefined) return cache[x];
 
-    for (let i = 2; i <= x; i++) {
+    for (let i = 2; i <= x; i += 1) {
       cache[i] = cache[i] || i * i;
       if (cache[i] === x) return i;
       if (cache[i] >= x) return i - 1;
@@ -24,7 +24,7 @@ function mySqrt(n: number): number {
 
 type Case = [number, number];
 
-export default function() {
+export default function () {
   ([
     [2, 1],
     [4, 2],

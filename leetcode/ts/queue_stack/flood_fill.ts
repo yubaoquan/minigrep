@@ -46,7 +46,7 @@ function floodFill(image: number[][], sr: number, sc: number, newColor: number):
 
   while (q.length) {
     const len = q.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len; i += 1) {
       const [x, y] = q.shift()!;
       image[x][y] = newColor;
       visited[`${x}-${y}`] = true;
@@ -61,7 +61,7 @@ function floodFill(image: number[][], sr: number, sc: number, newColor: number):
   return image;
 }
 
-export default function() {
+export default function () {
   const ret = floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2);
   console.info(ret);
 }

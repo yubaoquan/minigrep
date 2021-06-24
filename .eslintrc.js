@@ -13,7 +13,6 @@ module.exports = {
     createDefaultProgram: true,
   },
   rules: {
-    'arrow-parens': ['error', 'as-needed'],
     'brace-style': ['error', '1tbs'],
     'consistent-return': 'off',
     'func-names': 'off',
@@ -25,21 +24,12 @@ module.exports = {
     'no-console': 'off',
     'no-constant-condition': ['error', { checkLoops: false }],
     'no-continue': 'off',
-
     'no-loop-func': 'off',
     '@typescript-eslint/no-loop-func': 'off',
 
     'no-mixed-operators': ['error', { allowSamePrecedence: true }],
-    'no-new': 'off',
     'no-param-reassign': 'off',
-    'no-plusplus': 'off',
-
-    'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['warn'],
     '@typescript-eslint/no-unused-expressions': ['error', { allowShortCircuit: true }],
-
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error', { functions: false, classes: false }],
 
     'prefer-destructuring': [
       'error',
@@ -50,11 +40,8 @@ module.exports = {
       { enforceForRenamedProperties: false },
     ],
 
-    'space-infix-ops': 'off',
-    '@typescript-eslint/space-infix-ops': ['error', { int32Hint: true }],
-
-    'no-extra-parens': 'off',
-    '@typescript-eslint/no-extra-parens': ['error'],
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
 
     'lines-around-comment': ['error', {
       allowArrayStart: true,
@@ -64,6 +51,7 @@ module.exports = {
       beforeBlockComment: true,
       beforeLineComment: true,
     }],
+
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: 'class', next: '*' },
@@ -75,13 +63,6 @@ module.exports = {
       { blankLine: 'any', prev: 'import', next: 'import' },
       { blankLine: 'any', prev: 'export', next: 'export' },
     ],
-
-    'space-before-function-paren': 'off',
-    '@typescript-eslint/space-before-function-paren': ['error', {
-      anonymous: 'never',
-      asyncArrow: 'always',
-      named: 'never',
-    }],
 
     '@typescript-eslint/type-annotation-spacing': ['error',
       {

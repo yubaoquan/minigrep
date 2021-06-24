@@ -15,7 +15,7 @@ function maxDepth(root: Node): number {
   if (!root) return 0;
   if (!root.children.length) return 1;
   return root.children
-    .map(child => maxDepth(child) + 1)
+    .map((child) => maxDepth(child) + 1)
     .reduce((max, cur) => (cur > max ? cur : max), 0);
 }
 
@@ -27,7 +27,7 @@ function levelOrder(root: Node | null): number[][] {
   let nodes: Node[] = [root];
 
   while (nodes.length) {
-    ret.push(nodes.map(node => node.val));
+    ret.push(nodes.map((node) => node.val));
     nodes = nodes.reduce((all, node) => all.concat(node.children), [] as Node[]);
   }
   return ret;

@@ -6,8 +6,8 @@ function maxPoints(points: number[][]): number {
   if (points.length === 1) return 1;
   const memo: Record<string, Set<number>> = {};
 
-  for (let i = 0; i < points.length - 1; i++) {
-    for (let j = i + 1; j < points.length; j++) {
+  for (let i = 0; i < points.length - 1; i += 1) {
+    for (let j = i + 1; j < points.length; j += 1) {
       const [x1, y1] = points[i];
       const [x2, y2] = points[j];
       let key;
@@ -50,16 +50,16 @@ function maxPoints2(points: number[][]): number {
 
   let res = 0;
 
-  for (let i = 0; i < n - 1; i++) {
+  for (let i = 0; i < n - 1; i += 1) {
     const slope = new Map<string, number>();
     let repeat = 0;
     let tmpMax = 0;
 
-    for (let j = i + 1; j < n; j++) {
+    for (let j = i + 1; j < n; j += 1) {
       let dy = points[i][1] - points[j][1];
       let dx = points[i][0] - points[j][0];
       if (dy === 0 && dx === 0) {
-        repeat++;
+        repeat += 1;
         continue;
       }
       const g = gcd(dy, dx);

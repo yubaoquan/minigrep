@@ -7,8 +7,8 @@ function searchMatrix(matrix: number[][], target: number): boolean {
   if (matrix[0][0] > target) return false;
   if (matrix[matrix.length - 1][width - 1] < target) return false;
 
-  for (let row = 0; row < matrix.length; row++) {
-    for (let col = 0; col < width; col++) {
+  for (let row = 0; row < matrix.length; row += 1) {
+    for (let col = 0; col < width; col += 1) {
       if (matrix[row][col] === target) return true;
       if (matrix[row][col] > target) break;
     }
@@ -17,7 +17,7 @@ function searchMatrix(matrix: number[][], target: number): boolean {
   return false;
 }
 
-export default function() {
+export default function () {
   let matrix;
 
   matrix = [

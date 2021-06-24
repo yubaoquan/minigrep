@@ -4,18 +4,18 @@
 function subsets(nums: number[]): number[][] {
   if (!nums.length) return [];
   const ret: number[][] = [[]];
-  nums.forEach(t => ret.push([t]));
+  nums.forEach((t) => ret.push([t]));
 
   let start = 1;
   let { length } = nums;
   const memo: Record<string, boolean> = {};
 
   while (ret[ret.length - 1].length < nums.length) {
-    for (let i = start; i < length; i++) {
+    for (let i = start; i < length; i += 1) {
       const currentNums = ret[i];
-      const pushableNums = nums.filter(t => !currentNums.includes(t));
+      const pushableNums = nums.filter((t) => !currentNums.includes(t));
 
-      for (let j = 0; j < pushableNums.length; j++) {
+      for (let j = 0; j < pushableNums.length; j += 1) {
         const newItem = [...currentNums, pushableNums[j]].sort();
         const key = newItem.join(',');
         if (!memo[key]) {
@@ -32,7 +32,7 @@ function subsets(nums: number[]): number[][] {
   return ret;
 }
 
-export default function() {
+export default function () {
   const ret1 = subsets([1, 9, 8, 3, -1, 0]);
   console.info(ret1);
   console.info(ret1.length);

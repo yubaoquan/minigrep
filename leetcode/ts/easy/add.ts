@@ -2,19 +2,6 @@
 // https://leetcode-cn.com/problems/add-without-plus-lcci/
 // https://leetcode-cn.com/problems/bu-yong-jia-jian-cheng-chu-zuo-jia-fa-lcof/
 
-function add(a: number, b: number): number {
-  // 同号
-  if (a < 0 && b < 0) return -plus(-a, -b);
-  if (a >= 0 && b >= 0) return plus(a, b);
-
-  // 一正一负且负的绝对值大
-  if (a > b && a < -b) return -minus(-b, a);
-  if (b > a && b < -a) return -minus(-a, b);
-
-  // 一正一负 且负的绝对值不大于正的绝对值
-  return a > b ? minus(a, -b) : minus(b, -a);
-}
-
 function plus(a: number, b: number): number {
   const big = a > b ? a : b;
   const small = a > b ? b : a;
@@ -25,7 +12,7 @@ function plus(a: number, b: number): number {
   while (bitSmall.length < len) bitSmall = `0${bitSmall}`;
 
   let add1 = false; // 进位
-  for (let i = len - 1; i >= 0; i--) {
+  for (let i = len - 1; i >= 0; i -= 1) {
     const [b1, b2] = [+bitBig[i] || 0, +bitSmall[i] || 0];
 
     if (b1 && b2) { // 两个1
@@ -55,7 +42,7 @@ function minus(a: number, b: number): number {
   const arr = new Array(len);
 
   let lend = false; // 借位
-  for (let i = len - 1; i >= 0; i--) {
+  for (let i = len - 1; i >= 0; i -= 1) {
     const [b1, b2] = [+bitA[i] || 0, +bitB[i] || 0];
     if (b1 === b2) {
       arr[i] = lend ? 1 : 0;
@@ -71,10 +58,30 @@ function minus(a: number, b: number): number {
   return parseInt(arr.join(''), 2);
 }
 
+function add(a: number, b: number): number {
+  // 同号
+  if (a < 0 && b < 0) return -plus(-a, -b);
+  if (a >= 0 && b >= 0) return plus(a, b);
+
+  // 一正一负且负的绝对值大
+  if (a > b && a < -b) return -minus(-b, a);
+  if (b > a && b < -a) return -minus(-a, b);
+
+  // 一正一负 且负的绝对值不大于正的绝对值
+  return a > b ? minus(a, -b) : minus(b, -a);
+}
+
 type Case = number[];
 
-export default function() {
-  for (let i = 0; i < 10; i++) {
+export default function () {
+  function show(a: number, b: number, expect: number, result: number) {
+    if (expect !== result) {
+      console.info('wrong');
+      console.info(a, b, expect, result);
+    }
+  }
+
+  for (let i = 0; i < 10; i += 1) {
     const a = Math.ceil(Math.random() * 100);
     const b = Math.ceil(Math.random() * 100);
 
@@ -82,13 +89,6 @@ export default function() {
     show(-a, -b, -a - b, add(-a, -b));
     show(-a, b, -a + b, add(-a, b));
     show(a, -b, a - b, add(a, -b));
-  }
-
-  function show(a: number, b: number, expect: number, result: number) {
-    if (expect !== result) {
-      console.info('wrong');
-      console.info(a, b, expect, result);
-    }
   }
 
   ([

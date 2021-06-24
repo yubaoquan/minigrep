@@ -20,7 +20,7 @@ function dailyTemperatures(temperatures: number[]): number[] {
   const stack: number[] = []; // 日期
   const res: number[] = [];
 
-  for (let i = temperatures.length - 1; i >= 0; i--) {
+  for (let i = temperatures.length - 1; i >= 0; i -= 1) {
     while (stack.length && temperatures[stack[0]] <= temperatures[i]) stack.shift();
     res[i] = stack.length ? stack[0] - i : 0;
     stack.unshift(i);
@@ -29,7 +29,7 @@ function dailyTemperatures(temperatures: number[]): number[] {
   return res;
 }
 
-export default function() {
+export default function () {
   const res = dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]);
   console.info(res);
 }

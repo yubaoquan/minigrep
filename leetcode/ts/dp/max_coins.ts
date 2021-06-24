@@ -19,7 +19,7 @@ function maxCoins2(numbs: number[]): number {
     }
 
     let ret = 0;
-    for (let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i += 1) {
       const a = i === 0 ? 1 : nums[i - 1];
       const b = nums[i];
       const c = i === nums.length - 1 ? 1 : nums[i + 1];
@@ -44,15 +44,15 @@ function maxCoins(nums: number[]): number {
   points[0] = 1;
   points[n + 1] = 1;
 
-  for (let i = 1; i <= n; i++) {
+  for (let i = 1; i <= n; i += 1) {
     points[i] = nums[i - 1];
   }
 
   const dp: Record<string, number> = {};
 
-  for (let i = n; i >= 0; i--) {
-    for (let j = i + 1; j < n + 2; j++) {
-      for (let k = i + 1; k < j; k++) {
+  for (let i = n; i >= 0; i -= 1) {
+    for (let j = i + 1; j < n + 2; j += 1) {
+      for (let k = i + 1; k < j; k += 1) {
         const ij = dp[`${i}-${j}`] ?? 0;
         const ik = dp[`${i}-${k}`] ?? 0;
         const kj = dp[`${k}-${j}`] ?? 0;
@@ -67,7 +67,7 @@ function maxCoins(nums: number[]): number {
 
 type Case = [number[], number];
 
-export default function() {
+export default function () {
   console.info(maxCoins2);
   ([
     // [[3, 5, 8], 120],

@@ -13,7 +13,9 @@ function removeElements(h, val) {
 }
 
 const nodes = new Array(6).fill(0).map((t, i) => ({ val: i + 1 }));
-nodes.forEach((t, i) => (t.next = nodes[i + 1]));
+nodes.forEach((t, i) => {
+  t.next = nodes[i + 1];
+});
 console.info(nodes[0]);
 const head = removeElements(nodes[0], 6);
 console.info(head);

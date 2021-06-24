@@ -12,7 +12,7 @@ import { arrEq } from '../util/array.ts';
 function divingBoard(shorter: number, longer: number, k: number): number[] {
   const memo: Record<number, boolean> = {};
   const ret: number[] = [];
-  for (let i = 0; i <= k; i++) {
+  for (let i = 0; i <= k; i += 1) {
     const size = (longer * i) + (shorter * (k - i));
     if (!memo[size]) {
       memo[size] = true;
@@ -26,9 +26,10 @@ function divingBoard(shorter: number, longer: number, k: number): number[] {
  * 执行用时：256 ms, 在所有 TypeScript 提交中击败了5.13%的用户
  * 内存消耗：57.7 MB, 在所有 TypeScript 提交中击败了5.13%的用户
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function divingBoard2(shorter: number, longer: number, k: number): number[] {
   const ret: Set<number> = new Set();
-  for (let i = 0; i <= k; i++) {
+  for (let i = 0; i <= k; i += 1) {
     const size = (longer * i) + (shorter * (k - i));
     if (size) ret.add(size);
   }

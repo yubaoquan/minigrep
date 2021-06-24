@@ -4,16 +4,16 @@
  */
 
 function findMin(nums: number[]): number {
-  for (let i = 0; i + 1 < nums.length; i++) if (nums[i] > nums[i + 1]) return nums[i + 1];
+  for (let i = 0; i + 1 < nums.length; i += 1) if (nums[i] > nums[i + 1]) return nums[i + 1];
 
   return nums[0];
 }
 
-export default function() {
+export default function () {
   [
     [3, 4, 5, 1, 2],
     [4, 5, 6, 7, 0, 1, 2],
-  ].forEach(arr => {
+  ].forEach((arr) => {
     console.info(findMin(arr));
   });
 }

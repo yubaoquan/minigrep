@@ -7,10 +7,10 @@ export function masterMind(solution: string, guess: string): number[] {
   const guessList: string[] = guess.split('');
   const solutionList = solution.split('');
   let allGuess = 0;
-  guessList.forEach(c => {
-    const firstIndex = solutionList.findIndex(t => t === c);
+  guessList.forEach((c) => {
+    const firstIndex = solutionList.findIndex((t) => t === c);
     if (firstIndex > -1) {
-      allGuess++;
+      allGuess += 1;
       solutionList[firstIndex] = '_';
     }
   });

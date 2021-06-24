@@ -1,7 +1,7 @@
 function containsNearbyDuplicate(nums: number[], k: number): boolean {
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i += 1) {
     const end = i + k < nums.length - 1 ? i + k : nums.length - 1;
-    for (let j = i + 1; j <= end; j++) {
+    for (let j = i + 1; j <= end; j += 1) {
       if (nums[i] === nums[j]) return true;
     }
   }

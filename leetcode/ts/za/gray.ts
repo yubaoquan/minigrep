@@ -1,3 +1,20 @@
+function isMatch(a: number, b: number): boolean {
+  let str1 = a.toString(2);
+  let str2 = b.toString(2);
+  if (str1.length > str2.length) str2 = str2.padStart(str1.length, '0');
+  else str1 = str1.padStart(str2.length, '0');
+  let diffCount = 0;
+  for (let i = 0; i < str1.length; i += 1) {
+    if (str1[i] !== str2[i]) diffCount += 1;
+  }
+
+  return diffCount === 1;
+}
+
+function getMatchNumber(arr: number[], t: number, checker: Function): number {
+  return arr.findIndex((num) => isMatch(num, t) && checker(num));
+}
+
 // 格雷码 错误解法
 function circularPermutation(n: number, start: number): number[] {
   const getIniArray = () => Array(2 ** n).fill(0).map((t, i) => i);
@@ -19,11 +36,11 @@ function circularPermutation(n: number, start: number): number[] {
       console.info('Tried too many times');
       return ret;
     }
-    for (let i = 1; i < ret.length; i++) {
+    for (let i = 1; i < ret.length; i += 1) {
       const index = getMatchNumber(
         leftNumbers,
         ret[i - 1],
-        (t: number) => wrongResults.every(arr => arr[i] !== t),
+        (t: number) => wrongResults.every((arr) => arr[i] !== t),
       );
 
       if (index > -1) ret[i] = leftNumbers.splice(index, 1)[0];
@@ -36,27 +53,10 @@ function circularPermutation(n: number, start: number): number[] {
 
     isWrong = !isMatch(ret[0], ret[ret.length - 1]);
     if (isWrong) wrongResults.push(ret);
-    tryTimes++;
+    tryTimes += 1;
   }
 
   return ret;
-}
-
-function getMatchNumber(arr: number[], t: number, checker: Function): number {
-  return arr.findIndex(num => isMatch(num, t) && checker(num));
-}
-
-function isMatch(a: number, b: number): boolean {
-  let str1 = a.toString(2);
-  let str2 = b.toString(2);
-  if (str1.length > str2.length) str2 = str2.padStart(str1.length, '0');
-  else str1 = str1.padStart(str2.length, '0');
-  let diffCount = 0;
-  for (let i = 0; i < str1.length; i++) {
-    if (str1[i] !== str2[i]) diffCount++;
-  }
-
-  return diffCount === 1;
 }
 
 // console.info(circularPermutation(2, 3));

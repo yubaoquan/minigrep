@@ -5,10 +5,6 @@
 
 import TreeNode from '../def/tree_node.ts';
 
-export function sortedArrayToBST(nums: number[]): TreeNode | null {
-  return inner(nums, 0, nums.length);
-}
-
 function inner(nums: number[], start: number, end: number): TreeNode | null {
   if (!nums.length) return null;
   const middle = Math.floor((end + start) / 2);
@@ -17,6 +13,10 @@ function inner(nums: number[], start: number, end: number): TreeNode | null {
   if (start < middle) node.left = inner(nums, start, middle - 1);
   if (middle < end) node.right = inner(nums, middle + 1, end);
   return node;
+}
+
+export function sortedArrayToBST(nums: number[]): TreeNode | null {
+  return inner(nums, 0, nums.length);
 }
 
 const node = sortedArrayToBST([-10, -3, 0, 5, 9]);

@@ -1,8 +1,15 @@
 // 基本计算器
 // https://leetcode-cn.com/problems/basic-calculator/
 
-function calculate(s: string): number {
-  return helper(s.replace(/ /g, ''))[0];
+/**
+ * 同号相除下取整, 否则上取整
+ * @param a 被除数
+ * @param b 除数
+ */
+function devide(a: number, b: number): number {
+  if (a >= 0 && b > 0) return Math.floor(a / b);
+  if (a <= 0 && b < 0) return Math.floor(a / b);
+  return Math.ceil(a / b);
 }
 
 /**
@@ -48,20 +55,13 @@ function helper(s: string, from = 0): [number, number] {
   return [sum, index - from + 1];
 }
 
-/**
- * 同号相除下取整, 否则上取整
- * @param a 被除数
- * @param b 除数
- */
-function devide(a: number, b: number): number {
-  if (a >= 0 && b > 0) return Math.floor(a / b);
-  if (a <= 0 && b < 0) return Math.floor(a / b);
-  return Math.ceil(a / b);
+function calculate(s: string): number {
+  return helper(s.replace(/ /g, ''))[0];
 }
 
 type Case = [string, number];
 
-export default function() {
+export default function () {
   ([
     ['14-3/2', 13],
     ['3/2', 1],

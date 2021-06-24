@@ -58,7 +58,7 @@ class MyStack {
   }
 }
 
-export default function() {
+export default function () {
   const obj = new MyStack();
   obj.push(1);
 }

@@ -19,19 +19,19 @@ function nSum(nums: number[], n: number, start: number, target: number): number[
     while (lo < hi) {
       const sum = nums[lo] + nums[hi];
       const [left, right] = [nums[lo], nums[hi]];
-      if (sum < target) while (lo < hi && nums[lo] === left) lo++;
-      else if (sum > target) while (lo < hi && nums[hi] === right) hi--;
+      if (sum < target) while (lo < hi && nums[lo] === left) lo += 1;
+      else if (sum > target) while (lo < hi && nums[hi] === right) hi -= 1;
       else {
         ret.push([left, right]);
-        while (lo < hi && nums[lo] === left) lo++;
-        while (lo < hi && nums[hi] === right) hi--;
+        while (lo < hi && nums[lo] === left) lo += 1;
+        while (lo < hi && nums[hi] === right) hi -= 1;
       }
     }
   } else {
-    for (let i = start; i < nums.length; i++) {
+    for (let i = start; i < nums.length; i += 1) {
       const sub = nSum(nums, n - 1, i + 1, target - nums[i]);
-      sub.forEach(arr => ret.push([...arr, nums[i]]));
-      while (i < nums.length - 1 && nums[i] === nums[i + 1]) i++;
+      sub.forEach((arr) => ret.push([...arr, nums[i]]));
+      while (i < nums.length - 1 && nums[i] === nums[i + 1]) i += 1;
     }
   }
 
@@ -43,7 +43,7 @@ function threeSum(nums: number[]): number[][] {
   return nSum(nums, 3, 0, 0);
 }
 
-export default function() {
+export default function () {
   const ret = threeSum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]);
   console.info(ret);
 }

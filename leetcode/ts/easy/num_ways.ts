@@ -11,14 +11,14 @@ export function numWays(n: number, relation: number[][], k: number): number {
   });
 
   let currentPositions = [0];
-  for (let i = 0; i < k; i++) {
+  for (let i = 0; i < k; i += 1) {
     const newPositions: number[] = [];
-    currentPositions.forEach(position => {
+    currentPositions.forEach((position) => {
       if (memo[position]) newPositions.push(...memo[position]);
     });
     currentPositions = newPositions;
   }
-  return currentPositions.filter(position => position === n - 1).length;
+  return currentPositions.filter((position) => position === n - 1).length;
 }
 
 type Case = [number, number[][], number, number];

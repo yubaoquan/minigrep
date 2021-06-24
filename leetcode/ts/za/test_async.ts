@@ -1,9 +1,10 @@
 // https://muyiy.cn/question/async/8.html
 // https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function test() {
   console.info('start');
-  new Promise(resolve => {
+  new Promise((resolve) => {
     console.info('promise');
     resolve(undefined);
   }).then(() => {
@@ -15,7 +16,7 @@ async function test() {
   setTimeout(() => {
     console.info('timeout1');
 
-    new Promise(resolve => {
+    new Promise((resolve) => {
       console.info('promise in timeout1');
       resolve(undefined);
     }).then(() => {
@@ -35,12 +36,13 @@ async function test() {
 async function test2() {
   async function async1() {
     console.log('async1 start');
+
+    async function async2() {
+      console.log('async2');
+    }
+
     await async2();
     console.log('async1 end');
-  }
-
-  async function async2() {
-    console.log('async2');
   }
 
   console.log('script start');
@@ -51,7 +53,7 @@ async function test2() {
 
   async1();
 
-  new Promise(resolve => {
+  new Promise((resolve) => {
     console.log('promise1');
     resolve(undefined);
   }).then(() => {

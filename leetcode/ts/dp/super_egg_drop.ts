@@ -51,7 +51,7 @@ function superEggDrop(kk: number, nn: number): number {
 
     let ret: number = Number.MAX_VALUE;
 
-    for (let i = 1; i <= n; i++) {
+    for (let i = 1; i <= n; i += 1) {
       ret = Math.min(
         ret,
         Math.max(dp(k, n - i), dp(k - 1, i - 1)) + 1,
@@ -65,7 +65,7 @@ function superEggDrop(kk: number, nn: number): number {
   return dp(kk, nn);
 }
 
-export default function() {
+export default function () {
   const ret1 = superEggDrop(2, 6);
   const ret2 = superEggDrop(3, 14);
   const ret3 = superEggDrop(4, 5000);

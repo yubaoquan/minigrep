@@ -5,7 +5,7 @@
 
 export function isUnique(astr: string): boolean {
   const memo: Record<string, boolean> = {};
-  for (let i = 0; i < astr.length; i++) {
+  for (let i = 0; i < astr.length; i += 1) {
     if (memo[astr[i]]) return false;
     memo[astr[i]] = true;
   }

@@ -46,7 +46,7 @@ class MyQueue {
   }
 }
 
-export default function() {
+export default function () {
   const obj = new MyQueue();
   obj.push(1);
   const param2 = obj.pop();

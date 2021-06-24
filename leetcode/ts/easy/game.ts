@@ -1,12 +1,20 @@
 // 逃离游乐园 麻将
 
-export default function() {
-  const arr = [1, 9, 6, 7, 4, 8, 2, 3, 5];
-  const result = solve(arr, 4);
-  console.info(result);
+function isSorted(arr: number[]): boolean {
+  let counter = 0;
+  for (let i = 0; i < arr.length - 1; i += 1) if (arr[i] - arr[i + 1] !== -1) counter += 1;
+
+  return counter <= 1;
 }
 
 type OneStepRecord = [number[], string[]]; // 走到某步为止的交互记录 [当前数组, 交换记录]
+
+function swap(arr: number[], i: number, j: number): number[] {
+  const ret = [...arr];
+  ret[i] = arr[j];
+  ret[j] = arr[i];
+  return ret;
+}
 
 function solve(arr: number[], maxSteps: number): string[] {
   if (isSorted(arr)) return [];
@@ -27,11 +35,12 @@ function solve(arr: number[], maxSteps: number): string[] {
       return swaps;
     }
 
-    const canSwap = (i: number, j: number, id: string) =>
-      swaps.length < maxSteps && swaps[swaps.length - 1] !== `${i}-${j}` && !visited[id];
+    const canSwap = (i: number, j: number, id: string) => swaps.length < maxSteps
+      && swaps[swaps.length - 1] !== `${i}-${j}`
+      && !visited[id];
 
-    for (let i = 0; i < curArr.length - 1; i++) {
-      for (let j = i + 1; j < curArr.length; j++) {
+    for (let i = 0; i < curArr.length - 1; i += 1) {
+      for (let j = i + 1; j < curArr.length; j += 1) {
         const swapped = swap(curArr, i, j);
         const id = swapped.join(',');
         if (canSwap(i, j, id)) {
@@ -49,16 +58,8 @@ function solve(arr: number[], maxSteps: number): string[] {
   return [];
 }
 
-function isSorted(arr: number[]): boolean {
-  let counter = 0;
-  for (let i = 0; i < arr.length - 1; i++) if (arr[i] - arr[i + 1] !== -1) counter += 1;
-
-  return counter <= 1;
-}
-
-function swap(arr: number[], i: number, j: number): number[] {
-  const ret = [...arr];
-  ret[i] = arr[j];
-  ret[j] = arr[i];
-  return ret;
+export default function () {
+  const arr = [1, 9, 6, 7, 4, 8, 2, 3, 5];
+  const result = solve(arr, 4);
+  console.info(result);
 }

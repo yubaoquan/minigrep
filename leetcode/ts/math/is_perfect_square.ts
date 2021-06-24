@@ -8,7 +8,7 @@ function isPerfectSquare(num: number): boolean {
   const halfDigits = digits % 2 === 0 ? digits / 2 : (digits + 1) / 2;
   const half = num % 2 === 0 ? num / 2 : (num + 1) / 2;
 
-  for (let i = 10 ** (halfDigits - 1); i <= half; i++) {
+  for (let i = 10 ** (halfDigits - 1); i <= half; i += 1) {
     const square = i ** 2;
     if (square === num) return true;
     if (square > num) return false;

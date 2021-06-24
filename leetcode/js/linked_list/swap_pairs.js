@@ -11,6 +11,8 @@ function swapPairs(h) {
 }
 
 const nodes = new Array(4).fill(0).map((t, i) => ({ val: i + 1 }));
-nodes.forEach((t, i) => (t.next = nodes[i + 1] || null));
+nodes.forEach((t, i) => {
+  t.next = nodes[i + 1] || null;
+});
 swapPairs(nodes[0]);
 console.info(nodes[1]);

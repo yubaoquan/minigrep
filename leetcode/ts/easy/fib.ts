@@ -11,7 +11,7 @@ function fib(n: number): number {
   let c = a + b;
   const max = 1000000007;
 
-  for (let i = 3; i <= n; i++) {
+  for (let i = 3; i <= n; i += 1) {
     a = b;
     b = c;
     c = a + b;
@@ -21,7 +21,7 @@ function fib(n: number): number {
   return c;
 }
 
-type Case = [number, number];
+export type Case = [number, number];
 
 ([
   [5, 5],

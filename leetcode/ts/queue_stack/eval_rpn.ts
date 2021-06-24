@@ -51,7 +51,7 @@
 function evalRPN(tokens: string[]): number {
   const stack: number[] = [];
   console.info(234);
-  for (let i = 0; i < tokens.length; i++) {
+  for (let i = 0; i < tokens.length; i += 1) {
     const token = tokens[i];
     if (/\d+/.test(token)) {
       stack.push(+token);
@@ -80,14 +80,14 @@ function evalRPN(tokens: string[]): number {
   return stack.pop()!;
 }
 
-export default function() {
+export default function () {
   [
     ['4', '13', '5', '/', '+'],
     ['4', '-2', '/', '2', '-3', '-', '-'],
     ['2', '1', '+', '3', '*'],
     ['4', '13', '5', '/', '+'],
     ['10', '6', '9', '3', '+', '-11', '*', '/', '*', '17', '+', '5', '+'],
-  ].forEach(arr => {
+  ].forEach((arr) => {
     const res = evalRPN(arr);
     console.info(res);
   });

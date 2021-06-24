@@ -7,7 +7,7 @@ export function largestAltitude(gain: number[]): number {
   let current = 0;
   let max = 0;
 
-  gain.forEach(t => {
+  gain.forEach((t) => {
     current += t;
     if (current > max) max = current;
   });

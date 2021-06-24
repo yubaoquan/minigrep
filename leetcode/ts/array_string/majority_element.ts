@@ -6,7 +6,7 @@ function majorityElement(nums: number[]): number {
   const rec: Record<number, number> = {};
   const half = nums.length / 2;
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i += 1) {
     const t = nums[i];
     rec[t] = rec[t] ? rec[t] + 1 : 1;
     if (rec[t] > half) return t;
@@ -16,7 +16,7 @@ function majorityElement(nums: number[]): number {
 
 type Case = [number[], number];
 
-export default function() {
+export default function () {
   ([
     [[1, 2, 5, 9, 5, 9, 5, 5, 5], 5],
     [[3, 2], -1],

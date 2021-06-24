@@ -8,14 +8,14 @@ function convertToTitle(columnNumber: number): string {
   const beginCharCode = 'A'.charCodeAt(0);
   let left = columnNumber;
   while (left > 0) {
-    left--;
+    left -= 1;
     ret.unshift((left % 26) + beginCharCode);
     left = Math.floor(left / 26);
   }
 
-  return ret.map(n => String.fromCharCode(n)).join('');
+  return ret.map((n) => String.fromCharCode(n)).join('');
 }
 
-[1, 2, 3, 26, 27, 28, 701, 2147483647].forEach(n => {
+[1, 2, 3, 26, 27, 28, 701, 2147483647].forEach((n) => {
   console.info(convertToTitle(n));
 });

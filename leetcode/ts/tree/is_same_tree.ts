@@ -18,17 +18,17 @@ export function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
  * https://leetcode-cn.com/problems/ping-heng-er-cha-shu-lcof/
  */
 
+function getTreeHeight(root: TreeNode | null): number {
+  if (!root) return 0;
+  return 1 + Math.max(getTreeHeight(root.left), getTreeHeight(root.right));
+}
+
 export function isBalanced(root: TreeNode | null): boolean {
   if (!root) return true;
   const leftHeight = getTreeHeight(root.left);
   const rightHeight = getTreeHeight(root.right);
   if (Math.abs(leftHeight - rightHeight) > 1) return false;
   return isBalanced(root.left) && isBalanced(root.right);
-}
-
-function getTreeHeight(root: TreeNode | null): number {
-  if (!root) return 0;
-  return 1 + Math.max(getTreeHeight(root.left), getTreeHeight(root.right));
 }
 
 /**
@@ -55,7 +55,7 @@ const treeNodes: TreeNode[] = [
   0,
   -6,
   -5,
-].map(v => new TreeNode(v));
+].map((v) => new TreeNode(v));
 
 const head = treeNodes[0];
 head.left = treeNodes[1];

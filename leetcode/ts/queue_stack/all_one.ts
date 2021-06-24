@@ -19,10 +19,12 @@ export class AllOne {
     if (!this.memo[key]) {
       this.memo[key] = {
         val: 1,
+        max: '',
+        min: '',
       };
     }
-    if (this.memo[key]) this.memo[key]++;
-    else this.memo[key] = 1;
+    if (this.memo[key]) this.memo[key].val += 1;
+    else this.memo[key].val = 1;
     this.updateMax(key);
     this.updateMin(key);
   }
@@ -42,7 +44,7 @@ export class AllOne {
   }
 
   dec(key: string): void {
-    if (this.memo[key]) this.memo[key]--;
+    if (this.memo[key]) this.memo[key].val -= 1;
     if (!this.memo[key]) delete this.memo[key];
     if (this.max[0] === key) this.max.shift();
     if (this.min[0] === key) this.min.shift();

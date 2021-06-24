@@ -4,7 +4,7 @@
  */
 
 function isStraight(nums: number[]): boolean {
-  const arr = nums.filter(t => !!t);
+  const arr = nums.filter((t) => !!t);
   const zeroNum = nums.length - arr.length;
   arr.sort((a, b) => a - b);
   if (arr.some((t, i) => t === arr[i + 1])) return false;

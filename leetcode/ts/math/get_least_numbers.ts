@@ -7,9 +7,9 @@ function getLeastNumbers(arr: number[], k: number): number[] {
   const ret = new Array(k).fill(Number.MAX_VALUE);
   const lastIndex = k - 1;
 
-  arr.forEach(n => {
+  arr.forEach((n) => {
     if (n >= ret[lastIndex]) return;
-    for (let i = 0; i < k; i++) {
+    for (let i = 0; i < k; i += 1) {
       if (n < ret[i]) {
         ret.splice(i, 0, n);
         ret.pop();

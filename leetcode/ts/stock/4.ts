@@ -1,3 +1,19 @@
+function maxProfitKInf(prices: number[]) {
+  const n = prices.length;
+  if (!n) return 0;
+
+  let dpI0 = 0;
+  let dpI1 = Number.NEGATIVE_INFINITY; // 最开始一天, 手里不可能有股票
+
+  for (let i = 0; i < n; i += 1) {
+    const t = dpI0;
+    dpI0 = Math.max(dpI0, dpI1 + prices[i]);
+    dpI1 = Math.max(dpI1, t - prices[i]);
+  }
+
+  return dpI0;
+}
+
 function maxProfit(maxK: number, prices: number[]): number {
   const n = prices.length;
   if (!n) return 0;
@@ -5,11 +21,11 @@ function maxProfit(maxK: number, prices: number[]): number {
 
   const dp: Record<string, number> = {};
 
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n; i += 1) {
     dp[`${i}-0-0`] = 0;
     dp[`${i}-0-1`] = Number.NEGATIVE_INFINITY;
 
-    for (let k = maxK; k >= 1; k--) {
+    for (let k = maxK; k >= 1; k -= 1) {
       if (i === 0) {
         dp[`${i}-${k}-0`] = 0;
         dp[`${i}-${k}-1`] = -prices[0];
@@ -23,25 +39,9 @@ function maxProfit(maxK: number, prices: number[]): number {
   return dp[`${n - 1}-${maxK}-0`];
 }
 
-function maxProfitKInf(prices: number[]) {
-  const n = prices.length;
-  if (!n) return 0;
-
-  let dpI0 = 0;
-  let dpI1 = Number.NEGATIVE_INFINITY; // 最开始一天, 手里不可能有股票
-
-  for (let i = 0; i < n; i++) {
-    const t = dpI0;
-    dpI0 = Math.max(dpI0, dpI1 + prices[i]);
-    dpI1 = Math.max(dpI1, t - prices[i]);
-  }
-
-  return dpI0;
-}
-
 type Case = [number[], number, number];
 
-export default function() {
+export default function () {
   ([
     [[1, 2], 1, 1],
     [[2, 4, 1], 2, 2],

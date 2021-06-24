@@ -4,8 +4,8 @@
 function canJump(nums: number[]): boolean {
   const canArrive: Record<number, boolean> = {};
 
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = 0; j <= nums[i]; j++) {
+  for (let i = 0; i < nums.length; i += 1) {
+    for (let j = 0; j <= nums[i]; j += 1) {
       canArrive[i + j] = true;
       if (i + j === nums.length - 1) return true;
     }
@@ -16,7 +16,7 @@ function canJump(nums: number[]): boolean {
 
 type Case = [number[], boolean];
 
-export default function() {
+export default function () {
   ([
     [[2, 3, 1, 1, 4], true],
     [[3, 2, 1, 0, 4], false],

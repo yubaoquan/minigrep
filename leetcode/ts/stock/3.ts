@@ -7,7 +7,7 @@ function maxProfit(prices: number[]): number {
   let dpI20 = 0;
   let dpI21 = Number.NEGATIVE_INFINITY;
 
-  prices.forEach(price => {
+  prices.forEach((price) => {
     dpI20 = Math.max(dpI20, dpI21 + price);
     dpI21 = Math.max(dpI21, dpI10 - price);
     dpI10 = Math.max(dpI10, dpI11 + price);
@@ -19,7 +19,7 @@ function maxProfit(prices: number[]): number {
 
 type Case = [number[], number];
 
-export default function() {
+export default function () {
   ([
     [[3, 3, 5, 0, 0, 3, 1, 4], 6],
     [[1, 2, 3, 4, 5], 4],

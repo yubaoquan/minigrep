@@ -9,9 +9,9 @@ function findLengthOfLCIS(nums: number[]): number {
 
   while (start < nums.length) {
     let i = start + 1;
-    for (; i < nums.length; i++) {
+    for (; i < nums.length; i += 1) {
       if (nums[i - 1] < nums[i]) {
-        currentLength++;
+        currentLength += 1;
         max = Math.max(max, currentLength);
       } else {
         start = i;

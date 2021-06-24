@@ -13,18 +13,18 @@ export function findContinuousSequence(target: number): number[][] {
   while (left < half) {
     if (sum < target) {
       sum += right;
-      right++;
+      right += 1;
     } else if (sum > target) {
       sum -= left;
-      left++;
+      left += 1;
     } else {
       const arr: number[] = [];
-      for (let i = left; i < right; i++) {
+      for (let i = left; i < right; i += 1) {
         arr.push(i);
       }
       ret.push(arr);
       sum -= left;
-      left++;
+      left += 1;
     }
   }
 

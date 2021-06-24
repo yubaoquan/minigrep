@@ -59,7 +59,7 @@ function updateMatrix(matrix: number[][]): number[][] {
 
   while (q.length) {
     const len = q.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len; i += 1) {
       const [x, y] = q.shift()!;
       check(x - 1, y, ret[x][y]);
       check(x + 1, y, ret[x][y]);
@@ -71,7 +71,7 @@ function updateMatrix(matrix: number[][]): number[][] {
   return ret;
 }
 
-export default function() {
+export default function () {
   [
     [
       [0, 0, 0],
@@ -83,7 +83,7 @@ export default function() {
       [0, 1, 0],
       [1, 1, 1],
     ],
-  ].forEach(matrix => {
+  ].forEach((matrix) => {
     const ret = updateMatrix(matrix);
     console.info(ret);
   });

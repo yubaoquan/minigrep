@@ -3,11 +3,6 @@
 
 import TreeNode from '../def/tree_node.ts';
 
-function rob(root: TreeNode | null): number {
-  const [a, b] = dp(root);
-  return Math.max(a, b);
-}
-
 function dp(root: TreeNode | null): number[] {
   if (!root) return [0, 0];
   const left = dp(root.left);
@@ -19,16 +14,21 @@ function dp(root: TreeNode | null): number[] {
   return [notRobVal, robVal];
 }
 
+function rob(root: TreeNode | null): number {
+  const [a, b] = dp(root);
+  return Math.max(a, b);
+}
+
 type Case = [TreeNode, number];
 
-export default function() {
-  const nodes1 = [3, 2, 3, 3, 1].map(t => new TreeNode(t));
+export default function () {
+  const nodes1 = [3, 2, 3, 3, 1].map((t) => new TreeNode(t));
   nodes1[0].left = nodes1[1];
   nodes1[0].right = nodes1[2];
   nodes1[1].right = nodes1[3];
   nodes1[2].right = nodes1[4];
 
-  const nodes2 = [3, 4, 5, 1, 3, 1].map(t => new TreeNode(t));
+  const nodes2 = [3, 4, 5, 1, 3, 1].map((t) => new TreeNode(t));
   nodes2[0].left = nodes2[1];
   nodes2[0].right = nodes2[2];
   nodes2[1].left = nodes2[3];

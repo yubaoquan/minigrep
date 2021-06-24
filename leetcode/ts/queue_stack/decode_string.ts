@@ -29,6 +29,13 @@
 
  */
 
+function repeat(str: string, n: number): string {
+  let ret = '';
+  for (let i = 0; i < n; i += 1) ret += str;
+
+  return ret;
+}
+
 function decodeString(s: string): string {
   if (!s || !s.includes('[')) return s;
 
@@ -36,7 +43,7 @@ function decodeString(s: string): string {
   let curStr = '';
   let curNum = '';
 
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i += 1) {
     if (/\d/.test(s[i])) { // 读到数字, 入栈之前拼好的字符串
       curNum += s[i];
       if (curStr) stack.push(curStr);
@@ -66,16 +73,9 @@ function decodeString(s: string): string {
   return curStr;
 }
 
-function repeat(str: string, n: number): string {
-  let ret = '';
-  for (let i = 0; i < n; i++) ret += str;
-
-  return ret;
-}
-
 type Case = [string, string];
 
-export default function() {
+export default function () {
   ([
     [
       '3[z]2[2[y]pq4[2[jk]e1[f]]]ef',

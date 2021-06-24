@@ -10,8 +10,8 @@ function canPartition(nums: number[]): boolean {
   const dp = Array(sum + 1).fill(false);
   dp[0] = true;
 
-  nums.forEach(t => {
-    for (let j = sum; j >= 0; j--) {
+  nums.forEach((t) => {
+    for (let j = sum; j >= 0; j -= 1) {
       if (j >= t) dp[j] = dp[j] || dp[j - t];
     }
   });
@@ -21,7 +21,7 @@ function canPartition(nums: number[]): boolean {
 
 type Case = [number[], boolean];
 
-export default function() {
+export default function () {
   ([
     [[1, 5, 11, 5], true],
     [[1, 2, 3, 5], false],

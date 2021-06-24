@@ -24,14 +24,13 @@ function copyRandomList(head) {
   }
 
   list2.forEach((item, index) => {
-    const randomIndex = list1.findIndex(node => node === list1[index].random);
+    const randomIndex = list1.findIndex((node) => node === list1[index].random);
     item.random = list2[randomIndex];
   });
-
 
   return newHead;
 }
 
-export default function() {
+export default function () {
   console.info('test', copyRandomList(new Node(1)));
 }

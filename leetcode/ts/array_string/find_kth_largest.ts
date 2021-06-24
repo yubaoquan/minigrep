@@ -4,7 +4,7 @@
 function findKthLargest(nums: number[], k: number): number {
   const findMax = (notGt: number): number => {
     let max = Number.MIN_SAFE_INTEGER;
-    nums.forEach(n => {
+    nums.forEach((n) => {
       max = n > max && n < notGt ? n : max;
     });
     return max;
@@ -15,7 +15,7 @@ function findKthLargest(nums: number[], k: number): number {
 
   while (q.length < k) {
     max = findMax(max);
-    nums.forEach(t => {
+    nums.forEach((t) => {
       if (t === max) q.unshift(t);
     });
   }
@@ -25,7 +25,7 @@ function findKthLargest(nums: number[], k: number): number {
 
 type Case = [number[], number, number];
 
-export default function() {
+export default function () {
   ([
     [[-1, -1], 2, -1],
     [[3, 2, 3, 1, 2, 4, 5, 5, 6], 4, 4],

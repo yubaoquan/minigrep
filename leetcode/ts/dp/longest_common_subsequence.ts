@@ -13,8 +13,8 @@ function longestCommonSubsequence(str1: string, str2: string): number {
 
   // 备忘录
   const dp: Record<string, number> = {};
-  for (let i = 1; i < str1.length + 1; i++) {
-    for (let j = 1; j < str2.length + 1; j++) {
+  for (let i = 1; i < str1.length + 1; i += 1) {
+    for (let j = 1; j < str2.length + 1; j += 1) {
       dp[`${i}-${j}`] = str1[i - 1] === str2[j - 1]
         ? 1 + (dp[`${i - 1}-${j - 1}`] ?? 0)
         : Math.max(dp[`${i - 1}-${j}`] ?? 0, dp[`${i}-${j - 1}`] ?? 0);
@@ -26,7 +26,7 @@ function longestCommonSubsequence(str1: string, str2: string): number {
 
 type Case = [string, string, number];
 
-export default function() {
+export default function () {
   ([
     ['abcde', 'ace', 3],
     ['abc', 'abc', 3],

@@ -4,7 +4,8 @@
   "description": "test",
   "main": "app.mjs",
   "scripts": {
-    "a": "node app.mjs"
+    "a": "node app.mjs",
+    "lint": "eslint leetcode/ts/** --fix"
   },
   "repository": {
     "type": "git",

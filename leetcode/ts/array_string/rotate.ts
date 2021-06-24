@@ -10,8 +10,8 @@ function rotate(matrix: number[][]): void {
   const colHalf = Math.ceil(colLen / 2);
   const rowHalf = Math.floor(rowLen / 2);
 
-  for (let y = 0; y < rowHalf; y++) {
-    for (let x = 0; x < colHalf; x++) {
+  for (let y = 0; y < rowHalf; y += 1) {
+    for (let x = 0; x < colHalf; x += 1) {
       const [y1, x1] = [rowLen - x - 1, y];
       const [y2, x2] = [rowLen - y - 1, colLen - x - 1];
       const [y3, x3] = [x, colLen - y - 1];
@@ -25,7 +25,7 @@ function rotate(matrix: number[][]): void {
   }
 }
 
-export default function() {
+export default function () {
   [
     [
       [1, 2, 3],
@@ -38,7 +38,7 @@ export default function() {
       [13, 3, 6, 7],
       [15, 14, 12, 16],
     ],
-  ].forEach(arr => {
+  ].forEach((arr) => {
     rotate(arr);
     console.info(arr);
   });

@@ -14,13 +14,13 @@ export function exchange(nums: number[]): number[] {
       const t = nums[i];
       nums[i] = nums[j];
       nums[j] = t;
-      i++;
-      j--;
-    } else if (iIsOdd) j--;
-    else if (jIsEven) i++;
+      i += 1;
+      j -= 1;
+    } else if (iIsOdd) j -= 1;
+    else if (jIsEven) i += 1;
     else {
-      i++;
-      j--;
+      i += 1;
+      j -= 1;
     }
   }
   return nums;

@@ -6,10 +6,10 @@
 function merge(a: number[], m: number, b: number[], n: number) {
   let i = 0;
   let right = m;
-  for (let j = 0; j < n; j++) {
-    for (; i < a.length; i++) {
+  for (let j = 0; j < n; j += 1) {
+    for (; i < a.length; i += 1) {
       if (b[j] < a[i] || i === right) {
-        right++;
+        right += 1;
         a.splice(i, 0, b[j]);
         a.pop();
         break;

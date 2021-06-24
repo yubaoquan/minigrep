@@ -12,11 +12,11 @@ function groupAnagrams(strs: string[]): string[][] {
     else rec[key] = [str];
   }
 
-  strs.forEach(str => check(record, str));
+  strs.forEach((str) => check(record, str));
   return Object.values(record);
 }
 
-export default function() {
+export default function () {
   const ret = groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
   console.info(ret);
 }

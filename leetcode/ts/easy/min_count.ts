@@ -5,7 +5,7 @@
 
 function minCount(coins: number[]): number {
   return coins
-    .map(num => Math.ceil(num / 2))
+    .map((num) => Math.ceil(num / 2))
     .reduce((ret, item) => ret + item, 0);
 }
 

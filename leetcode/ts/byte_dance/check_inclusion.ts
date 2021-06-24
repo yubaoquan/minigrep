@@ -5,7 +5,7 @@ function checkInclusion(s1: string, s2: string): boolean {
   if (s2.length < s1.length) return false;
   const sortedS1 = s1.split('').sort().join('');
 
-  for (let i = 0; i <= s2.length - s1.length; i++) {
+  for (let i = 0; i <= s2.length - s1.length; i += 1) {
     const sortedSubStr = s2.slice(i, i + s1.length).split('').sort().join('');
     if (sortedS1 === sortedSubStr) return true;
   }

@@ -32,7 +32,7 @@ function fractionToDecimal(numerator: number, denominator: number): string {
 
 type Case = [number, number, string];
 
-export default function() {
+export default function () {
   ([
     [-50, 8, '-6.25'],
     [4, 333, '0.(012)'],

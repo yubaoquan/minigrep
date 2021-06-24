@@ -44,9 +44,9 @@ function canVisitAllRooms(rooms: number[][]): boolean {
 
   while (q.length) {
     const len = q.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len; i += 1) {
       const room: number[] = q.shift()!;
-      room.forEach(key => {
+      room.forEach((key) => {
         if (visited[key]) return;
         q.push(rooms[key]);
         visited[key] = true;
@@ -57,7 +57,7 @@ function canVisitAllRooms(rooms: number[][]): boolean {
   return Object.keys(visited).length === rooms.length;
 }
 
-export default function() {
+export default function () {
   const ret = [
     [[1], [2], [3], []],
     [[1, 3], [3, 0, 1], [2], [0]],

@@ -27,7 +27,7 @@ function numIslands(grid: string[][]): number {
 
   /** 检查周围一圈是否是水 */
   function checkRound(t: number, queue: number[]) {
-    for (let k = 0; k < 4; k++) {
+    for (let k = 0; k < 4; k += 1) {
       const x = Math.floor(t / n) + dirX[k];
       const y = (t % n) + dirY[k];
       if (isWaterOrVisited(x, y)) continue;
@@ -53,7 +53,7 @@ function numIslands(grid: string[][]): number {
   return res;
 }
 
-export default function() {
+export default function () {
   const case0 = [
     ['1', '1', '1', '1', '0'],
     ['1', '1', '0', '1', '0'],

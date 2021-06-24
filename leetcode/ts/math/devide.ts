@@ -31,7 +31,7 @@ function divide(dividend: number, divisor: number): number {
 
 type Case = [number, number, number];
 
-export default function() {
+export default function () {
   ([
     [-2147483648, -1, 2147483647],
     [10, 3, 3],

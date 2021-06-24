@@ -2,14 +2,14 @@
 // https://leetcode-cn.com/explore/interview/card/bytedance/242/string/1012/
 function lengthOfLongestSubstring(s: string): number {
   let ret = 0;
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i += 1) {
     let dupLength = 1;
     const memo: Record<string, boolean> = {};
     memo[s[i]] = true;
 
-    for (let j = i + 1; j < s.length; j++) {
+    for (let j = i + 1; j < s.length; j += 1) {
       if (memo[s[j]]) break;
-      dupLength++;
+      dupLength += 1;
       memo[s[j]] = true;
     }
     ret = ret > dupLength ? ret : dupLength;

@@ -9,13 +9,13 @@ export function maximalSquare(matrix: string[][]): number {
   const dp: number[][] = Array(n).fill(0).map(() => Array(m).fill(0));
   let max = 0;
 
-  for (let i = 0; i < n; i++) { // 初始化
+  for (let i = 0; i < n; i += 1) { // 初始化
     if (matrix[i][0] === '1') {
       dp[i][0] = 1;
       max = Math.max(max, 1);
     }
   }
-  for (let j = 0; j < m; j++) { // 初始化
+  for (let j = 0; j < m; j += 1) { // 初始化
     if (matrix[0][j] === '1') {
       dp[0][j] = 1;
       max = Math.max(max, 1);
@@ -23,8 +23,8 @@ export function maximalSquare(matrix: string[][]): number {
   }
 
   // 因为第一行和第一列已经初始化了 所以从 i = 1 和 j = 1 处开始遍历
-  for (let i = 1; i < n; i++) {
-    for (let j = 1; j < m; j++) {
+  for (let i = 1; i < n; i += 1) {
+    for (let j = 1; j < m; j += 1) {
       if (matrix[i][j] === '1') {
         dp[i][j] = Math.min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]) + 1;
         max = Math.max(dp[i][j], max);

@@ -6,11 +6,11 @@
 
 function reverseBits(num: number): number {
   const strArr = (num >>> 0).toString(2).split('0');
-  const oneList: string[] = strArr.filter(s => !!s);
+  const oneList: string[] = strArr.filter((s) => !!s);
   oneList.sort((s1, s2) => s2.length - s1.length);
   let changed = false;
 
-  for (let i = 1; i < strArr.length; i++) {
+  for (let i = 1; i < strArr.length; i += 1) {
     if (strArr[i - 1] && strArr[i]) {
       const combinedStr = `${strArr[i - 1]}1${strArr[i]}`;
       if (combinedStr.length > oneList[0].length) {

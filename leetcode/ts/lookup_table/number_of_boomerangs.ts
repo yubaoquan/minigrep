@@ -14,18 +14,18 @@ function numberOfBoomerangs(points: number[][]): number {
     return memo[key];
   }
 
-  for (let i = 0; i < points.length - 1; i++) {
-    for (let j = i + 1; j < points.length; j++) {
+  for (let i = 0; i < points.length - 1; i += 1) {
+    for (let j = i + 1; j < points.length; j += 1) {
       const distance = getDistance(points[i], points[j]);
       distances[`${i}-${j}`] = distance;
       distances[`${j}-${i}`] = distance;
     }
   }
 
-  for (let i = 0; i < points.length; i++) {
+  for (let i = 0; i < points.length; i += 1) {
     const distancesFromI: Record<string, number> = {};
 
-    for (let j = 0; j < points.length; j++) {
+    for (let j = 0; j < points.length; j += 1) {
       if (i === j) continue;
 
       const distance = distances[`${i}-${j}`];

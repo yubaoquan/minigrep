@@ -11,7 +11,7 @@ function compressString(s: string): string {
   let count = 1;
   while (arr.length) {
     const char = arr.shift();
-    if (currentChar === char) count++;
+    if (currentChar === char) count += 1;
     else {
       ret += `${currentChar}${count}`;
       currentChar = char!;

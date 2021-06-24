@@ -1,7 +1,7 @@
 export default class ListNode {
   static getNodes(vals: number[]) {
-    const nodes = vals.map(t => new ListNode(t));
-    for (let i = 0; i < nodes.length - 1; i++) {
+    const nodes = vals.map((t) => new ListNode(t));
+    for (let i = 0; i < nodes.length - 1; i += 1) {
       nodes[i].next = nodes[i + 1];
     }
     return nodes;

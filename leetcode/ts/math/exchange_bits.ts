@@ -27,7 +27,7 @@ export function exchangeBits2(num: number): number {
   str = str.length % 2 === 0 ? str : `0${str}`;
   let ret = 0;
   let isEven = true;
-  for (let i = 0; i < str.length; i++) {
+  for (let i = 0; i < str.length; i += 1) {
     const index = isEven ? i + 1 : i - 1;
     if (str[index] === '1') ret += 2 ** (str.length - i - 1);
     isEven = !isEven;

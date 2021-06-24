@@ -10,7 +10,7 @@ function generateParenthesis(n: number): string[] {
 
   while (ret[0].length < finalLength) {
     const cur = ret.shift()!;
-    for (let i = 0; i <= cur.length; i++) {
+    for (let i = 0; i <= cur.length; i += 1) {
       const newItem = `${cur.slice(0, i)}()${cur.slice(i)}`;
       if (memo[newItem]) continue;
       memo[newItem] = true;
@@ -21,7 +21,7 @@ function generateParenthesis(n: number): string[] {
   return ret;
 }
 
-export default function() {
+export default function () {
   const expect = [
     '((()))',
     '(()())',

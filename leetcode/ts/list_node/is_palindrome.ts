@@ -16,7 +16,7 @@ export function isPalindrome(head: ListNode | null): boolean {
   }
 
   node = head;
-  for (let i = 0; i < stack.length; i++) {
+  for (let i = 0; i < stack.length; i += 1) {
     if (stack[i].val !== node!.val) return false;
     node = node!.next;
   }

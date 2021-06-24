@@ -3,7 +3,7 @@ function lengthOfLIS(nums: number[]): number {
   const dp: number[] = Array(nums.length).fill(1);
 
   nums.forEach((t, i) => {
-    for (let j = 0; j < i; j++) {
+    for (let j = 0; j < i; j += 1) {
       if (nums[j] < t) dp[i] = Math.max(dp[i], dp[j] + 1);
     }
   });
@@ -13,7 +13,7 @@ function lengthOfLIS(nums: number[]): number {
 
 type Case = [number[], number];
 
-export default function() {
+export default function () {
   ([
     [[10, 9, 2, 5, 3, 7, 101, 18], 4],
     [[5, 1, 5, 5, 2, 5, 4], 3],

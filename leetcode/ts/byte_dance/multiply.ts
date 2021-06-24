@@ -7,8 +7,8 @@ function multiply(num1: string, num2: string): string {
   const ret: number[] = Array(len1 + len2 + 1).fill(0);
   let lastSumInc = 0;
 
-  for (let i = 0; i < len1; i++) {
-    for (let j = 0; j < len2; j++) {
+  for (let i = 0; i < len1; i += 1) {
+    for (let j = 0; j < len2; j += 1) {
       const a = +num1[len1 - i - 1];
       const b = +num2[len2 - j - 1];
       let temp = (a * b) + '0'.repeat(i + j);
@@ -17,7 +17,7 @@ function multiply(num1: string, num2: string): string {
       if (temp.length < ret.length) temp = '0'.repeat(ret.length - temp.length) + temp;
 
       lastSumInc = 0;
-      for (let k = temp.length - 1; k >= 0; k--) {
+      for (let k = temp.length - 1; k >= 0; k -= 1) {
         const sum = +temp[k] + ret[k] + lastSumInc;
         ret[k] = sum % 10;
         lastSumInc = sum > 9 ? 1 : 0;

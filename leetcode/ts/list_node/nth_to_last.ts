@@ -10,7 +10,7 @@ export function kthToLast(head: ListNode | null, k: number): number {
   let node1: ListNode = head!;
   let node2: ListNode = head!;
 
-  for (let i = 0; i < k; i++) {
+  for (let i = 0; i < k; i += 1) {
     node2 = node2.next!;
   }
 
@@ -26,7 +26,7 @@ export function getKthFromEnd(head: ListNode | null, k: number): ListNode | null
   let node1: ListNode = head!;
   let node2: ListNode = head!;
 
-  for (let i = 0; i < k; i++) {
+  for (let i = 0; i < k; i += 1) {
     node2 = node2.next!;
   }
 

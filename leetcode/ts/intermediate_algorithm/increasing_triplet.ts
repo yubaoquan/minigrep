@@ -8,8 +8,8 @@ function increasingTriplet(nums: number[]): boolean {
 
   const dp: number[] = Array(nums.length).fill(1);
 
-  for (let i = 0; i < nums.length; i++) {
-    for (let j = 0; j < i; j++) {
+  for (let i = 0; i < nums.length; i += 1) {
+    for (let j = 0; j < i; j += 1) {
       if (nums[j] < nums[i]) dp[i] = Math.max(dp[i], dp[j] + 1);
       if (dp[i] >= 3) return true;
     }
@@ -18,14 +18,14 @@ function increasingTriplet(nums: number[]): boolean {
   return dp[dp.length - 1] >= 3;
 }
 
-export default function() {
+export default function () {
   [
     [1, 2, 3, 1, 2, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     [5, 1, 5, 5, 2, 5, 4],
     [1, 2, 3, 4, 5],
     [5, 4, 3, 2, 1],
-  ].forEach(arr => {
+  ].forEach((arr) => {
     console.info(increasingTriplet(arr));
   });
 }

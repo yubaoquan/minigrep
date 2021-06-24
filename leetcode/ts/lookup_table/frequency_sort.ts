@@ -3,7 +3,7 @@
 
 function frequencySort(s: string): string {
   const map: Record<string, number> = {};
-  for (let i = 0; i < s.length; i++) {
+  for (let i = 0; i < s.length; i += 1) {
     const c = s[i];
     map[c] = map[c] ? map[c] + 1 : 1;
   }
@@ -11,7 +11,7 @@ function frequencySort(s: string): string {
   entries.sort(([, count1], [,count2]) => count2 - count1);
   return entries.reduce((ret, [key, value]) => {
     let r = ret;
-    for (let i = 0; i < value; i++) {
+    for (let i = 0; i < value; i += 1) {
       r += key;
     }
     return r;

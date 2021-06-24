@@ -6,14 +6,14 @@ function permute(nums: number[]): number[][] {
 
   while (ret[0].length < nums.length) {
     const cur = ret.shift()!;
-    nums.forEach(num => {
+    nums.forEach((num) => {
       if (!cur.includes(num)) ret.push([...cur, num]);
     });
   }
   return ret;
 }
 
-export default function() {
+export default function () {
   const ret = permute([1, 2, 3]);
   console.info(ret);
 }

@@ -8,7 +8,7 @@ function maxProfit(prices: number[]): number {
   const dp: Record<number, [number, number]> = {};
   dp[0] = [0, -prices[0]];
 
-  for (let i = 1; i < n; i++) {
+  for (let i = 1; i < n; i += 1) {
     dp[i] = [
       Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i]),
       Math.max(dp[i - 1][1], -prices[i]),
@@ -20,7 +20,7 @@ function maxProfit(prices: number[]): number {
 
 type Case = [number[], number];
 
-export default function() {
+export default function () {
   ([
     [[7, 1, 5, 3, 6, 4], 5],
     [[7, 6, 4, 3, 1], 0],

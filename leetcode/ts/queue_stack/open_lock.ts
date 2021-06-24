@@ -44,6 +44,22 @@
 
  */
 
+/**
+ * 将 s[pos] 向上拨动一次
+ */
+function plusOne(s: string, pos: number) {
+  const num = s[pos] === '9' ? '0' : +s[pos] + 1;
+  return s.slice(0, pos) + num + s.slice(pos + 1);
+}
+
+/**
+ * 将 s[pos] 向下拨动一次
+ */
+function minusOne(s: string, pos: number) {
+  const num = s[pos] === '0' ? '9' : +s[pos] - 1;
+  return s.slice(0, pos) + num + s.slice(pos + 1);
+}
+
 function openLock(deadends: string[], target: string): number {
   const q = [];
   const visited: Record<string, boolean> = {};
@@ -61,11 +77,11 @@ function openLock(deadends: string[], target: string): number {
 
   while (q.length) {
     const len = q.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len; i += 1) {
       const current = q.shift()!;
       if (deadends.includes(current)) continue;
       if (current === target) return step;
-      for (let j = 0; j < 4; j++) {
+      for (let j = 0; j < 4; j += 1) {
         enqueueUnvisited(plusOne(current, j));
         enqueueUnvisited(minusOne(current, j));
       }
@@ -76,25 +92,9 @@ function openLock(deadends: string[], target: string): number {
   return -1;
 }
 
-/**
- * 将 s[pos] 向上拨动一次
- */
-function plusOne(s: string, pos: number) {
-  const num = s[pos] === '9' ? '0' : +s[pos] + 1;
-  return s.slice(0, pos) + num + s.slice(pos + 1);
-}
-
-/**
- * 将 s[pos] 向下拨动一次
- */
-function minusOne(s: string, pos: number) {
-  const num = s[pos] === '0' ? '9' : +s[pos] - 1;
-  return s.slice(0, pos) + num + s.slice(pos + 1);
-}
-
 type Case = [string[], string];
 
-export default function() {
+export default function () {
   ([
     [
       ['0201', '0101', '0102', '1212', '2002'], '0202',

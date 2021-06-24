@@ -23,7 +23,7 @@ function letterCombinations(digits: string): string[] {
 
   while (ret[0].length < digits.length) {
     const curStr = ret.shift();
-    letterMap[+digitsArr[index]].forEach(char => ret.push(curStr + char));
+    letterMap[+digitsArr[index]].forEach((char) => ret.push(curStr + char));
     index = ret[0].length;
   }
 
@@ -32,7 +32,7 @@ function letterCombinations(digits: string): string[] {
 
 type Case = [string, string[]];
 
-export default function() {
+export default function () {
   ([
     ['23', ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']],
   ] as Case[]).forEach(([str, expect]) => {

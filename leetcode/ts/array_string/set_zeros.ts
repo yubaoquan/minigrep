@@ -7,13 +7,13 @@ function setZeroes(matrix: number[][]): void {
   const colsToClean: Record<number, boolean> = {};
   const colCleaned: Record<number, boolean> = {};
 
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[0].length; j++) {
+  for (let i = 0; i < matrix.length; i += 1) {
+    for (let j = 0; j < matrix[0].length; j += 1) {
       if (matrix[i][j] === 0) {
         rowsToClean[i] = true;
         colsToClean[j] = true;
         if (!colCleaned[j]) {
-          for (let k = 0; k < i; k++) matrix[k][j] = 0;
+          for (let k = 0; k < i; k += 1) matrix[k][j] = 0;
           colCleaned[j] = true;
         }
       } else if (colsToClean[j]) {
@@ -24,7 +24,7 @@ function setZeroes(matrix: number[][]): void {
   }
 }
 
-export default function() {
+export default function () {
   [
     [
       [1, 1, 1],
@@ -36,7 +36,7 @@ export default function() {
       [3, 4, 5, 2],
       [1, 3, 1, 5],
     ],
-  ].forEach(item => {
+  ].forEach((item) => {
     setZeroes(item);
     console.info(item);
   });

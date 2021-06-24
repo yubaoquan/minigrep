@@ -39,7 +39,7 @@ function show(node: ListNode | null) {
 }
 
 function genList(arr: number[]): ListNode | null {
-  const nodes = arr.map(n => new ListNode(n));
+  const nodes = arr.map((n) => new ListNode(n));
   nodes.forEach((node, i) => {
     node.next = nodes[i + 1] || null;
   });
@@ -52,7 +52,7 @@ function genList(arr: number[]): ListNode | null {
   [1, 2],
   [1, 2, 3],
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-].forEach(arr => {
+].forEach((arr) => {
   const head = genList(arr);
   const reversed = reverseList(head);
   show(reversed);

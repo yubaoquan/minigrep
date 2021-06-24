@@ -5,14 +5,14 @@
 function missingNumber(nums: number[]): number {
   const len = nums.length;
   let total = (1 + len) * len / 2;
-  for (let i = 0; i < len; i++) total -= nums[i];
+  for (let i = 0; i < len; i += 1) total -= nums[i];
 
   return total;
 }
 
 type Case = [number[], number];
 
-export default function() {
+export default function () {
   ([
     [[3, 0, 1], 2],
     [[9, 6, 4, 2, 3, 5, 7, 0, 1], 8],

@@ -12,7 +12,7 @@ function merge(intervals: number[][]): number[][] {
     return 1;
   });
   ret.push(intervals[0]);
-  for (let i = 1; i < intervals.length; i++) {
+  for (let i = 1; i < intervals.length; i += 1) {
     const a = ret[ret.length - 1];
     const b = intervals[i];
     if (a[0] <= b[0] && a[1] >= b[1]) continue;
@@ -23,13 +23,13 @@ function merge(intervals: number[][]): number[][] {
   return ret;
 }
 
-export default function() {
+export default function () {
   [
     [[2, 3], [5, 5], [2, 2], [3, 4], [3, 4]],
     [[1, 4], [4, 5]],
     [[1, 4], [0, 4]],
     [[1, 4], [2, 3]],
-  ].forEach(item => {
+  ].forEach((item) => {
     console.info(merge(item));
   });
 }

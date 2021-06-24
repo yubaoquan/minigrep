@@ -3,60 +3,9 @@
 
 import { debug } from '../util/debug.ts';
 
-export default function() {
-  const result = solve(
-    'bbyyrybbbryybrbr',
-    'yrbyyrbbrrbrbryr',
-    'rbbrbyyrbrbyrbby',
-  );
-
-  console.info(result);
-
-  // const arr = '1234567890';
-  // for (let i = 0; i < 10; i++) {
-  //   console.info(rotate(arr, i));
-  // }
-}
-
-const rotateOperations = [rotate1, rotate2, rotate3];
-
 type PlateGroup = [string, string, string];
 type RotateHistory = string[];
 type TRecord = [PlateGroup, RotateHistory];
-
-function solve(arr1: string, arr2: string, arr3: string): string[] {
-  const q: TRecord[] = [[[arr1, arr2, arr3], []]];
-  const visited: Record<string, boolean> = {};
-  const displayedHistory: Record<string, boolean> = {};
-  const displayHistory = (id: string) => {
-    displayedHistory[id] = true;
-    console.info(id);
-  };
-
-  let counter = 0;
-
-  while (q.length && counter < 100000) {
-    const [[p1, p2, p3], history] = q.shift()!;
-    if (debug(isDone(p1, p2, p3), false)) return history;
-
-    for (let i = 0; i < rotateOperations.length; i++) {
-      for (let j = 1; j < 16; j++) {
-        const [new1, new2, new3] = rotateOperations[i](p1, p2, p3, j);
-        const id = getId(new1, new2, new3);
-        if (!visited[id]) {
-          visited[id] = true;
-          const historyId = history.join(', ');
-          if (!displayedHistory[historyId]) displayHistory(historyId);
-          q.push([[new1, new2, new3], [...history, `${i}-${j}`]]);
-        }
-      }
-    }
-
-    counter += 1;
-  }
-
-  return [];
-}
 
 const rotateRecords: Record<string, string> = {};
 
@@ -69,10 +18,10 @@ function rotate(str: string, time = 1) {
   const timeNeed = time % arr.length;
   const ret: string[] = [];
 
-  for (let i = timeNeed; i < arr.length; i++) {
+  for (let i = timeNeed; i < arr.length; i += 1) {
     ret.push(arr[i]);
   }
-  for (let i = 0; i < timeNeed; i++) {
+  for (let i = 0; i < timeNeed; i += 1) {
     ret.push(arr[i]);
   }
 
@@ -121,6 +70,8 @@ function rotate3(str1: string, str2: string, str3: string, time: number) {
   return [str1, array.join(''), str];
 }
 
+const rotateOperations = [rotate1, rotate2, rotate3];
+
 // 转盘的颜色全部对齐
 function isDone(str1: string, str2: string, str3: string): boolean {
   const arr1Done = str1 === 'rrrrrrrrrrrrrrrr';
@@ -132,4 +83,53 @@ function isDone(str1: string, str2: string, str3: string): boolean {
 
 function getId(str1: string, str2: string, str3: string): string {
   return `${str1}-${str2}-${str3}`;
+}
+
+function solve(arr1: string, arr2: string, arr3: string): string[] {
+  const q: TRecord[] = [[[arr1, arr2, arr3], []]];
+  const visited: Record<string, boolean> = {};
+  const displayedHistory: Record<string, boolean> = {};
+  const displayHistory = (id: string) => {
+    displayedHistory[id] = true;
+    console.info(id);
+  };
+
+  let counter = 0;
+
+  while (q.length && counter < 100000) {
+    const [[p1, p2, p3], history] = q.shift()!;
+    if (debug(isDone(p1, p2, p3), false)) return history;
+
+    for (let i = 0; i < rotateOperations.length; i += 1) {
+      for (let j = 1; j < 16; j += 1) {
+        const [new1, new2, new3] = rotateOperations[i](p1, p2, p3, j);
+        const id = getId(new1, new2, new3);
+        if (!visited[id]) {
+          visited[id] = true;
+          const historyId = history.join(', ');
+          if (!displayedHistory[historyId]) displayHistory(historyId);
+          q.push([[new1, new2, new3], [...history, `${i}-${j}`]]);
+        }
+      }
+    }
+
+    counter += 1;
+  }
+
+  return [];
+}
+
+export default function () {
+  const result = solve(
+    'bbyyrybbbryybrbr',
+    'yrbyyrbbrrbrbryr',
+    'rbbrbyyrbrbyrbby',
+  );
+
+  console.info(result);
+
+  // const arr = '1234567890';
+  // for (let i = 0; i < 10; i+=1) {
+  //   console.info(rotate(arr, i));
+  // }
 }

@@ -11,20 +11,20 @@ export function spiralOrder(matrix: number[][]): number[] {
   let b = matrix.length - 1;
   const ret: number[] = [];
   while (true) {
-    for (let i = l; i <= r; i++) ret.push(matrix[t][i]);
-    t++;
+    for (let i = l; i <= r; i += 1) ret.push(matrix[t][i]);
+    t += 1;
     if (t > b) break;
 
-    for (let i = t; i <= b; i++) ret.push(matrix[i][r]);
-    r--;
+    for (let i = t; i <= b; i += 1) ret.push(matrix[i][r]);
+    r -= 1;
     if (l > r) break;
 
-    for (let i = r; i >= l; i--) ret.push(matrix[b][i]);
-    b--;
+    for (let i = r; i >= l; i -= 1) ret.push(matrix[b][i]);
+    b -= 1;
     if (t > b) break;
 
-    for (let i = b; i >= t; i--) ret.push(matrix[i][l]);
-    l++;
+    for (let i = b; i >= t; i -= 1) ret.push(matrix[i][l]);
+    l += 1;
     if (l > r) break;
   }
   return ret;

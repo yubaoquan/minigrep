@@ -3,7 +3,7 @@
 
 function topKFrequent(nums: number[], k: number): number[] {
   const memo: Record<string, number> = {};
-  nums.forEach(t => {
+  nums.forEach((t) => {
     memo[t] = memo[t] ? memo[t] + 1 : 1;
   });
 
@@ -18,10 +18,10 @@ type Case = [number[], number, number[]];
 
 function arrEq(a: number[], b: number[]): boolean {
   if (a.length !== b.length) return false;
-  return a.every(t => b.includes(t));
+  return a.every((t) => b.includes(t));
 }
 
-export default function() {
+export default function () {
   ([
     [[1, 1, 1, 2, 2, 3], 2, [1, 2]],
     [[1], 1, [1]],

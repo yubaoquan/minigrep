@@ -2,7 +2,7 @@ function isHappy(n: number): boolean {
   const powSum = (num: number): number => num
     .toString()
     .split('')
-    .map(item => +item)
+    .map((item) => +item)
     .reduce((sum, cur) => sum + (cur * cur), 0);
 
   let temp = powSum(n);
@@ -19,7 +19,7 @@ function isHappy(n: number): boolean {
 
 type Case = [number, boolean];
 
-export default function() {
+export default function () {
   ([
     [19, true],
   ] as Case[]).forEach(([n, expect]) => {

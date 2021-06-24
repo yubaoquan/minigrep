@@ -4,14 +4,14 @@
  */
 
 function searchInsert(nums: number[], target: number): number {
-  for (let i = 0; i < nums.length; i++) if (nums[i] >= target) return i;
+  for (let i = 0; i < nums.length; i += 1) if (nums[i] >= target) return i;
 
   return nums.length;
 }
 
 type Case = [number[], number];
 
-export default function() {
+export default function () {
   ([
     [[1, 3, 5, 6], 5],
     [[1, 3, 5, 6], 2],

@@ -5,8 +5,8 @@
 function minimumTotal(triangle: number[][]): number {
   const n = triangle.length;
   const dp = Array(n + 1).fill(0);
-  for (let i = n - 1; i >= 0; i--) {
-    for (let j = 0; j <= i; j++) {
+  for (let i = n - 1; i >= 0; i -= 1) {
+    for (let j = 0; j <= i; j += 1) {
       dp[j] = Math.min(dp[j], dp[j + 1]) + triangle[i][j];
     }
   }

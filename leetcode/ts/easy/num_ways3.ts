@@ -13,7 +13,7 @@ export function waysToStep(n: number): number {
   let d = a + b + c;
   const max = 1000000007;
 
-  for (let i = 4; i < n; i++) {
+  for (let i = 4; i < n; i += 1) {
     a = b;
     b = c;
     c = d;

@@ -4,7 +4,7 @@
 function simplifyPath(path: string): string {
   let ret = path
     .replace(/\.\.\./g, '%%%')
-    .replace(/\.+\w/, match => match.replace(/\./g, '%'));
+    .replace(/\.+\w/, (match) => match.replace(/\./g, '%'));
 
   const regAndReplace: [RegExp, string][] = [
     [/^\/\.\.\//g, '/'],
@@ -31,13 +31,13 @@ function simplifyPath(path: string): string {
     }
     if (parts[i] !== '..' && parts[i + 1] === '..') {
       parts.splice(i, 2);
-      if (i > 0) i--;
+      if (i > 0) i -= 1;
       continue;
     }
-    i++;
+    i += 1;
   }
 
-  return `/${parts.filter(part => part !== '.').join('/')}`.replace(/%/g, '.');
+  return `/${parts.filter((part) => part !== '.').join('/')}`.replace(/%/g, '.');
 }
 
 export type Case = [string, string];

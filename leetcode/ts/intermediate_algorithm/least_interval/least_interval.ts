@@ -11,19 +11,21 @@ function leastInterval(tasks: string[], n: number): number {
   const codeOfZ = codeOfA + 25;
   const offsetsOfChar: Record<string, number> = {}; // { A: 0, B: 1,..., Z: 25 }
 
-  for (let chraCode = codeOfA; chraCode <= codeOfZ; chraCode++) {
+  for (let chraCode = codeOfA; chraCode <= codeOfZ; chraCode += 1) {
     offsetsOfChar[String.fromCharCode(chraCode)] = chraCode - codeOfA;
   }
 
-  tasks.forEach(char => map[offsetsOfChar[char]]++);
+  tasks.forEach((char) => {
+    map[offsetsOfChar[char]] += 1;
+  });
   map.sort((a, b) => a - b);
 
   let time = 0;
   while (map[25] > 0) {
-    for (let i = 0; i <= n; i++) {
+    for (let i = 0; i <= n; i += 1) {
       if (!map[25]) break; // 全部执行完了
-      if (i < 26 && map[25 - i] > 0) map[25 - i]--;
-      time++;
+      if (i < 26 && map[25 - i] > 0) map[25 - i] -= 1;
+      time += 1;
     }
     map.sort((a, b) => a - b);
   }

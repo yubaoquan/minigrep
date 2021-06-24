@@ -29,10 +29,10 @@ function numSquares(n: number): number {
 
   while (q.length) {
     const len = q.length;
-    for (let i = 0; i < len; i++) {
+    for (let i = 0; i < len; i += 1) {
       const cur = q.shift()!;
       const start = Math.floor(Math.sqrt(cur));
-      for (let j = start; j > 0; j--) {
+      for (let j = start; j > 0; j -= 1) {
         if (cur === square(j)) return res;
         q.push(cur - square(j));
       }
@@ -42,8 +42,8 @@ function numSquares(n: number): number {
   return res;
 }
 
-export default function() {
-  [12, 13].forEach(num => {
+export default function () {
+  [12, 13].forEach((num) => {
     console.info(numSquares(num));
   });
 }
