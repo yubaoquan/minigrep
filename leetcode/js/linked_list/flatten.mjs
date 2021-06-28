@@ -10,7 +10,7 @@ function Node(val, prev, next, child) {
   this.child = child;
 }
 
-Node.prototype.display = function() {
+Node.prototype.display = function display() {
   let current = this;
   const arr = [];
   while (current && current.next) {
@@ -24,6 +24,13 @@ Node.prototype.display = function() {
 };
 
 let count = 0;
+
+function getListTail(head) {
+  let node = head;
+  while (node && node.next) node = node.next;
+
+  return node;
+}
 
 function flatten(head) {
   let node = head;
@@ -55,13 +62,6 @@ function flatten(head) {
   return head;
 }
 
-function getListTail(head) {
-  let node = head;
-  while (node && node.next) node = node.next;
-
-  return node;
-}
-
 function linkNodes(a, b) {
   a.next = b;
   b.prev = a;
@@ -71,7 +71,7 @@ function setChild(a, b) {
   a.child = b;
 }
 
-export default function() {
+export default () => {
   const nodes = new Array(13).fill(null).map((t, i) => new Node(i));
   linkNodes(nodes[1], nodes[2]);
   linkNodes(nodes[2], nodes[3]);
@@ -87,4 +87,4 @@ export default function() {
 
   const res = flatten(nodes[1]);
   res.display();
-}
+};
