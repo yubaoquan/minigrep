@@ -21,7 +21,7 @@ function generateParenthesis(n: number): string[] {
   return ret;
 }
 
-export default function () {
+export default () => {
   const expect = [
     '((()))',
     '(()())',
@@ -31,4 +31,4 @@ export default function () {
   ];
 
   console.info(arrEqIgnoreOrder(generateParenthesis(3), expect));
-}
+};

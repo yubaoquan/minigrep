@@ -25,7 +25,7 @@ function findKthLargest(nums: number[], k: number): number {
 
 type Case = [number[], number, number];
 
-export default function () {
+export default () => {
   ([
     [[-1, -1], 2, -1],
     [[3, 2, 3, 1, 2, 4, 5, 5, 6], 4, 4],
@@ -34,4 +34,4 @@ export default function () {
     const ret = findKthLargest(nums, k);
     console.info(expect, ret, expect === ret);
   });
-}
+};

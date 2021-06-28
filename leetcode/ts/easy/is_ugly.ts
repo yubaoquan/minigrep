@@ -3,7 +3,8 @@
  * https://leetcode-cn.com/problems/ugly-number/
  */
 
-function isUgly(n: number): boolean {
+function isUgly(input: number): boolean {
+  let n = input;
   if (!n) return false;
   if (n === 1) return true;
   while (n % 2 === 0) n /= 2;

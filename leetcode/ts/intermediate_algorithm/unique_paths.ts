@@ -13,7 +13,7 @@ function uniquePaths(mm: number, nn: number): number {
   return check(mm, nn);
 }
 
-export default function () {
+export default () => {
   const ret = uniquePaths(7, 3);
   console.info(ret === 28);
-}
+};

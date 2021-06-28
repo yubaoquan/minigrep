@@ -57,11 +57,11 @@ function canVisitAllRooms(rooms: number[][]): boolean {
   return Object.keys(visited).length === rooms.length;
 }
 
-export default function () {
+export default () => {
   const ret = [
     [[1], [2], [3], []],
     [[1, 3], [3, 0, 1], [2], [0]],
   ].map(canVisitAllRooms);
 
   console.info(ret);
-}
+};

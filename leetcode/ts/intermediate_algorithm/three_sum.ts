@@ -43,7 +43,7 @@ function threeSum(nums: number[]): number[][] {
   return nSum(nums, 3, 0, 0);
 }
 
-export default function () {
+export default () => {
   const ret = threeSum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]);
   console.info(ret);
-}
+};

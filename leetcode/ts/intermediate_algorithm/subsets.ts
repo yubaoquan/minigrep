@@ -32,10 +32,10 @@ function subsets(nums: number[]): number[][] {
   return ret;
 }
 
-export default function () {
+export default () => {
   const ret1 = subsets([1, 9, 8, 3, -1, 0]);
   console.info(ret1);
   console.info(ret1.length);
   console.info(subsets([3, 2, 4, 1]));
   console.info(subsets([1, 2, 3]));
-}
+};

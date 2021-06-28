@@ -43,7 +43,7 @@ function searchRange(nums: number[], target: number): number[] {
 
 type Case = [number[], number, number[]];
 
-export default function () {
+export default () => {
   ([
     [[0, 0, 1, 2, 2], 2, [3, 4]],
     [[5, 7, 7, 8, 8, 10], 8, [3, 4]],
@@ -62,4 +62,4 @@ export default function () {
     console.info(correct);
     if (!correct) console.info(ret);
   });
-}
+};

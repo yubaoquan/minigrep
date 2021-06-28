@@ -15,7 +15,7 @@ function massage(nums: number[]): number {
 
 type Case = [number[], number];
 
-export default function () {
+export default () => {
   ([
     [[1, 2, 3, 1], 4],
     [[2, 7, 9, 3, 1], 12],
@@ -24,4 +24,4 @@ export default function () {
     const ret = massage(arr);
     console.info(expect === ret);
   });
-}
+};

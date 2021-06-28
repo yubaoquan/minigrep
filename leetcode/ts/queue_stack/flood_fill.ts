@@ -61,7 +61,7 @@ function floodFill(image: number[][], sr: number, sc: number, newColor: number):
   return image;
 }
 
-export default function () {
+export default () => {
   const ret = floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2);
   console.info(ret);
-}
+};

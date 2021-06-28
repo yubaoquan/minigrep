@@ -73,7 +73,7 @@ function add(a: number, b: number): number {
 
 type Case = number[];
 
-export default function () {
+export default () => {
   function show(a: number, b: number, expect: number, result: number) {
     if (expect !== result) {
       console.info('wrong');
@@ -106,4 +106,4 @@ export default function () {
     const result = add(a, b);
     show(a, b, expect, result);
   });
-}
+};

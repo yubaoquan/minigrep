@@ -71,7 +71,7 @@ function updateMatrix(matrix: number[][]): number[][] {
   return ret;
 }
 
-export default function () {
+export default () => {
   [
     [
       [0, 0, 0],
@@ -87,4 +87,4 @@ export default function () {
     const ret = updateMatrix(matrix);
     console.info(ret);
   });
-}
+};

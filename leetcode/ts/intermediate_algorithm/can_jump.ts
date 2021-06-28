@@ -16,7 +16,7 @@ function canJump(nums: number[]): boolean {
 
 type Case = [number[], boolean];
 
-export default function () {
+export default () => {
   ([
     [[2, 3, 1, 1, 4], true],
     [[3, 2, 1, 0, 4], false],
@@ -24,4 +24,4 @@ export default function () {
     const actual = canJump(arr);
     console.info(expect, actual);
   });
-}
+};

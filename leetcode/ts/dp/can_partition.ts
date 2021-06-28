@@ -21,7 +21,7 @@ function canPartition(nums: number[]): boolean {
 
 type Case = [number[], boolean];
 
-export default function () {
+export default () => {
   ([
     [[1, 5, 11, 5], true],
     [[1, 2, 3, 5], false],
@@ -29,4 +29,4 @@ export default function () {
     const ret = canPartition(nums);
     console.info(ret === expect);
   });
-}
+};

@@ -18,19 +18,7 @@ empty() -- 返回栈是否为空
 
 // https://leetcode-cn.com/problems/bao-han-minhan-shu-de-zhan-lcof/comments/259777
 
-class Node {
-  val: number;
-
-  min: number;
-
-  next: Node | null;
-
-  constructor(val: number, min: number, next: Node | null) {
-    this.val = val;
-    this.min = min;
-    this.next = next;
-  }
-}
+import Node from './node.ts';
 
 class MyStack {
   head: Node|null = null;
@@ -58,7 +46,7 @@ class MyStack {
   }
 }
 
-export default function () {
+export default () => {
   const obj = new MyStack();
   obj.push(1);
-}
+};

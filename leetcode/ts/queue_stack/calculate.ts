@@ -61,7 +61,7 @@ function calculate(s: string): number {
 
 type Case = [string, number];
 
-export default function () {
+export default () => {
   ([
     ['14-3/2', 13],
     ['3/2', 1],
@@ -74,4 +74,4 @@ export default function () {
     const actual = calculate(expr);
     console.info(expect, actual, expect === actual);
   });
-}
+};

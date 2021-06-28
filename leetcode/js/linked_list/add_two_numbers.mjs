@@ -1,4 +1,5 @@
-const { makeList } = require('./util.js.js');
+// @ts-nocheck
+import { makeList } from './util.mjs';
 
 function addTwoNumbers(a, b) {
   let l1 = a;
@@ -7,7 +8,7 @@ function addTwoNumbers(a, b) {
   let node = result;
   let inc = 0; // 进位
 
-  while (true) {
+  while (l1 || l2 || inc) {
     let sum = inc;
 
     if (l1) {
@@ -26,14 +27,19 @@ function addTwoNumbers(a, b) {
     if (l1 || l2 || inc) {
       node.next = { val: 0 };
       node = node.next;
-    } else return result;
+    }
   }
+  return result;
 }
 
-module.exports = function() {
+function foo() {
   const a = makeList([5]);
   const b = makeList([5]);
 
   const result = addTwoNumbers(a, b);
   console.info(result);
-};
+}
+
+export default foo;
+
+foo();

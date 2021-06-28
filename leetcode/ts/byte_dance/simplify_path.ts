@@ -25,16 +25,13 @@ function simplifyPath(path: string): string {
   const parts = ret.split('/');
 
   for (let i = 0; i < parts.length;) {
-    if (parts[i] === '..' && i === 0) {
-      parts.shift();
-      continue;
-    }
-    if (parts[i] !== '..' && parts[i + 1] === '..') {
+    while (parts[0] === '..') parts.shift();
+    if (parts[i + 1] === '..') {
       parts.splice(i, 2);
-      if (i > 0) i -= 1;
-      continue;
+      i = Math.max(0, i - 1);
+    } else {
+      i += 1;
     }
-    i += 1;
   }
 
   return `/${parts.filter((part) => part !== '.').join('/')}`.replace(/%/g, '.');
@@ -42,6 +39,7 @@ function simplifyPath(path: string): string {
 
 export type Case = [string, string];
 
+let pass = true;
 ([
   ['/home/of/foo/../../bar/../../is/./here/.', '/is/here'],
   ['/home/../../..', '/'],
@@ -57,8 +55,15 @@ export type Case = [string, string];
   ['/a//b////c/d//././/..', '/a/b/c'],
 ] as Case[]).forEach(([str, expect]) => {
   const actual = simplifyPath(str);
-  console.info(expect);
-  console.info(actual);
-  console.info(expect === actual);
-  console.info('===========================');
+
+  // console.info(expect === actual);
+  // console.info('===========================');
+  if (expect !== actual) {
+    pass = false;
+    console.info(str);
+    console.info(expect);
+    console.info(actual);
+  }
 });
+
+console.info(pass);

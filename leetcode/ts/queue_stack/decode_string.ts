@@ -75,7 +75,7 @@ function decodeString(s: string): string {
 
 type Case = [string, string];
 
-export default function () {
+export default () => {
   ([
     [
       '3[z]2[2[y]pq4[2[jk]e1[f]]]ef',
@@ -91,4 +91,4 @@ export default function () {
     // console.info(result);
     console.info(result === expect);
   });
-}
+};

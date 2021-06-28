@@ -29,7 +29,8 @@ export function reverseList(head: ListNode | null): ListNode | null {
   return cur;
 }
 
-function show(node: ListNode | null) {
+function show(inputNode: ListNode | null) {
+  let node = inputNode;
   const ret: number[] = [];
   while (node) {
     ret.push(node.val);

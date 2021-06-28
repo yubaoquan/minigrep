@@ -11,7 +11,7 @@ function searchInsert(nums: number[], target: number): number {
 
 type Case = [number[], number];
 
-export default function () {
+export default () => {
   ([
     [[1, 3, 5, 6], 5],
     [[1, 3, 5, 6], 2],
@@ -21,4 +21,4 @@ export default function () {
     const ret = searchInsert(arr, num);
     console.info(ret);
   });
-}
+};

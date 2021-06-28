@@ -10,7 +10,10 @@ export function spiralOrder(matrix: number[][]): number[] {
   let t = 0;
   let b = matrix.length - 1;
   const ret: number[] = [];
-  while (true) {
+
+  const shouldBreak = () => (t > b) || (l > r) || (t > b) || (l > r);
+
+  while (!shouldBreak()) {
     for (let i = l; i <= r; i += 1) ret.push(matrix[t][i]);
     t += 1;
     if (t > b) break;

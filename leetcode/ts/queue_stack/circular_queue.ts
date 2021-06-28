@@ -92,7 +92,7 @@ class MyCircularQueue {
 * Your MyCircularQueue object will be instantiated and called as such:
 */
 
-export default function () {
+export default () => {
   const obj = new MyCircularQueue(3);
 
   const arr = [
@@ -108,4 +108,4 @@ export default function () {
   ];
 
   console.info(arr);
-}
+};

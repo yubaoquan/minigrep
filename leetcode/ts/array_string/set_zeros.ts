@@ -24,7 +24,7 @@ function setZeroes(matrix: number[][]): void {
   }
 }
 
-export default function () {
+export default () => {
   [
     [
       [1, 1, 1],
@@ -40,4 +40,4 @@ export default function () {
     setZeroes(item);
     console.info(item);
   });
-}
+};

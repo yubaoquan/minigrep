@@ -29,7 +29,7 @@ function dailyTemperatures(temperatures: number[]): number[] {
   return res;
 }
 
-export default function () {
+export default () => {
   const res = dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]);
   console.info(res);
-}
+};

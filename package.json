@@ -5,7 +5,7 @@
   "main": "app.mjs",
   "scripts": {
     "a": "node app.mjs",
-    "lint": "eslint leetcode/ts/** --fix"
+    "lint": "eslint leetcode/ts/** --fix --ignore-pattern lint_test.ts"
   },
   "repository": {
     "type": "git",

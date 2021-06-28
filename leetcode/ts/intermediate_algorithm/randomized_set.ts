@@ -27,7 +27,7 @@ class RandomizedSet {
   }
 }
 
-export default function () {
+export default () => {
   const set = new RandomizedSet();
 
   [
@@ -39,4 +39,4 @@ export default function () {
     set.insert(2),
     set.getRandom(),
   ].forEach((ret) => console.info(ret));
-}
+};

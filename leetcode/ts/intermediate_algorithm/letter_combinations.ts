@@ -32,11 +32,11 @@ function letterCombinations(digits: string): string[] {
 
 type Case = [string, string[]];
 
-export default function () {
+export default () => {
   ([
     ['23', ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']],
   ] as Case[]).forEach(([str, expect]) => {
     const ret = letterCombinations(str);
     console.info(arrEqIgnoreOrder(ret, expect));
   });
-}
+};

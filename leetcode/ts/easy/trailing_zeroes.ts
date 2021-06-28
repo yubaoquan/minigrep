@@ -4,7 +4,8 @@
  * https://leetcode-cn.com/problems/factorial-zeros-lcci/solution/zhai-zi-ping-lun-qu-suan-tou-wang-bazuo-zhe-de-dai/
  */
 
-export function trailingZeroes(n: number): number {
+export function trailingZeroes(input: number): number {
+  let n = input;
   let count = 0;
   while (n >= 5) {
     n = Math.floor(n / 5);

@@ -19,11 +19,11 @@ function isHappy(n: number): boolean {
 
 type Case = [number, boolean];
 
-export default function () {
+export default () => {
   ([
     [19, true],
   ] as Case[]).forEach(([n, expect]) => {
     const ret = isHappy(n);
     console.info(n, expect, ret);
   });
-}
+};

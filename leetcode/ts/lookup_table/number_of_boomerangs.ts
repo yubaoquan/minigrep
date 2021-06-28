@@ -22,21 +22,21 @@ function numberOfBoomerangs(points: number[][]): number {
     }
   }
 
-  for (let i = 0; i < points.length; i += 1) {
+  points.forEach((p1, i) => {
     const distancesFromI: Record<string, number> = {};
 
-    for (let j = 0; j < points.length; j += 1) {
-      if (i === j) continue;
+    points.forEach((p2, j) => {
+      if (i === j) return;
 
       const distance = distances[`${i}-${j}`];
       const distanceRecordNum = distancesFromI[distance];
       distancesFromI[distance] = distanceRecordNum ? distanceRecordNum + 1 : 1;
-    }
+    });
 
     Object.entries(distancesFromI).forEach(([, value]) => {
       if (value > 1) ret += value * (value - 1);
     });
-  }
+  });
 
   return ret;
 }

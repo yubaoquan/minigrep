@@ -15,7 +15,7 @@ function findPeakElement(nums: number[]): number {
 
 type Case = [number[], number[]];
 
-export default function () {
+export default () => {
   ([
     [[1, 2, 3, 1], [2]],
     [[1, 2, 1, 3, 5, 6, 4], [1, 5]],
@@ -23,4 +23,4 @@ export default function () {
     const ret = findPeakElement(arr);
     console.info(expect.includes(ret));
   });
-}
+};

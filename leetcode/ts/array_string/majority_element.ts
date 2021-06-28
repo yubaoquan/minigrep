@@ -16,7 +16,7 @@ function majorityElement(nums: number[]): number {
 
 type Case = [number[], number];
 
-export default function () {
+export default () => {
   ([
     [[1, 2, 5, 9, 5, 9, 5, 5, 5], 5],
     [[3, 2], -1],
@@ -26,4 +26,4 @@ export default function () {
     console.info(ret);
     console.info(ret === expect);
   });
-}
+};

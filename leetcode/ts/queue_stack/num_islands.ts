@@ -53,7 +53,7 @@ function numIslands(grid: string[][]): number {
   return res;
 }
 
-export default function () {
+export default () => {
   const case0 = [
     ['1', '1', '1', '1', '0'],
     ['1', '1', '0', '1', '0'],
@@ -70,4 +70,4 @@ export default function () {
   const res0 = numIslands(case0);
   const res1 = numIslands(case1);
   console.info(res0, res1);
-}
+};

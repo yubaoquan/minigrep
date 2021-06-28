@@ -13,7 +13,7 @@ function permute(nums: number[]): number[][] {
   return ret;
 }
 
-export default function () {
+export default () => {
   const ret = permute([1, 2, 3]);
   console.info(ret);
-}
+};

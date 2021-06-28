@@ -25,7 +25,7 @@ function rotate(matrix: number[][]): void {
   }
 }
 
-export default function () {
+export default () => {
   [
     [
       [1, 2, 3],
@@ -42,4 +42,4 @@ export default function () {
     rotate(arr);
     console.info(arr);
   });
-}
+};

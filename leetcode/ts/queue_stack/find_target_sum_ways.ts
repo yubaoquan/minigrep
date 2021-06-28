@@ -38,7 +38,7 @@ function findTargetSumWays(nums: number[], S: number): number {
 
 type Case = [number[], number];
 
-export default function () {
+export default () => {
   ([
     [[1, 1, 1, 1, 1], 3],
     [[1, 0], 1],
@@ -46,4 +46,4 @@ export default function () {
     const res = findTargetSumWays(arr, s);
     console.info(res);
   });
-}
+};

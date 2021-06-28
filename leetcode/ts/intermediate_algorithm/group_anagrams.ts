@@ -16,7 +16,7 @@ function groupAnagrams(strs: string[]): string[][] {
   return Object.values(record);
 }
 
-export default function () {
+export default () => {
   const ret = groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']);
   console.info(ret);
-}
+};

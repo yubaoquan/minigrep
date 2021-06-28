@@ -17,7 +17,8 @@ function isPerfectSquare(num: number): boolean {
 }
 
 // https://leetcode-cn.com/problems/valid-perfect-square/solution/zhi-xing-yong-shi-0-ms-zai-suo-you-c-ti-jiao-zh-44/
-export function isPerfectSquare2(num: number): boolean {
+export function isPerfectSquare2(input: number): boolean {
+  let num = input;
   let t = 1;
   while (num > 0) {
     num -= t;

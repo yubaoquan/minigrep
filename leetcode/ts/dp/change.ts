@@ -36,7 +36,7 @@ function change2(amount: number, coins: number[]): number {
 
 type Case = [number[], number, number];
 
-export default function () {
+export default () => {
   ([
     [[1, 2, 5], 5, 4],
     [[2], 3, 0],
@@ -46,4 +46,4 @@ export default function () {
     console.info(actual, expect);
     console.info(actual === expect);
   });
-}
+};

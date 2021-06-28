@@ -119,7 +119,7 @@ function solve(arr1: string, arr2: string, arr3: string): string[] {
   return [];
 }
 
-export default function () {
+export default () => {
   const result = solve(
     'bbyyrybbbryybrbr',
     'yrbyyrbbrrbrbryr',
@@ -132,4 +132,4 @@ export default function () {
   // for (let i = 0; i < 10; i+=1) {
   //   console.info(rotate(arr, i));
   // }
-}
+};

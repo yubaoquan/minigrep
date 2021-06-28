@@ -80,7 +80,7 @@ function evalRPN(tokens: string[]): number {
   return stack.pop()!;
 }
 
-export default function () {
+export default () => {
   [
     ['4', '13', '5', '/', '+'],
     ['4', '-2', '/', '2', '-3', '-', '-'],
@@ -91,4 +91,4 @@ export default function () {
     const res = evalRPN(arr);
     console.info(res);
   });
-}
+};

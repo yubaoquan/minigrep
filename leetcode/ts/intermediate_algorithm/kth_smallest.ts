@@ -23,14 +23,14 @@ function kthSmallest(root: TreeNode | null, k: number): number {
 type CaseGenerator = () => [TreeNode, number];
 
 const caseGenerators: CaseGenerator[] = [
-  function () {
+  () => {
     const nodes = [3, 1, 4, 2].map((t) => new TreeNode(t));
     nodes[0].left = nodes[1];
     nodes[0].right = nodes[2];
     nodes[1].right = nodes[3];
     return [nodes[0], 1];
   },
-  function () {
+  () => {
     const nodes = [5, 3, 6, 3, 4, 1].map((t) => new TreeNode(t));
     nodes[0].left = nodes[1];
     nodes[0].right = nodes[2];
@@ -41,9 +41,9 @@ const caseGenerators: CaseGenerator[] = [
   },
 ];
 
-export default function () {
+export default () => {
   caseGenerators.map((gen) => gen()).forEach(([node, k]) => {
     const ret = kthSmallest(node, k);
     console.info(ret);
   });
-}
+};

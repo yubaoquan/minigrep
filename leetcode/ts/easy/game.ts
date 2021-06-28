@@ -58,8 +58,8 @@ function solve(arr: number[], maxSteps: number): string[] {
   return [];
 }
 
-export default function () {
+export default () => {
   const arr = [1, 9, 6, 7, 4, 8, 2, 3, 5];
   const result = solve(arr, 4);
   console.info(result);
-}
+};

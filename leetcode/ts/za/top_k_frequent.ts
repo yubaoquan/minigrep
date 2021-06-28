@@ -21,7 +21,7 @@ function arrEq(a: number[], b: number[]): boolean {
   return a.every((t) => b.includes(t));
 }
 
-export default function () {
+export default () => {
   ([
     [[1, 1, 1, 2, 2, 3], 2, [1, 2]],
     [[1], 1, [1]],
@@ -30,4 +30,4 @@ export default function () {
     console.info(ret);
     console.info(arrEq(ret, expect));
   });
-}
+};

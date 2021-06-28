@@ -24,7 +24,7 @@ function mySqrt(n: number): number {
 
 type Case = [number, number];
 
-export default function () {
+export default () => {
   ([
     [2, 1],
     [4, 2],
@@ -33,4 +33,4 @@ export default function () {
     const result = mySqrt(input);
     console.info(input, expect, result);
   });
-}
+};

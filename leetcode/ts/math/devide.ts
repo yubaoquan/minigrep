@@ -31,7 +31,7 @@ function divide(dividend: number, divisor: number): number {
 
 type Case = [number, number, number];
 
-export default function () {
+export default () => {
   ([
     [-2147483648, -1, 2147483647],
     [10, 3, 3],
@@ -40,4 +40,4 @@ export default function () {
     const ret = divide(dividend, divisor);
     console.info(expect, ret, expect === ret);
   });
-}
+};

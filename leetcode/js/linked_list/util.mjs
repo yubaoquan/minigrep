@@ -1,10 +1,10 @@
-
+// @ts-nocheck
 function ListNode(val) {
   this.val = val;
   this.next = null;
 }
 
-ListNode.prototype.display = function() {
+ListNode.prototype.display = function () {
   let current = this;
   const arr = [];
   while (current && current.next) {
@@ -18,7 +18,9 @@ ListNode.prototype.display = function() {
 };
 
 export function makeList(arr) {
-  const nodes = arr.map(val => new ListNode(val));
-  nodes.forEach((t, i) => (t.next = nodes[i + 1]));
+  const nodes = arr.map((val) => new ListNode(val));
+  nodes.forEach((t, i) => {
+    t.next = nodes[i + 1];
+  });
   return nodes[0];
 }

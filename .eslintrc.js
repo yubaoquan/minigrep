@@ -13,23 +13,19 @@ module.exports = {
     createDefaultProgram: true,
   },
   rules: {
-    'brace-style': ['error', '1tbs'],
-    'consistent-return': 'off',
-    'func-names': 'off',
-    'import/extensions': ['error', 'always'],
-    'import/prefer-default-export': 'off',
-    'max-classes-per-file': 'off',
-    'max-len': ['error', { code: 100, ignoreComments: true, ignoreStrings: true }],
-    'max-statements-per-line': ['error', { max: 1 }],
     'no-console': 'off',
-    'no-constant-condition': ['error', { checkLoops: false }],
     'no-continue': 'off',
+    'consistent-return': 'off',
+    'import/prefer-default-export': 'off',
     'no-loop-func': 'off',
     '@typescript-eslint/no-loop-func': 'off',
 
-    'no-mixed-operators': ['error', { allowSamePrecedence: true }],
-    'no-param-reassign': 'off',
-    '@typescript-eslint/no-unused-expressions': ['error', { allowShortCircuit: true }],
+    'no-param-reassign': ['error', { props: false }],
+    'max-statements-per-line': ['error', { max: 1 }],
+    'import/extensions': ['error', 'always'],
+    'brace-style': ['error', '1tbs'],
+
+    '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
 
     'prefer-destructuring': [
       'error',
@@ -39,9 +35,6 @@ module.exports = {
       },
       { enforceForRenamedProperties: false },
     ],
-
-    'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
 
     'lines-around-comment': ['error', {
       allowArrayStart: true,

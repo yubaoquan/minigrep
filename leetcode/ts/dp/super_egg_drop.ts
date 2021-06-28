@@ -65,11 +65,11 @@ function superEggDrop(kk: number, nn: number): number {
   return dp(kk, nn);
 }
 
-export default function () {
+export default () => {
   const ret1 = superEggDrop(2, 6);
   const ret2 = superEggDrop(3, 14);
   const ret3 = superEggDrop(4, 5000);
   console.info(ret1, ret2, ret3);
   console.info(ret1 === 3);
   console.info(ret2 === 4);
-}
+};

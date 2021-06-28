@@ -23,7 +23,7 @@ function search(nums: number[], target: number): number {
 
 type Case = [number[], number, number];
 
-export default function () {
+export default () => {
   ([
     [[4, 5, 6, 7, 0, 1, 2], 0, 4],
     [[4, 5, 6, 7, 0, 1, 2], 3, -1],
@@ -31,4 +31,4 @@ export default function () {
     const ret = search(nums, target);
     console.info(expect, ret, expect === ret);
   });
-}
+};

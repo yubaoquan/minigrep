@@ -9,11 +9,11 @@ function findMin(nums: number[]): number {
   return nums[0];
 }
 
-export default function () {
+export default () => {
   [
     [3, 4, 5, 1, 2],
     [4, 5, 6, 7, 0, 1, 2],
   ].forEach((arr) => {
     console.info(findMin(arr));
   });
-}
+};

@@ -34,7 +34,7 @@ function zigzagLevelOrder(root: TreeNode | null): number[][] {
 }
 
 const getTrees = [
-  function () {
+  () => {
     const nodes = [3, 9, 20, 15, 7].map((t) => new TreeNode(t));
     nodes[0].left = nodes[1];
     nodes[0].right = nodes[2];
@@ -43,7 +43,7 @@ const getTrees = [
 
     return nodes[0];
   },
-  function () {
+  () => {
     const nodes = [1, 2, 3, 4, 5].map((t) => new TreeNode(t));
     const root = nodes[0];
     root.left = nodes[1];
@@ -52,7 +52,7 @@ const getTrees = [
     root.right.right = nodes[4];
     return root;
   },
-  function () {
+  () => {
     const nodes = [0, 2, 4, 1, 3, -1, 5, 1, 6, 8].map((t) => new TreeNode(t));
     nodes[0].left = nodes[1];
     nodes[0].right = nodes[2];
@@ -69,9 +69,9 @@ const getTrees = [
 
 ];
 
-export default function () {
+export default () => {
   getTrees.map((getTree) => getTree()).forEach((tree) => {
     const ret = zigzagLevelOrder(tree);
     console.info(ret);
   });
-}
+};

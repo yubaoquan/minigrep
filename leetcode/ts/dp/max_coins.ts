@@ -67,7 +67,7 @@ function maxCoins(nums: number[]): number {
 
 type Case = [number[], number];
 
-export default function () {
+export default () => {
   console.info(maxCoins2);
   ([
     // [[3, 5, 8], 120],
@@ -77,4 +77,4 @@ export default function () {
     const actual = maxCoins(nums);
     console.info(expect, actual, expect === actual);
   });
-}
+};

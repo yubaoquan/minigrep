@@ -26,7 +26,7 @@ function longestCommonSubsequence(str1: string, str2: string): number {
 
 type Case = [string, string, number];
 
-export default function () {
+export default () => {
   ([
     ['abcde', 'ace', 3],
     ['abc', 'abc', 3],
@@ -35,4 +35,4 @@ export default function () {
     const actual = longestCommonSubsequence(str1, str2);
     console.info(expect, actual, expect === actual);
   });
-}
+};

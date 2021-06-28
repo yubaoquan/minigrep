@@ -1,3 +1,3 @@
-import fn from './intermediate_algorithm/subsets.ts';
+import fn from './test.ts';
 
 fn();

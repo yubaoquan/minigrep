@@ -14,7 +14,7 @@ function titleToNumber(s: string): number {
 
 type Case = [string, number];
 
-export default function () {
+export default () => {
   ([
     ['A', 1],
     ['AB', 28],
@@ -23,4 +23,4 @@ export default function () {
     const result = titleToNumber(title);
     console.info(title, expect, result, expect === result);
   });
-}
+};

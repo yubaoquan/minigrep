@@ -24,13 +24,12 @@ function exist(board: string[][], word: string): boolean {
 
       if (pathArr.length === word.length - 1 && newPositions.length) return true;
 
-      for (let k = 0; k < newPositions.length; k += 1) {
-        const [px, py] = newPositions[k];
+      newPositions.forEach(([px, py]) => {
         const newPath = `${currentPath},${px}-${py}`;
-        if (visited[newPath]) continue;
+        if (visited[newPath]) return;
         memo.unshift(newPath);
         visited[newPath] = true;
-      }
+      });
     }
 
     return false;
@@ -39,7 +38,7 @@ function exist(board: string[][], word: string): boolean {
   return board.some((arr, y) => arr.some((char, x) => find(x, y)));
 }
 
-export default function () {
+export default () => {
   const board = [
     ['A', 'B', 'C', 'E'],
     ['S', 'F', 'C', 'S'],
@@ -49,4 +48,4 @@ export default function () {
   console.info(exist(board, 'SEE'));
   console.info(exist(board, 'ABCCED'));
   console.info(!exist(board, 'ABCB'));
-}
+};

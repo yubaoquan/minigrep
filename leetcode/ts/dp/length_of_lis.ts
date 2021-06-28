@@ -13,7 +13,7 @@ function lengthOfLIS(nums: number[]): number {
 
 type Case = [number[], number];
 
-export default function () {
+export default () => {
   ([
     [[10, 9, 2, 5, 3, 7, 101, 18], 4],
     [[5, 1, 5, 5, 2, 5, 4], 3],
@@ -21,4 +21,4 @@ export default function () {
     const actual = lengthOfLIS(nums);
     console.info(expect, actual, expect === actual);
   });
-}
+};

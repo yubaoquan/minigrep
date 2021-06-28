@@ -17,7 +17,7 @@ function searchMatrix(matrix: number[][], target: number): boolean {
   return false;
 }
 
-export default function () {
+export default () => {
   let matrix;
 
   matrix = [
@@ -45,4 +45,4 @@ export default function () {
 
   matrix = [[-1, 3]];
   console.info(searchMatrix(matrix, 1) === false);
-}
+};

@@ -94,7 +94,7 @@ function openLock(deadends: string[], target: string): number {
 
 type Case = [string[], string];
 
-export default function () {
+export default () => {
   ([
     [
       ['0201', '0101', '0102', '1212', '2002'], '0202',
@@ -112,4 +112,4 @@ export default function () {
     const result = openLock(deadends, target);
     console.info(result);
   });
-}
+};

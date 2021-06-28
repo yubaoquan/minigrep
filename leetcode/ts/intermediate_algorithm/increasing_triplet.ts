@@ -18,7 +18,7 @@ function increasingTriplet(nums: number[]): boolean {
   return dp[dp.length - 1] >= 3;
 }
 
-export default function () {
+export default () => {
   [
     [1, 2, 3, 1, 2, 1],
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -28,4 +28,4 @@ export default function () {
   ].forEach((arr) => {
     console.info(increasingTriplet(arr));
   });
-}
+};

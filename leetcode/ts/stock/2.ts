@@ -16,7 +16,7 @@ function maxProfit(prices: number[]): number {
 
 type Case = [number[], number];
 
-export default function () {
+export default () => {
   ([
     [[7, 1, 5, 3, 6, 4], 7],
     [[1, 2, 3, 4, 5], 4],
@@ -24,4 +24,4 @@ export default function () {
   ] as Case[]).forEach(([arr, result]) => {
     console.info(maxProfit(arr) === result);
   });
-}
+};

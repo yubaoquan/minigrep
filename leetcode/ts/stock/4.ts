@@ -41,7 +41,7 @@ function maxProfit(maxK: number, prices: number[]): number {
 
 type Case = [number[], number, number];
 
-export default function () {
+export default () => {
   ([
     [[1, 2], 1, 1],
     [[2, 4, 1], 2, 2],
@@ -50,4 +50,4 @@ export default function () {
     console.info(maxProfit(k, arr));
     console.info(maxProfit(k, arr) === result);
   });
-}
+};

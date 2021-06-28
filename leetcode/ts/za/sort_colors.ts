@@ -43,7 +43,7 @@ function sortColors(nums: number[]): void {
 
 type Case = [number[], number[]];
 
-export default function () {
+export default () => {
   ([
     [[2, 2, 0, 0, 2, 0, 2, 1, 0], [0, 0, 0, 0, 1, 2, 2, 2, 2]],
     [[0, 2, 2, 2, 0, 2, 1, 1], [0, 0, 1, 1, 2, 2, 2, 2]],
@@ -56,4 +56,4 @@ export default function () {
     console.info(arr);
     console.info(arrEq(arr, expect));
   });
-}
+};

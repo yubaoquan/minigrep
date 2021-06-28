@@ -42,8 +42,8 @@ function numSquares(n: number): number {
   return res;
 }
 
-export default function () {
+export default () => {
   [12, 13].forEach((num) => {
     console.info(numSquares(num));
   });
-}
+};

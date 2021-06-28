@@ -21,7 +21,7 @@ function rob(root: TreeNode | null): number {
 
 type Case = [TreeNode, number];
 
-export default function () {
+export default () => {
   const nodes1 = [3, 2, 3, 3, 1].map((t) => new TreeNode(t));
   nodes1[0].left = nodes1[1];
   nodes1[0].right = nodes1[2];
@@ -42,4 +42,4 @@ export default function () {
     const ret = rob(node);
     console.info(ret, expect, ret === expect);
   });
-}
+};

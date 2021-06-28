@@ -26,7 +26,7 @@ function coinChange(coins: number[], amount: number): number {
 
 type Case = [number[], number, number];
 
-export default function () {
+export default () => {
   ([
     [[186, 419, 83, 408], 6249, 20],
     [[2, 5, 10, 1], 27, 4],
@@ -36,4 +36,4 @@ export default function () {
     const actual = coinChange(coins, amount);
     console.info(expect, actual, expect === actual);
   });
-}
+};
