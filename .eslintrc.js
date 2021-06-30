@@ -13,6 +13,8 @@ module.exports = {
     createDefaultProgram: true,
   },
   rules: {
+    'no-extra-parens': 'off',
+    '@typescript-eslint/no-extra-parens': ['error'],
     'no-console': 'off',
     'no-continue': 'off',
     'consistent-return': 'off',
@@ -22,7 +24,7 @@ module.exports = {
 
     'no-param-reassign': ['error', { props: false }],
     'max-statements-per-line': ['error', { max: 1 }],
-    'import/extensions': ['error', 'always'],
+    'import/extensions': ['error', 'ignorePackages'],
     'brace-style': ['error', '1tbs'],
 
     '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
