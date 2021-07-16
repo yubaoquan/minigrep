@@ -26,7 +26,7 @@ module.exports = {
     'max-statements-per-line': ['error', { max: 1 }],
     'import/extensions': ['error', 'ignorePackages'],
     'brace-style': ['error', '1tbs'],
-
+    '@typescript-eslint/prefer-optional-chain': 'error',
     '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
 
     'prefer-destructuring': [

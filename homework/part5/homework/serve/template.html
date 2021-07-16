@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%=title%></title>
+  <style>
+    * {
+      list-style: none;
+      padding: 0;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .parent {
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .list {
+      margin: 20px auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 600px;
+    }
+
+    .item {
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h3><%=title%></h3>
+
+  <div>
+    <%if(parent) {%>
+      <div class="parent item">
+        <a href="<%=parentPath%>">上一层</a>
+      </div>
+    <%}%>
+    <div class="list">
+      <%for (let i = 0; i < dirs.length; i++) {%>
+        <div class="item">
+          <%if (dirs[i].isUnsupportedFile) {%>
+          <span><%=dirs[i].title%></span>
+          <%} else {%>
+            <a href="<%=dirs[i].path%>">
+              <%=dirs[i].title%>
+            </a>
+          <%}%>
+        </div>
+      <%}%>
+    </div>
+  </div>
+</body>
+</html>

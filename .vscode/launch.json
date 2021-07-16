@@ -19,8 +19,8 @@
     "type": "node",
     "request": "launch",
     "runtimeExecutable": "node",
-    "runtimeArgs": ["--inspect-brk", "app.mjs"],
-    "cwd": "${workspaceFolder}/leetcode/js",
+    "runtimeArgs": ["--inspect-brk", "${file}"],
+    "cwd": "${fileDirname}",
     "outputCapture": "std",
     "port": 9229
   },

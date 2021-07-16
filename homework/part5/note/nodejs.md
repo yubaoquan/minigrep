@@ -1,5 +1,12 @@
 # nodejs
 
+## 架构
+
+- 内置核心模块 native modules
+- 胶水层node c/c++ bindings
+- 执行引擎, 事件循环, 网络库等模块 v8, libuv, ...
+- 硬件
+
 1. 默认情况下 this 是空对象, 不是 global
 
 ```javascript
