@@ -12,11 +12,7 @@ export function reverseList(head: ListNode | null): ListNode | null {
   let { next } = cur;
 
   head.next = null;
-
-  if (!next) {
-    cur.next = head;
-    return cur;
-  }
+  cur.next = head;
 
   while (next) {
     const nextNext: ListNode | null = next.next;
