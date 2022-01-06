@@ -13,6 +13,7 @@ module.exports = {
     createDefaultProgram: true,
   },
   rules: {
+    'no-plusplus': 'off',
     'no-extra-parens': 'off',
     '@typescript-eslint/no-extra-parens': ['error'],
     'no-console': 'off',
