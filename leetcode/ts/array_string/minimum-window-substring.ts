@@ -21,12 +21,12 @@ export function minWindow(s: string, t: string): string {
   let len = Number.MAX_VALUE;
 
   while (right < s.length) {
-    const char = s[right];
+    const c = s[right];
     right++;
 
-    if (need[char]) {
-      tWindow[char]++;
-      if (tWindow[char] === need[char]) valid++;
+    if (need[c]) {
+      tWindow[c]++;
+      if (tWindow[c] === need[c]) valid++;
     }
 
     while (valid === needSize) {

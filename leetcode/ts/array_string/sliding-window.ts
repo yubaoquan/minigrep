@@ -1,7 +1,8 @@
 /* 滑动窗⼝算法框架 */
+/* eslint-disable */
 export const slidingWindow = (s: string, t: string) => {
   const need: Record<string, number> = {};
-  const _window;
+  const tWindow;
 
   for (let i = 0; i < t.length; i += 1) {
     need[t[i]] = need[t[i]] ? need[t[i]] + 1 : 1;
