@@ -23,12 +23,16 @@ export function removeDuplicates(nums: number[]): number {
 type Case = [number[], number, number[]];
 
 const test = () => {
-  ([
-    [[1, 1, 2], 2, [1, 2]],
-    [[0, 0, 1, 1, 1, 2, 2, 3, 3, 4], 5, [0, 1, 2, 3, 4]],
-  ] as Case[]).forEach(([nums, expectedLen, expectedArr]) => {
+  (
+    [
+      [[1, 1, 2], 2, [1, 2]],
+      [[0, 0, 1, 1, 1, 2, 2, 3, 3, 4], 5, [0, 1, 2, 3, 4]],
+    ] as Case[]
+  ).forEach(([nums, expectedLen, expectedArr]) => {
     const actualLen = removeDuplicates(nums);
-    console.info(expectedLen === actualLen && arrEq(nums.slice(0, actualLen), expectedArr));
+    console.info(
+      expectedLen === actualLen && arrEq(nums.slice(0, actualLen), expectedArr),
+    );
   });
 };
 

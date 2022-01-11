@@ -46,10 +46,12 @@ export function checkInclusion(s1: string, s2: string): boolean {
 
 type Case = [string, string, boolean];
 const test = () => {
-  ([
-    ['ab', 'eidbaooo', true],
-    ['ab', 'eidboaoo', false],
-  ] as Case[]).forEach(([s1, s2, expected]) => {
+  (
+    [
+      ['ab', 'eidbaooo', true],
+      ['ab', 'eidboaoo', false],
+    ] as Case[]
+  ).forEach(([s1, s2, expected]) => {
     const actual = checkInclusion(s1, s2);
     console.info(actual === expected);
   });

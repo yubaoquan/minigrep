@@ -20,10 +20,12 @@ export class NumMatrix {
         preSum[i][j - 1] ||= 0;
         preSum[i - 1][j - 1] ||= 0;
 
+        /* eslint-disable prettier/prettier */
         preSum[i][j] = preSum[i - 1][j]
           + preSum[i][j - 1]
           + matrix[i - 1][j - 1]
           - preSum[i - 1][j - 1];
+        /* eslint-enable prettier/prettier */
       }
     }
   }
@@ -31,10 +33,12 @@ export class NumMatrix {
   sumRegion(row1: number, col1: number, row2: number, col2: number): number {
     const { preSum } = this;
 
+    /* eslint-disable prettier/prettier */
     return preSum[row2 + 1][col2 + 1]
       - preSum[row1][col2 + 1]
       - preSum[row2 + 1][col1]
       + preSum[row1][col1];
+    /* eslint-enable prettier/prettier */
   }
 }
 
