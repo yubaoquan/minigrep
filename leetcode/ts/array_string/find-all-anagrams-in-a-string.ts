@@ -49,12 +49,12 @@ export function findAnagrams(s: string, p: string): number[] {
 type Case = [string, string, number[]];
 
 const test = () => {
-  /* eslint-disable prettier/prettier */
-  ([
-    ['cbaebabacd', 'abc', [0, 6]],
-    ['abab', 'ab', [0, 1, 2]],
-  ] as Case[]).forEach(([s, p, expect]) => {
-  /* eslint-enable prettier/prettier */
+  (
+    [
+      ['cbaebabacd', 'abc', [0, 6]],
+      ['abab', 'ab', [0, 1, 2]],
+    ] as Case[]
+  ).forEach(([s, p, expect]) => {
     const actual = findAnagrams(s, p);
     console.info(actual);
     console.info(arrEq(expect, actual));

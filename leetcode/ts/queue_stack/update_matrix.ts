@@ -40,14 +40,16 @@ function updateMatrix(matrix: number[][]): number[][] {
   const visited: Record<string, boolean> = {};
   const q: number[][] = [];
 
-  const ret: number[][] = matrix.map((arr, i) => arr.map((item, j) => {
-    if (item === 0) {
-      visited[`${i}-${j}`] = true;
-      q.push([i, j]);
-      return 0;
-    }
-    return -1;
-  }));
+  const ret: number[][] = matrix.map((arr, i) =>
+    arr.map((item, j) => {
+      if (item === 0) {
+        visited[`${i}-${j}`] = true;
+        q.push([i, j]);
+        return 0;
+      }
+      return -1;
+    }),
+  );
 
   function check(x: number, y: number, n: number) {
     if (x < 0 || x >= matrix.length || y < 0 || y >= matrix[0].length) return;

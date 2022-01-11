@@ -25,11 +25,13 @@ function isIsomorphic(s: string, t: string): boolean {
 
 export type Case = [string, string, boolean];
 
-([
-  ['egg', 'add', true],
-  ['foo', 'bar', false],
-  ['paper', 'title', true],
-] as Case[]).forEach(([a, b, expect]) => {
+(
+  [
+    ['egg', 'add', true],
+    ['foo', 'bar', false],
+    ['paper', 'title', true],
+  ] as Case[]
+).forEach(([a, b, expect]) => {
   const actual = isIsomorphic(a, b);
   console.info(expect === actual);
 });

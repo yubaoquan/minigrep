@@ -8,7 +8,7 @@ function frequencySort(s: string): string {
     map[c] = map[c] ? map[c] + 1 : 1;
   }
   const entries: [string, number][] = Object.entries(map);
-  entries.sort(([, count1], [,count2]) => count2 - count1);
+  entries.sort(([, count1], [, count2]) => count2 - count1);
   return entries.reduce((ret, [key, value]) => {
     let r = ret;
     for (let i = 0; i < value; i += 1) {
@@ -20,11 +20,13 @@ function frequencySort(s: string): string {
 
 export type Case = [string, string];
 
-([
-  ['tree', 'eert'],
-  ['cccaaa', 'cccaaa'],
-  ['Aabb', 'bbAa'],
-] as Case[]).forEach(([input, expect]) => {
+(
+  [
+    ['tree', 'eert'],
+    ['cccaaa', 'cccaaa'],
+    ['Aabb', 'bbAa'],
+  ] as Case[]
+).forEach(([input, expect]) => {
   const actual = frequencySort(input);
   console.info(expect, actual, expect === actual);
 });

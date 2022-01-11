@@ -22,7 +22,14 @@ function numIslands(grid: string[][]): number {
 
   /** 是水或检查过 */
   function isWaterOrVisited(x: number, y: number): boolean {
-    return x < 0 || x >= m || y < 0 || y >= n || grid[x][y] === '0' || visited[`${x}-${y}`];
+    return (
+      x < 0 ||
+      x >= m ||
+      y < 0 ||
+      y >= n ||
+      grid[x][y] === '0' ||
+      visited[`${x}-${y}`]
+    );
   }
 
   /** 检查周围一圈是否是水 */
@@ -34,7 +41,7 @@ function numIslands(grid: string[][]): number {
 
       // 没有探索过的陆地, 标记并加入队列
       visited[`${x}-${y}`] = true;
-      queue.push((x * n) + y);
+      queue.push(x * n + y);
     }
   }
 
@@ -42,7 +49,7 @@ function numIslands(grid: string[][]): number {
     item.forEach((subItem, j) => {
       if (subItem === '0' || visited[`${i}-${j}`]) return;
       res += 1;
-      const queue = [(i * n) + j];
+      const queue = [i * n + j];
       while (queue.length) {
         const t = queue.shift()!;
         checkRound(t, queue);

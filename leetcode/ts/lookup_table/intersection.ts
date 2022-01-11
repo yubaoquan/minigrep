@@ -18,10 +18,16 @@ function intersection(nums1: number[], nums2: number[]): number[] {
 
 type Case = [number[], number[], number[]];
 
-([
-  [[1, 2, 2, 1], [2, 2], [2]],
-  [[4, 9, 5], [9, 4, 9, 8, 4], [9, 4]],
-] as Case[]).forEach(([a, b, expect]) => {
+(
+  [
+    [[1, 2, 2, 1], [2, 2], [2]],
+    [
+      [4, 9, 5],
+      [9, 4, 9, 8, 4],
+      [9, 4],
+    ],
+  ] as Case[]
+).forEach(([a, b, expect]) => {
   const actual = intersection(a, b);
   console.info(arrEqIgnoreOrder(expect, actual));
 });

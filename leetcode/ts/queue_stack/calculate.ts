@@ -32,7 +32,7 @@ function helper(s: string, from = 0): [number, number] {
   while (index < s.length) {
     const c = s[index];
     const isDigit = c.match(/^\d$/);
-    if (isDigit) num = (10 * num) + Number(c);
+    if (isDigit) num = 10 * num + Number(c);
     if (c === '(') {
       let skipLen = 0;
       [num, skipLen] = helper(s, index + 1);
@@ -62,15 +62,17 @@ function calculate(s: string): number {
 type Case = [string, number];
 
 export default () => {
-  ([
-    ['14-3/2', 13],
-    ['3/2', 1],
-    ['3+2*2', 7],
-    ['(1+(4+5+2)-3)+(6+8)', 23],
-    ['1 + 1', 2],
-    [' 2-1 + 2 ', 3],
-    [' -1 + 2 ', 1],
-  ] as Case[]).forEach(([expr, expect]) => {
+  (
+    [
+      ['14-3/2', 13],
+      ['3/2', 1],
+      ['3+2*2', 7],
+      ['(1+(4+5+2)-3)+(6+8)', 23],
+      ['1 + 1', 2],
+      [' 2-1 + 2 ', 3],
+      [' -1 + 2 ', 1],
+    ] as Case[]
+  ).forEach(([expr, expect]) => {
     const actual = calculate(expr);
     console.info(expect, actual, expect === actual);
   });

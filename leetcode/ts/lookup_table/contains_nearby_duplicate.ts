@@ -9,14 +9,14 @@ function containsNearbyDuplicate(nums: number[], k: number): boolean {
 }
 
 export type Case = [number[], number, boolean];
-
-([
-  [[1, 2, 3, 1, 2, 3], 2, false],
-  [[99, 99], 2, true],
-  [[1, 2, 3, 1], 3, true],
-  [[1, 0, 1, 1], 1, true],
-
-] as Case[]).forEach(([nums, k, expect]) => {
+(
+  [
+    [[1, 2, 3, 1, 2, 3], 2, false],
+    [[99, 99], 2, true],
+    [[1, 2, 3, 1], 3, true],
+    [[1, 0, 1, 1], 1, true],
+  ] as Case[]
+).forEach(([nums, k, expect]) => {
   const actual = containsNearbyDuplicate(nums, k);
   console.info(expect === actual);
 });

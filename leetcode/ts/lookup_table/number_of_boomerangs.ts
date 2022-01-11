@@ -9,8 +9,9 @@ function numberOfBoomerangs(points: number[][]): number {
   function getDistance(a: number[], b: number[]) {
     const xOffset = Math.abs(a[0] - b[0]);
     const yOffset = Math.abs(a[1] - b[1]);
-    const key = xOffset < yOffset ? `${xOffset}-${yOffset}` : `${yOffset}-${xOffset}`;
-    if (!memo[key]) memo[key] = (xOffset ** 2) + (yOffset ** 2);
+    const key =
+      xOffset < yOffset ? `${xOffset}-${yOffset}` : `${yOffset}-${xOffset}`;
+    if (!memo[key]) memo[key] = xOffset ** 2 + yOffset ** 2;
     return memo[key];
   }
 
@@ -42,6 +43,17 @@ function numberOfBoomerangs(points: number[][]): number {
 }
 
 // console.info(numberOfBoomerangs([[0, 0], [1, 0], [-1, 0], [0, 1], [0, -1]]));
-console.info(numberOfBoomerangs([
-  [1, 8], [7, 9], [2, 0], [2, 3], [7, 5], [9, 2], [2, 8], [9, 7], [3, 6], [1, 2],
-]));
+console.info(
+  numberOfBoomerangs([
+    [1, 8],
+    [7, 9],
+    [2, 0],
+    [2, 3],
+    [7, 5],
+    [9, 2],
+    [2, 8],
+    [9, 7],
+    [3, 6],
+    [1, 2],
+  ]),
+);

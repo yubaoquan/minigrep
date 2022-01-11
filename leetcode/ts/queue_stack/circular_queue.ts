@@ -89,8 +89,8 @@ class MyCircularQueue {
 }
 
 /**
-* Your MyCircularQueue object will be instantiated and called as such:
-*/
+ * Your MyCircularQueue object will be instantiated and called as such:
+ */
 
 export default () => {
   const obj = new MyCircularQueue(3);

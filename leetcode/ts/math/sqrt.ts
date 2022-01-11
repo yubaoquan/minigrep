@@ -25,11 +25,13 @@ function mySqrt(n: number): number {
 type Case = [number, number];
 
 export default () => {
-  ([
-    [2, 1],
-    [4, 2],
-    [8, 2],
-  ] as Case[]).forEach(([input, expect]) => {
+  (
+    [
+      [2, 1],
+      [4, 2],
+      [8, 2],
+    ] as Case[]
+  ).forEach(([input, expect]) => {
     const result = mySqrt(input);
     console.info(input, expect, result);
   });
