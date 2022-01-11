@@ -24,10 +24,12 @@ function search(nums: number[], target: number): number {
 type Case = [number[], number, number];
 
 export default () => {
+  /* eslint-disable prettier/prettier */
   ([
     [[4, 5, 6, 7, 0, 1, 2], 0, 4],
     [[4, 5, 6, 7, 0, 1, 2], 3, -1],
   ] as Case[]).forEach(([nums, target, expect]) => {
+    /* eslint-enable prettier/prettier */
     const ret = search(nums, target);
     console.info(expect, ret, expect === ret);
   });

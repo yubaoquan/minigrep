@@ -2,7 +2,7 @@
  * 移除重复节点
  * https://leetcode-cn.com/problems/remove-duplicate-node-lcci/
  */
-import ListNode from '../def/list_node.ts';
+import type ListNode from '../def/list_node.ts';
 
 export function removeDuplicateNodes(head: ListNode | null): ListNode | null {
   if (!head) return head;

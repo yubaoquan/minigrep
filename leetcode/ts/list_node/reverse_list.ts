@@ -43,6 +43,7 @@ function genList(arr: number[]): ListNode | null {
   return nodes[0] || null;
 }
 
+/* eslint-disable prettier/prettier */
 [
   [],
   [1],
@@ -50,6 +51,7 @@ function genList(arr: number[]): ListNode | null {
   [1, 2, 3],
   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 ].forEach((arr) => {
+  /* eslint-enable prettier/prettier */
   const head = genList(arr);
   const reversed = reverseList(head);
   show(reversed);

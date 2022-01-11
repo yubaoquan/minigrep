@@ -22,8 +22,10 @@ export function corpFlightBookings(bookings: number[][], n: number): number[] {
 }
 
 const test = () => {
+  /* eslint-disable prettier/prettier */
   const actual1 = corpFlightBookings([[1, 2, 10], [2, 3, 20], [2, 5, 25]], 5);
   const actual2 = corpFlightBookings([[1, 2, 10], [2, 2, 15]], 2);
+  /* eslint-enable prettier/prettier */
 
   console.info(arrEq(actual1, [10, 55, 45, 25, 25]));
   console.info(arrEq(actual2, [10, 25]));

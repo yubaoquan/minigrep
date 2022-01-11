@@ -4,7 +4,7 @@
  * https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
  */
 
-import ListNode from '../def/list_node.ts';
+import type ListNode from '../def/list_node.ts';
 
 export function kthToLast(head: ListNode | null, k: number): number {
   let node1: ListNode = head!;
@@ -22,7 +22,10 @@ export function kthToLast(head: ListNode | null, k: number): number {
   return node1.val;
 }
 
-export function getKthFromEnd(head: ListNode | null, k: number): ListNode | null {
+export function getKthFromEnd(
+  head: ListNode | null,
+  k: number,
+): ListNode | null {
   let node1: ListNode = head!;
   let node2: ListNode = head!;
 

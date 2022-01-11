@@ -23,12 +23,14 @@ export function carPooling(trips: number[][], capacity: number): boolean {
 type Case = [[number, number, number][], number, boolean];
 
 const test = () => {
+  /* eslint-disable prettier/prettier */
   ([
     [[[2, 1, 5], [3, 3, 7]], 4, false],
     [[[2, 1, 5], [3, 3, 7]], 5, true],
     [[[2, 1, 5], [3, 5, 7]], 3, true],
     [[[3, 2, 7], [3, 7, 9], [8, 3, 9]], 11, true],
   ] as Case[]).forEach(([trips, capacity, expected]) => {
+  /* eslint-enable prettier/prettier */
     const actual = carPooling(trips, capacity);
     console.info(actual === expected);
   });

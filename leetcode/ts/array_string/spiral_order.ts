@@ -11,7 +11,7 @@ export function spiralOrder(matrix: number[][]): number[] {
   let b = matrix.length - 1;
   const ret: number[] = [];
 
-  const shouldBreak = () => (t > b) || (l > r) || (t > b) || (l > r);
+  const shouldBreak = () => t > b || l > r || t > b || l > r;
 
   while (!shouldBreak()) {
     for (let i = l; i <= r; i += 1) ret.push(matrix[t][i]);
