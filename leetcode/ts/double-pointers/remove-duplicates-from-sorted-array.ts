@@ -30,9 +30,7 @@ const test = () => {
     ] as Case[]
   ).forEach(([nums, expectedLen, expectedArr]) => {
     const actualLen = removeDuplicates(nums);
-    console.info(
-      expectedLen === actualLen && arrEq(nums.slice(0, actualLen), expectedArr),
-    );
+    console.info(expectedLen === actualLen && arrEq(nums.slice(0, actualLen), expectedArr));
   });
 };
 

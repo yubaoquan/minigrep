@@ -30,12 +30,7 @@ image[i][j] 和 newColor 表示的颜色值在范围 [0, 65535]内。
 
  */
 
-function floodFill(
-  image: number[][],
-  sr: number,
-  sc: number,
-  newColor: number,
-): number[][] {
+function floodFill(image: number[][], sr: number, sc: number, newColor: number): number[][] {
   if (!image.length || !image[0].length) return image;
   const q: number[][] = [];
   const visited: Record<string, boolean> = {};

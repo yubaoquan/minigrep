@@ -4,8 +4,7 @@
  */
 
 function findMin(nums: number[]): number {
-  for (let i = 0; i + 1 < nums.length; i += 1)
-    if (nums[i] > nums[i + 1]) return nums[i + 1];
+  for (let i = 0; i + 1 < nums.length; i += 1) if (nums[i] > nums[i + 1]) return nums[i + 1];
 
   return nums[0];
 }

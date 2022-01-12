@@ -4,10 +4,7 @@
 
 import { arrEq } from '../util/array.ts';
 
-export function getModifiedArray(
-  length: number,
-  updates: number[][],
-): number[] {
+export function getModifiedArray(length: number, updates: number[][]): number[] {
   const ret = Array(length).fill(0);
   const diff = Array(length).fill(0);
 

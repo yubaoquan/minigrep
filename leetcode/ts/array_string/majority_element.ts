@@ -17,11 +17,13 @@ function majorityElement(nums: number[]): number {
 type Case = [number[], number];
 
 export default () => {
-  ([
-    [[1, 2, 5, 9, 5, 9, 5, 5, 5], 5],
-    [[3, 2], -1],
-    [[2, 2, 1, 1, 1, 2, 2], 2],
-  ] as Case[]).forEach(([arr, expect]) => {
+  (
+    [
+      [[1, 2, 5, 9, 5, 9, 5, 5, 5], 5],
+      [[3, 2], -1],
+      [[2, 2, 1, 1, 1, 2, 2], 2],
+    ] as Case[]
+  ).forEach(([arr, expect]) => {
     const ret = majorityElement(arr);
     console.info(ret);
     console.info(ret === expect);

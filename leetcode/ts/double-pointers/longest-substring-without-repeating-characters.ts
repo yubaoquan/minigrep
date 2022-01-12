@@ -32,12 +32,14 @@ export function lengthOfLongestSubstring(s: string): number {
 type Case = [string, number];
 
 const test = () => {
-  ([
-    ['abcabcbb', 3],
-    ['bbbbb', 1],
-    ['pwwkew', 3],
-    ['', 0],
-  ] as Case[]).forEach(([s, expect]) => {
+  (
+    [
+      ['abcabcbb', 3],
+      ['bbbbb', 1],
+      ['pwwkew', 3],
+      ['', 0],
+    ] as Case[]
+  ).forEach(([s, expect]) => {
     const actual = lengthOfLongestSubstring(s);
     console.info(actual === expect);
   });

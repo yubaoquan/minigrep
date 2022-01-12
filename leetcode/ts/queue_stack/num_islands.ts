@@ -22,14 +22,7 @@ function numIslands(grid: string[][]): number {
 
   /** 是水或检查过 */
   function isWaterOrVisited(x: number, y: number): boolean {
-    return (
-      x < 0 ||
-      x >= m ||
-      y < 0 ||
-      y >= n ||
-      grid[x][y] === '0' ||
-      visited[`${x}-${y}`]
-    );
+    return x < 0 || x >= m || y < 0 || y >= n || grid[x][y] === '0' || visited[`${x}-${y}`];
   }
 
   /** 检查周围一圈是否是水 */

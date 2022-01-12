@@ -2,7 +2,7 @@
 /* eslint-disable */
 export const slidingWindow = (s: string, t: string) => {
   const need: Record<string, number> = {};
-  const tWindow;
+  // const tWindow;
 
   for (let i = 0; i < t.length; i += 1) {
     need[t[i]] = need[t[i]] ? need[t[i]] + 1 : 1;

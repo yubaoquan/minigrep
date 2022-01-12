@@ -20,10 +20,12 @@ function merge(a: number[], m: number, b: number[], n: number) {
 
 type Case = [number[], number, number[], number];
 
-([
-  [[1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3],
-  [[-1, 0, 0, 3, 3, 3, 0, 0, 0], 6, [1, 2, 2], 3],
-] as Case[]).forEach(([arr1, m, arr2, n]) => {
+(
+  [
+    [[1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3],
+    [[-1, 0, 0, 3, 3, 3, 0, 0, 0], 6, [1, 2, 2], 3],
+  ] as Case[]
+).forEach(([arr1, m, arr2, n]) => {
   merge(arr1, m, arr2, n);
   console.info(arr1);
 });

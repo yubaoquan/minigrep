@@ -26,11 +26,13 @@ function merge(intervals: number[][]): number[][] {
 
 export default () => {
   [
+  /* eslint-disable prettier/prettier */
     [[2, 3], [5, 5], [2, 2], [3, 4], [3, 4]],
     [[1, 4], [4, 5]],
     [[1, 4], [0, 4]],
     [[1, 4], [2, 3]],
   ].forEach((item) => {
+  /* eslint-enable prettier/prettier */
     console.info(merge(item));
   });
 };

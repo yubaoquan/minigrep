@@ -50,11 +50,13 @@ export function minWindow(s: string, t: string): string {
 
 type Case = [string, string, string];
 const test = () => {
-  ([
-    ['ADOBECODEBANC', 'ABC', 'BANC'],
-    ['a', 'a', 'a'],
-    ['a', 'aa', ''],
-  ] as Case[]).forEach(([s, t, expected]) => {
+  (
+    [
+      ['ADOBECODEBANC', 'ABC', 'BANC'],
+      ['a', 'a', 'a'],
+      ['a', 'aa', ''],
+    ] as Case[]
+  ).forEach(([s, t, expected]) => {
     const actual = minWindow(s, t);
     console.info(actual === expected);
   });
