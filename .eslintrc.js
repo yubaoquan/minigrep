@@ -26,10 +26,7 @@ module.exports = {
     'import/extensions': ['error', 'ignorePackages'],
     '@typescript-eslint/prefer-optional-chain': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
-    '@typescript-eslint/no-use-before-define': [
-      'error',
-      { ignoreTypeReferences: false },
-    ],
+    '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
 
     'prefer-destructuring': [
       'error',
