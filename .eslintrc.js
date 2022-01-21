@@ -17,9 +17,11 @@ module.exports = {
     'no-plusplus': 'off',
     'no-console': 'off',
     'no-continue': 'off',
-    'consistent-return': 'off',
-    'import/prefer-default-export': 'off',
     'no-loop-func': 'off',
+    'consistent-return': 'off',
+    'no-async-promise-executor': 'off',
+    'no-promise-executor-return': 'off',
+    'import/prefer-default-export': 'off',
     '@typescript-eslint/no-loop-func': 'off',
 
     'no-param-reassign': ['error', { props: false }],
