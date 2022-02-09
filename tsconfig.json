@@ -8,11 +8,11 @@
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["es2021", "dom"],
+    "lib": ["es2021", "dom", "deno.ns"],
     "baseUrl": "./",
     "outDir": "./dist",
     "module": "esnext",
-    "target": "es2021"
+    "target": "esnext"
   },
   "include": [
     "ts/**/*.ts",
@@ -21,6 +21,8 @@
     "leetcode/**/*.mjs"
   ],
   "exclude": [
-    "./dist/**/*"
+    "dist",
+    "src",
+    "gui"
   ]
 }
