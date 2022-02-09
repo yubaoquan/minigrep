@@ -8,9 +8,11 @@
     "preserveConstEnums": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["es2020", "dom"],
+    "lib": ["es2021", "dom"],
     "baseUrl": "./",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "module": "esnext",
+    "target": "es2021"
   },
   "include": [
     "ts/**/*.ts",
