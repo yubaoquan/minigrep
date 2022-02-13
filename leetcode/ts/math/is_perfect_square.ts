@@ -29,14 +29,16 @@ export function isPerfectSquare2(input: number): boolean {
 
 type Case = [number, boolean];
 
-([
-  [4, true],
-  [16, true],
-  [1, true],
-  [5, false],
-  [100, true],
-  [17, false],
-] as Case[]).forEach(([num, expect]) => {
+(
+  [
+    [4, true],
+    [16, true],
+    [1, true],
+    [5, false],
+    [100, true],
+    [17, false],
+  ] as Case[]
+).forEach(([num, expect]) => {
   const actual = isPerfectSquare(num);
   console.info(num, actual === expect);
 });

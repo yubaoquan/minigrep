@@ -3,7 +3,12 @@
 
 // import { debug } from '../util/debug.ts';
 
-function fourSumCount(a: number[], b: number[], c: number[], d: number[]): number {
+function fourSumCount(
+  a: number[],
+  b: number[],
+  c: number[],
+  d: number[],
+): number {
   // return debug(nSumCount([a, b, c, d], 0, 0)).length;
   const map: Record<string, number> = {};
   let ret = 0;
@@ -25,7 +30,11 @@ function fourSumCount(a: number[], b: number[], c: number[], d: number[]): numbe
   return ret;
 }
 
-function nSumCount(numsArrs: number[][], start: number, target: number): number[][] {
+function nSumCount(
+  numsArrs: number[][],
+  start: number,
+  target: number,
+): number[][] {
   if (!numsArrs.length) return [];
   const ret: number[][] = [];
 
@@ -43,7 +52,9 @@ function nSumCount(numsArrs: number[][], start: number, target: number): number[
     });
   }
 
-  return start === 0 ? ret.filter((arr) => arr.length === numsArrs.length) : ret;
+  return start === 0
+    ? ret.filter((arr) => arr.length === numsArrs.length)
+    : ret;
 }
 
 const a = [1, 2];

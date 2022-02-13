@@ -8,10 +8,12 @@ export function reverseLeftWords(s: string, n: number): string {
 }
 
 type Case = [string, number, string];
-([
-  ['abcdefg', 2, 'cdefgab'],
-  ['lrloseumgh', 6, 'umghlrlose'],
-] as Case[]).forEach(([s, k, expect]) => {
+(
+  [
+    ['abcdefg', 2, 'cdefgab'],
+    ['lrloseumgh', 6, 'umghlrlose'],
+  ] as Case[]
+).forEach(([s, k, expect]) => {
   const actual = reverseLeftWords(s, k);
   console.info(s, expect === actual);
 });

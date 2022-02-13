@@ -1,9 +1,10 @@
 function isHappy(n: number): boolean {
-  const powSum = (num: number): number => num
-    .toString()
-    .split('')
-    .map((item) => +item)
-    .reduce((sum, cur) => sum + (cur * cur), 0);
+  const powSum = (num: number): number =>
+    num
+      .toString()
+      .split('')
+      .map((item) => +item)
+      .reduce((sum, cur) => sum + cur * cur, 0);
 
   let temp = powSum(n);
   const cache: Record<number, boolean> = {};
@@ -20,9 +21,7 @@ function isHappy(n: number): boolean {
 type Case = [number, boolean];
 
 export default () => {
-  ([
-    [19, true],
-  ] as Case[]).forEach(([n, expect]) => {
+  ([[19, true]] as Case[]).forEach(([n, expect]) => {
     const ret = isHappy(n);
     console.info(n, expect, ret);
   });

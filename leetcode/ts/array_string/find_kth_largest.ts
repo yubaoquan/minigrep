@@ -26,11 +26,13 @@ function findKthLargest(nums: number[], k: number): number {
 type Case = [number[], number, number];
 
 export default () => {
-  ([
-    [[-1, -1], 2, -1],
-    [[3, 2, 3, 1, 2, 4, 5, 5, 6], 4, 4],
-    [[3, 2, 1, 5, 6, 4], 2, 5],
-  ] as Case[]).forEach(([nums, k, expect]) => {
+  (
+    [
+      [[-1, -1], 2, -1],
+      [[3, 2, 3, 1, 2, 4, 5, 5, 6], 4, 4],
+      [[3, 2, 1, 5, 6, 4], 2, 5],
+    ] as Case[]
+  ).forEach(([nums, k, expect]) => {
     const ret = findKthLargest(nums, k);
     console.info(expect, ret, expect === ret);
   });

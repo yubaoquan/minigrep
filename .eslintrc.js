@@ -1,7 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['airbnb-typescript/base'],
-  plugins: ['@typescript-eslint'],
+  extends: ['airbnb-base', 'airbnb-typescript/base', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'import'],
   globals: {
     Deno: 'readonly',
     fetch: 'readonly',
@@ -13,20 +13,21 @@ module.exports = {
     createDefaultProgram: true,
   },
   rules: {
-    'no-extra-parens': 'off',
-    '@typescript-eslint/no-extra-parens': ['error'],
+    'prettier/prettier': 'error',
+    'no-plusplus': 'off',
     'no-console': 'off',
     'no-continue': 'off',
-    'consistent-return': 'off',
-    'import/prefer-default-export': 'off',
     'no-loop-func': 'off',
+    'consistent-return': 'off',
+    'no-async-promise-executor': 'off',
+    'no-promise-executor-return': 'off',
+    'import/prefer-default-export': 'off',
     '@typescript-eslint/no-loop-func': 'off',
 
     'no-param-reassign': ['error', { props: false }],
-    'max-statements-per-line': ['error', { max: 1 }],
     'import/extensions': ['error', 'ignorePackages'],
-    'brace-style': ['error', '1tbs'],
     '@typescript-eslint/prefer-optional-chain': 'error',
+    '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
 
     'prefer-destructuring': [
@@ -38,14 +39,17 @@ module.exports = {
       { enforceForRenamedProperties: false },
     ],
 
-    'lines-around-comment': ['error', {
-      allowArrayStart: true,
-      allowBlockStart: true,
-      allowClassStart: true,
-      allowObjectStart: true,
-      beforeBlockComment: true,
-      beforeLineComment: true,
-    }],
+    'lines-around-comment': [
+      'error',
+      {
+        allowArrayStart: true,
+        allowBlockStart: true,
+        allowClassStart: true,
+        allowObjectStart: true,
+        beforeBlockComment: true,
+        beforeLineComment: true,
+      },
+    ],
 
     'padding-line-between-statements': [
       'error',
@@ -57,19 +61,6 @@ module.exports = {
       { blankLine: 'always', prev: 'import', next: '*' },
       { blankLine: 'any', prev: 'import', next: 'import' },
       { blankLine: 'any', prev: 'export', next: 'export' },
-    ],
-
-    '@typescript-eslint/type-annotation-spacing': ['error',
-      {
-        after: true,
-        before: false,
-        overrides: {
-          arrow: {
-            after: true,
-            before: true,
-          },
-        },
-      },
     ],
   },
 };

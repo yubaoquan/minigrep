@@ -5,7 +5,10 @@
 
 import ListNode from '../def/list_node.ts';
 
-function mergeTwoLists(a: ListNode | null, b: ListNode | null): ListNode | null {
+function mergeTwoLists(
+  a: ListNode | null,
+  b: ListNode | null,
+): ListNode | null {
   let l1 = a;
   let l2 = b;
   if (!l1 && !l2) return l1;

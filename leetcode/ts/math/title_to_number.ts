@@ -8,18 +8,24 @@ function getNumberOfPos(char: string, pos: number) {
 }
 
 function titleToNumber(s: string): number {
-  return s.split('')
-    .reduce((ret, cur, index) => ret + getNumberOfPos(cur, s.length - index - 1), 0);
+  return s
+    .split('')
+    .reduce(
+      (ret, cur, index) => ret + getNumberOfPos(cur, s.length - index - 1),
+      0,
+    );
 }
 
 type Case = [string, number];
 
 export default () => {
-  ([
-    ['A', 1],
-    ['AB', 28],
-    ['ZY', 701],
-  ] as Case[]).forEach(([title, expect]) => {
+  (
+    [
+      ['A', 1],
+      ['AB', 28],
+      ['ZY', 701],
+    ] as Case[]
+  ).forEach(([title, expect]) => {
     const result = titleToNumber(title);
     console.info(title, expect, result, expect === result);
   });

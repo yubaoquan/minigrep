@@ -21,6 +21,7 @@ function dailyTemperatures(temperatures: number[]): number[] {
   const res: number[] = [];
 
   for (let i = temperatures.length - 1; i >= 0; i -= 1) {
+    // eslint-disable-next-line prettier/prettier
     while (stack.length && temperatures[stack[0]] <= temperatures[i]) stack.shift();
     res[i] = stack.length ? stack[0] - i : 0;
     stack.unshift(i);

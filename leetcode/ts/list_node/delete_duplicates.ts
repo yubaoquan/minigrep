@@ -4,7 +4,7 @@
  */
 
 // Definition for singly-linked list.
-import ListNode from '../def/list_node.ts';
+import type ListNode from '../def/list_node.ts';
 
 export function deleteDuplicates(head: ListNode | null): ListNode | null {
   if (!head) return head;

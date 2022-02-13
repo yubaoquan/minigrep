@@ -44,23 +44,29 @@ function decodeString(s: string): string {
   let curNum = '';
 
   for (let i = 0; i < s.length; i += 1) {
-    if (/\d/.test(s[i])) { // 读到数字, 入栈之前拼好的字符串
+    if (/\d/.test(s[i])) {
+      // 读到数字, 入栈之前拼好的字符串
       curNum += s[i];
       if (curStr) stack.push(curStr);
       curStr = '';
-    } else if (s[i] === '[') { // 读到[, 入栈之前拼好的数字
+    } else if (s[i] === '[') {
+      // 读到[, 入栈之前拼好的数字
       stack.push(curNum);
       curNum = '';
-    } else if (s[i] === ']') { // 读到], 出栈
+    } else if (s[i] === ']') {
+      // 读到], 出栈
       const str = stack.pop()!;
 
-      if (/\d+/.test(str)) { // 出栈数字
+      if (/\d+/.test(str)) {
+        // 出栈数字
         curStr = repeat(curStr, +str);
-      } else { // 出栈同级的字符串, 遇到]至少要有一个数字出栈, 所以下标-1
+      } else {
+        // 出栈同级的字符串, 遇到]至少要有一个数字出栈, 所以下标-1
         curStr = str + curStr;
         i -= 1;
       }
-    } else { // 读到英文字母, 拼接到字符串上
+    } else {
+      // 读到英文字母, 拼接到字符串上
       curStr += s[i];
     }
   }
@@ -76,16 +82,18 @@ function decodeString(s: string): string {
 type Case = [string, string];
 
 export default () => {
-  ([
+  (
     [
-      '3[z]2[2[y]pq4[2[jk]e1[f]]]ef',
-      'zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef',
-    ],
-    ['3[a2[c]]', 'accaccacc'],
-    ['3[a]2[bc]', 'aaabcbc'],
-    ['2[abc]3[cd]ef', 'abcabccdcdcdef'],
-    ['abc3[cd]xyz', 'abccdcdcdxyz'],
-  ] as Case[]).forEach(([s, expect]) => {
+      [
+        '3[z]2[2[y]pq4[2[jk]e1[f]]]ef',
+        'zzzyypqjkjkefjkjkefjkjkefjkjkefyypqjkjkefjkjkefjkjkefjkjkefef',
+      ],
+      ['3[a2[c]]', 'accaccacc'],
+      ['3[a]2[bc]', 'aaabcbc'],
+      ['2[abc]3[cd]ef', 'abcabccdcdcdef'],
+      ['abc3[cd]xyz', 'abccdcdcdxyz'],
+    ] as Case[]
+  ).forEach(([s, expect]) => {
     const result = decodeString(s);
 
     // console.info(result);

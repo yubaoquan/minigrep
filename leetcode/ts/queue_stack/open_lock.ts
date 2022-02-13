@@ -95,20 +95,14 @@ function openLock(deadends: string[], target: string): number {
 type Case = [string[], string];
 
 export default () => {
-  ([
+  (
     [
-      ['0201', '0101', '0102', '1212', '2002'], '0202',
-    ],
-    [
-      ['8888'], '0009',
-    ],
-    [
-      ['8887', '8889', '8878', '8898', '8788', '8988', '7888', '9888'], '8888',
-    ],
-    [
-      ['0000'], '8888',
-    ],
-  ] as Case[]).forEach(([deadends, target]) => {
+      [['0201', '0101', '0102', '1212', '2002'], '0202'],
+      [['8888'], '0009'],
+      [['8887', '8889', '8878', '8898', '8788', '8988', '7888', '9888'], '8888'],
+      [['0000'], '8888'],
+    ] as Case[]
+  ).forEach(([deadends, target]) => {
     const result = openLock(deadends, target);
     console.info(result);
   });

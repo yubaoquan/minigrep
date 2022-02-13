@@ -39,10 +39,12 @@ function findTargetSumWays(nums: number[], S: number): number {
 type Case = [number[], number];
 
 export default () => {
-  ([
-    [[1, 1, 1, 1, 1], 3],
-    [[1, 0], 1],
-  ] as Case[]).forEach(([arr, s]) => {
+  (
+    [
+      [[1, 1, 1, 1, 1], 3],
+      [[1, 0], 1],
+    ] as Case[]
+  ).forEach(([arr, s]) => {
     const res = findTargetSumWays(arr, s);
     console.info(res);
   });

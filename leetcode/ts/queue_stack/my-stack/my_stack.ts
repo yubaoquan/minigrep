@@ -21,7 +21,7 @@ empty() -- 返回栈是否为空
 import Node from './node.ts';
 
 class MyStack {
-  head: Node|null = null;
+  head: Node | null = null;
 
   push(x: number): void {
     this.head = this.head
