@@ -7,22 +7,22 @@ import ListNode from '../def/list_node.ts';
 
 export function reverseList(head: ListNode | null): ListNode | null {
   if (!head || !head.next) return head;
-  let pre = head;
-  let cur = head.next;
-  let { next } = cur;
+  let left = head;
+  let middle = head.next;
+  let right = middle.next;
 
   head.next = null;
-  cur.next = head;
+  middle.next = head;
 
-  while (next) {
-    const nextNext: ListNode | null = next.next;
-    cur.next = pre;
-    next.next = cur;
-    pre = cur;
-    cur = next;
-    next = nextNext;
+  while (right) {
+    const nextNext: ListNode | null = right.next;
+    middle.next = left;
+    right.next = middle;
+    left = middle;
+    middle = right;
+    right = nextNext;
   }
-  return cur;
+  return middle;
 }
 
 function show(inputNode: ListNode | null) {
