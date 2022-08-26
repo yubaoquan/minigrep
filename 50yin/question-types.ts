@@ -1,6 +1,11 @@
-const genGenerator =
-  (keyIndex: number, valueIndex: number) => (allChars: [string, string, string][]) =>
-    allChars.reduce((ret, cur) => ({ ...ret, [cur[keyIndex]]: cur[valueIndex] }), {});
+import ALL_CHARS from './char.ts';
+
+const genGenerator = (keyIndex: number, valueIndex: number) => () =>
+  ALL_CHARS.reduce((ret, cur) => {
+    const question = cur[keyIndex];
+    const answer = cur[valueIndex];
+    return { ...ret, [question]: answer };
+  }, {});
 
 /** 平假名 */
 const HIRAGANA_INDEX = 0;

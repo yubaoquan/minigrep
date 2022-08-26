@@ -12,7 +12,7 @@
 ## 运行
 
 ```bash
-deno run --unstable --allow-env play.ts
+deno run --unstable play.ts
 ```
 
 ## 退出
