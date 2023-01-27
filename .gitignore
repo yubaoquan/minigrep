@@ -9,3 +9,4 @@ test_open.ts
 dist
 .cache
 /test/text-to-png/imgs/
+config/
