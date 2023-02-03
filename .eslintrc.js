@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  extends: ['airbnb-base', 'airbnb-typescript/base', 'prettier'],
+  extends: ['airbnb-base', 'airbnb-typescript/base', 'plugin:import/errors', 'prettier'],
   plugins: ['@typescript-eslint', 'prettier', 'import'],
   globals: {
     Deno: 'readonly',
@@ -21,14 +21,19 @@ module.exports = {
     'consistent-return': 'off',
     'no-async-promise-executor': 'off',
     'no-promise-executor-return': 'off',
+    'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     '@typescript-eslint/no-loop-func': 'off',
 
     'no-param-reassign': ['error', { props: false }],
-    'import/extensions': ['error', 'ignorePackages'],
+    'import/extensions': ['error', 'always', { ignorePackages: true }],
     '@typescript-eslint/prefer-optional-chain': 'error',
     '@typescript-eslint/consistent-type-imports': 'error',
     '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      { args: 'after-used', destructuredArrayIgnorePattern: '^_' },
+    ],
 
     'prefer-destructuring': [
       'error',

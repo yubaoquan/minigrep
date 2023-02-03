@@ -15,6 +15,7 @@ export const processDir = (
   canSkip?: ISkipChecker,
 ) => {
   const traverse = (dir: string) => {
+    console.info('traversing ', dir);
     Array.from(Deno.readDirSync(dir)).forEach((t) => {
       const fullPath = join(dir, t.name);
       if (canSkip?.(fullPath, t)) return;
