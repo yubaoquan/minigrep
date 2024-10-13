@@ -6,7 +6,7 @@ use fuckr;
 
 fn main() {
     fuckr::fuck();
-    // minigrep();
+    minigrep();
 }
 
 fn minigrep() {
@@ -15,6 +15,7 @@ fn minigrep() {
         process::exit(1);
     });
 
+    println!("success!");
     println!("Searching for {}", config.query);
     println!("In file {}", config.filename);
 
