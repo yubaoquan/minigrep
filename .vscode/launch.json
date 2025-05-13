@@ -4,6 +4,23 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Cargo run minigrep",
+      "program": "${workspaceFolder}/target/debug/minigrep",
+      "args": ["fff", "eee"],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "cargo build"
+    },
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Launch",
+      "program": "${workspaceFolder}/<program>",
+      "args": ["aaa", "bbb"],
+      "cwd": "${workspaceFolder}"
+    },
   {
     "name": "Deno",
     "type": "pwa-node",
