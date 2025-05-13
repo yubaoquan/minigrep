@@ -37,3 +37,22 @@ class Solution:
                 else:
                     break
         return count
+
+    def numberOfArithmeticSlices2(self, nums: List[int]) -> int:
+        n = len(nums)
+        if n < 3:
+            return 0
+
+        # curr 表示以当前位置结尾的等差数列的个数
+        curr = 0
+        count = 0
+
+        for i in range(2, n):
+            if nums[i] - nums[i - 1] == nums[i - 1] - nums[i - 2]:
+                # 如果当前三个数构成等差数列，那么新的等差数列个数是前一个位置的等差数列个数加1
+                curr += 1
+                count += curr
+            else:
+                curr = 0
+
+        return count
