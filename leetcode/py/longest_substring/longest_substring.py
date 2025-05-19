@@ -3,8 +3,6 @@
 
 如果不存在这样的子字符串，则返回 0。
 
-
-
 示例 1：
 
 输入：s = "aaabb", k = 3
@@ -16,7 +14,6 @@
 输入：s = "ababbc", k = 2
 输出：5
 解释：最长子串为 "ababb" ，其中 'a' 重复了 2 次， 'b' 重复了 3 次。
-
 """
 
 from collections import Counter
