@@ -19,9 +19,28 @@
 """
 
 from typing import List
+from cases import long_case
+import heapq
 
 
 class Solution:
+    def smallestRange2(self, nums: List[List[int]]) -> List[int]:
+        rangeLeft, rangeRight = -(10**9), 10**9
+        maxValue = max(vec[0] for vec in nums)
+        priorityQueue = [(vec[0], i, 0) for i, vec in enumerate(nums)]
+        heapq.heapify(priorityQueue)
+
+        while True:
+            minValue, row, idx = heapq.heappop(priorityQueue)
+            if maxValue - minValue < rangeRight - rangeLeft:
+                rangeLeft, rangeRight = minValue, maxValue
+            if idx == len(nums[row]) - 1:
+                break
+            maxValue = max(maxValue, nums[row][idx + 1])
+            heapq.heappush(priorityQueue, (nums[row][idx + 1], row, idx + 1))
+
+        return [rangeLeft, rangeRight]
+
     def smallestRange(self, nums: List[List[int]]) -> List[int]:
         all_nums = []
         for num in nums:
@@ -52,28 +71,21 @@ class Solution:
                 right += 1
         return res
 
-    def is_valid1(self, nums: List[List[int]], left_num: int, right_num: int) -> bool:
+    def is_valid(self, nums: List[List[int]], left_num: int, right_num: int) -> bool:
         return all(any(left_num <= num <= right_num for num in lst) for lst in nums)
-
-    def is_valid2(self, nums: List[List[int]], left_num: int, right_num: int) -> bool:
-        for lst in nums:
-            if lst[0] > right_num or lst[-1] < left_num:
-                return False
-        return True
 
 
 cases = [
-    # ([[4, 10, 15, 24, 26], [0, 9, 12, 20], [5, 18, 22, 30]], [20, 24]),
+    ([[4, 10, 15, 24, 26], [0, 9, 12, 20], [5, 18, 22, 30]], [20, 24]),
     ([[1, 2, 3], [1, 2, 3], [1, 2, 3]], [1, 1]),
     ([[1, 3, 5, 7, 9], [2, 4, 6, 8, 10]], [1, 2]),
+    long_case,
 ]
 
 for caseItem in cases:
     case = caseItem[0]
     expected = caseItem[1]
-    result = Solution().smallestRange(case)
+    result = Solution().smallestRange2(case)
     result_str = str(result)
     expected_str = str(expected)
     assert result_str == expected_str, f"expected {expected_str}, but got {result_str}"
-
-# print(Solution().is_valid([[4, 10, 15, 24, 26]], 5, 20))
