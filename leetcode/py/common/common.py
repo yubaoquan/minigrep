@@ -8,11 +8,8 @@ def run_cases(cases, Solution, method_name):
     """
     solution = Solution()
     for i, (params, expected) in enumerate(cases):
-        try:
-            result = getattr(solution, method_name)(*params)
-            if result == expected:
-                print(f"Test case {i + 1} passed.")
-            else:
-                print(f"Test case {i + 1} failed: expected {expected}, got {result}")
-        except Exception as e:
-            print(f"Test case {i + 1} failed with error: {e}")
+        result = getattr(solution, method_name)(*params)
+        if result == expected:
+            print(f"Test case {i + 1} passed.")
+        else:
+            print(f"Test case {i + 1} failed: expected {expected}, got {result}")
