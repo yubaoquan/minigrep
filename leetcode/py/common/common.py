@@ -9,7 +9,14 @@ def run_cases(cases, Solution, method_name):
     solution = Solution()
     for i, (params, expected) in enumerate(cases):
         result = getattr(solution, method_name)(*params)
-        if result == expected:
+        if is_equal(result, expected):
             print(f"Test case {i + 1} passed.")
         else:
             print(f"Test case {i + 1} failed: expected {expected}, got {result}")
+
+
+def is_equal(a, b):
+    # if a and b are both float, compare them with a tolerance
+    if isinstance(a, float) and isinstance(b, float):
+        return abs(a - b) < 1e-5
+    return a == b
