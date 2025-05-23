@@ -26,6 +26,16 @@ from common.common import run_cases
 
 class Solution:
     def numSubarrayProductLessThanK(self, nums: List[int], k: int) -> int:
+        ans, prod, i = 0, 1, 0
+        for j, num in enumerate(nums):
+            prod *= num
+            while i <= j and prod >= k:
+                prod //= nums[i]
+                i += 1
+            ans += j - i + 1
+        return ans
+
+    def numSubarrayProductLessThanK3(self, nums: List[int], k: int) -> int:
         res = 0
         nums_len = len(nums)
         arr = [1] * nums_len
